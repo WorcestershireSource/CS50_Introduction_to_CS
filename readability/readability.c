@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int count_letters (string)
+
 int main(void)
 {
     // prompt user for string with get_string
@@ -20,5 +22,11 @@ int main(void)
 // print output "grade X" - as rounded int -
 //if >16 then say 16+
 //if <1 say Before Grade 1
+
+}
+
+
+int count_letters (string)
+{
 
 }
