@@ -3,6 +3,7 @@
 #include <string.h>
 
 int count_letters (string);
+int count_letters (string);
 
 int main(void)
 {
@@ -47,5 +48,5 @@ int count_letters (string s)
 int count_letters (string s)
 {
     //count number of words - anything separated by a space
-    
+
 }
