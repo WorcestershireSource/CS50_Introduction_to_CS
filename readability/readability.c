@@ -15,7 +15,7 @@ int main(void)
 
 
 
-//count number of words - anything separated by a space
+
 // count number of sentences - .? or! marks end of a sentence
 
 
@@ -42,4 +42,10 @@ int count_letters (string s)
         }
     }
     return letters;
+}
+
+int count_letters (string s)
+{
+    //count number of words - anything separated by a space
+    
 }
