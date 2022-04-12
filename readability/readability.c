@@ -18,10 +18,10 @@ int main(void)
 
 
     //calc average no of letters per 100 word
-    float l = (count_letters(input) / count_words(input)) * 100.0;
+    float l = ((float) count_letters(input) / (float) count_words(input)) * 100.0;
 
     //calc average no of sentences per 100 word
-    float w = (count_sentences(input) / count_words(input)) * 100.0;
+    float w = ((float) count_sentences(input) / (float) count_words(input)) * 100.0;
 
     //index = 0.0588 * L - 0.296 * S - 15.8
     float findex = (0.0588 * l) - (0.296 * w) - 15.8;
