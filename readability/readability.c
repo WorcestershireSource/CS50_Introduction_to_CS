@@ -7,7 +7,7 @@ int main(void)
 {
     // prompt user for string with get_string
     string input = get_string("Text: ");
-    printf("%i letters\n", count_letters);
+    printf("%i letters\n", count_letters(input));
 
 
 
