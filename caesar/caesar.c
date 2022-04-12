@@ -15,9 +15,13 @@ int main(int argc, string argv[])
 
         int l = strlen(input);
 
-        for(int i = 0; i < l; )
+        string = ciper[l];
+
+        for(int i = 0; i < l; i++)
         {
-            
+            cipher[i] = (int) cipher[i] + (int) argv[2];
+
+            //how should it reflect roll over from 25?
         }
     }
 
