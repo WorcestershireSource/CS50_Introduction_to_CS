@@ -34,9 +34,9 @@ int count_letters (string s)
 
     int l = strlen(s);
     int letters = 0;
-    for (int i = 0, i < l, i++)
+    for (int i = 0; i < l; i++)
     {
-        if ((input[i] > 64 && input[i] < 91) || (input[i] > 96 && input[i] < 123))
+        if ((s[i] > 64 && s[i] < 91) || (s[i] > 96 && s[i] < 123))
         {
             letters++;
         }
