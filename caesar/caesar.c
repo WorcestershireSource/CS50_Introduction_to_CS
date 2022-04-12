@@ -10,6 +10,8 @@ int main(int argc, string argv[])
     }
     else
     {
-        
+        string input = get_string()
+        int l = strlen(input);
+        for(int i = 0; i < l; )
     }
 }
