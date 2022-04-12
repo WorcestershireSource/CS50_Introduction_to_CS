@@ -3,9 +3,9 @@
 #include <string.h>
 #include <math.h>
 
-int count_letters (string);
-int count_words (string);
-int count_sentences (string);
+int count_letters(string);
+int count_words(string);
+int count_sentences(string);
 
 int main(void)
 {
@@ -18,17 +18,18 @@ int main(void)
     float index = round((0.0588 * l) - (0.296 * w) - 15.8);
 
     // print output "grade X" - as rounded int
-    if(index < 1)
+    // special outputs for values below 1 and 16+
+    if (index < 1)
     {
         printf("Before Grade 1\n");
         return 0;
     }
-    if(index > 1 && index < 16)
+    if (index > 1 && index < 16)
     {
         printf("Grade %i\n", (int) index);
         return 0;
     }
-    if(index > 15)
+    if (index > 15)
     {
         printf("Grade 16+\n");
         return 0;
@@ -42,7 +43,7 @@ int main(void)
 }
 
 
-int count_letters (string s)
+int count_letters(string s)
 {
     // count number of letters (a to z upper and lower))
 
@@ -58,14 +59,14 @@ int count_letters (string s)
     return letters;
 }
 
-int count_words (string s)
+int count_words(string s)
 {
     //count number of words - anything separated by a space
     int l = strlen(s);
     int words = 1;
     for (int i = 0; i < l; i++)
     {
-        if (s[i] == 32 )
+        if (s[i] == 32)
         {
             words++;
         }
@@ -73,14 +74,14 @@ int count_words (string s)
     return words;
 }
 
-int count_sentences (string s)
+int count_sentences(string s)
 {
     // count number of sentences - .? or! marks end of a sentence
     int l = strlen(s);
     int sentences = 0;
     for (int i = 0; i < l; i++)
     {
-        if (s[i] == 33 || s[i] == 46 || s[i] == 63 )
+        if (s[i] == 33 || s[i] == 46 || s[i] == 63)
         {
             sentences++;
         }
