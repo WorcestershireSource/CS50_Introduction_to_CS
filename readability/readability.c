@@ -46,7 +46,7 @@ int count_words (string s)
 {
     //count number of words - anything separated by a space
     int l = strlen(s);
-    int words = 0;
+    int words = 1;
     for (int i = 0; i < l; i++)
     {
         if (s[i] == 32 )
