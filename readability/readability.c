@@ -14,7 +14,6 @@ int main(void)
 
 
 
-// count number of letters (a to z A2Z)
 //count number of words - anything separated by a space
 // count number of sentences - .? or! marks end of a sentence
 
@@ -30,5 +29,6 @@ int main(void)
 
 int count_letters (string)
 {
-
+    // count number of letters (a to z upper and lower))
+    
 }
