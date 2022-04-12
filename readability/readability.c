@@ -12,22 +12,12 @@ int main(void)
     // prompt user for string with get_string
     string input = get_string("Text: ");
 
-    //printf("%i letters\n", count_letters(input));
-    //printf("%i words\n", count_words(input));
-    //printf("%i sentences\n", count_sentences(input));
-
-
-    //calc average no of letters per 100 word
+    //calculate reading index score = 0.0588 * L - 0.296 * S - 15.8
     float l = ((float) count_letters(input) / (float) count_words(input)) * 100.0;
-
-    //calc average no of sentences per 100 word
     float w = ((float) count_sentences(input) / (float) count_words(input)) * 100.0;
+    float index = round((0.0588 * l) - (0.296 * w) - 15.8);
 
-    //index = 0.0588 * L - 0.296 * S - 15.8
-    float findex = (0.0588 * l) - (0.296 * w) - 15.8;
-    int index = round(findex);
-
-    // print output "grade X" - as rounded int -
+    // print output "grade X" - as rounded int
     if(index < 1)
     {
         printf("Before Grade 1\n");
