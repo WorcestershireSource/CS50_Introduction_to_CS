@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 int main(int argc, string argv[])
 {
@@ -10,8 +11,13 @@ int main(int argc, string argv[])
     }
     else
     {
-        string input = get_string()
+        string input = get_string("plaintext: ");
+
         int l = strlen(input);
+
         for(int i = 0; i < l; )
+        {
+            
+        }
     }
 }
