@@ -11,17 +11,20 @@ int main(void)
 {
     // prompt user for string with get_string
     string input = get_string("Text: ");
-    printf("%i letters\n", count_letters(input));
-    printf("%i words\n", count_words(input));
-    printf("%i sentences\n", count_sentences(input));
+
+    //printf("%i letters\n", count_letters(input));
+    //printf("%i words\n", count_words(input));
+    //printf("%i sentences\n", count_sentences(input));
 
 
+    //calc average no of letters per 100 word
+    float l = ((float) count_letters / (float) count_words) * 100;
 
-    //calculation
-    float average_letter = count_letters / count_words * 100.0;
-    float average_sentence = count_sentences / count_words * 100.0;
-    float grade_score = 0.0588 * average_letter - 0.296 * average_sentence - 15.8;
-    int output = round(grade_score);
+    //calc average no of sentences per 100 word
+    float w = ((float) count_sentences / (float) count_words) * 100;
+
+    //index = 0.0588 * L - 0.296 * S - 15.8
+    float index = round((0.0588 * l) - (0.296 * w) - 15.8);
 
 
     // print output "grade X" - as rounded int -
