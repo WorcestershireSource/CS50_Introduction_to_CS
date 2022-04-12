@@ -16,11 +16,32 @@ int main(void)
 
 
 
-//calculation
+    //calculation
+    float grade_score = 0.0588 * (count_letters / count_words * 100) - 0.296 * (count_sentences / count_words * 100) - 15.8);
+    int output = round(grade_score);
 
-// print output "grade X" - as rounded int -
-//if >16 then say 16+
-//if <1 say Before Grade 1
+
+    // print output "grade X" - as rounded int -
+    if(output < 1)
+    {
+        printf("Before Grade 1\n");
+        return 0;
+    }
+    if(output > 1 && output < 16)
+    {
+        printf("Grade %i\n", output);
+        return 0;
+    }
+    if(output > 15)
+    {
+        printf("Grade 16+\n");
+        return 0;
+    }
+    else
+    {
+        return 1;
+    }
+
 
 }
 
