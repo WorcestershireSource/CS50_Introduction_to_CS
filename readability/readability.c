@@ -27,11 +27,11 @@ int main(void)
 }
 
 
-int count_letters (string)
+int count_letters (string s)
 {
     // count number of letters (a to z upper and lower))
 
-    int l = strlen(input)
+    int l = strlen(s)
     int letters = 0
     for (int i = 0, i < l, i++)
     {
