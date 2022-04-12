@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 int count_letters (string);
 
@@ -31,8 +32,8 @@ int count_letters (string s)
 {
     // count number of letters (a to z upper and lower))
 
-    int l = strlen(s)
-    int letters = 0
+    int l = strlen(s);
+    int letters = 0;
     for (int i = 0, i < l, i++)
     {
         if ((input[i] > 64 && input[i] < 91) || (input[i] > 96 && input[i] < 123))
