@@ -18,27 +18,27 @@ int main(void)
 
 
     //calc average no of letters per 100 word
-    float l = ((float) count_letters / (float) count_words) * 100;
+    float l = (count_letters(input) / count_words(input)) * 100.0;
 
     //calc average no of sentences per 100 word
-    float w = ((float) count_sentences / (float) count_words) * 100;
+    float w = ((float) count_sentences(input) / count_words(input)) * 100.0;
 
     //index = 0.0588 * L - 0.296 * S - 15.8
     float index = round((0.0588 * l) - (0.296 * w) - 15.8);
 
 
     // print output "grade X" - as rounded int -
-    if(output < 1)
+    if(index < 1)
     {
         printf("Before Grade 1\n");
         return 0;
     }
-    if(output > 1 && output < 16)
+    if(index > 1 && index < 16)
     {
-        printf("Grade %i\n", output);
+        printf("Grade %i\n", (int) index);
         return 0;
     }
-    if(output > 15)
+    if(index > 15)
     {
         printf("Grade 16+\n");
         return 0;
