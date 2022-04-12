@@ -18,7 +18,9 @@ int main(void)
 
 
     //calculation
-    float grade_score = 0.0588 * (count_letters / count_words * 100.0) - 0.296 * (count_sentences / count_words * 100.0) - 15.8);
+    float average_letter = count_letters / count_words * 100.0;
+    float average_sentence = count_sentences / count_words * 100.0;
+    float grade_score = 0.0588 * average_letter - 0.296 * average_sentence - 15.8;
     int output = round(grade_score);
 
 
