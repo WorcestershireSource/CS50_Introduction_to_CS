@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include <math.h>
+#include <stdlib.h>
+
 
 int main(int argc, string argv[])
 {
@@ -17,16 +18,17 @@ int main(int argc, string argv[])
 
         int l = strlen(plaintext);
 
+        int ciphercode = atoi(argv[1]);
+
         string ciphertext;
 
         //for(int i = 0; i < l; i++)
         //{
             //if(islower(ciphertext[i]))
             ///{
-                int x = ((int) plaintext[0] + (int) argv[2]) % 122;
+                int x = ((int) plaintext[0] + ciphercode) % 122;
                 printf("%i\n", x);
-                printf("%i\n", (int) argv[1]);
-                printf("%s\n", argv[1]);
+                printf("%i\n", ciphercode);
                 //ciphertext[i] = (string) x;
             //}
             //if(isupper(ciphertext[i]))
