@@ -17,27 +17,27 @@ int main(int argc, string argv[])
         return 1;
     }
 
+    //get plaintext from user
     string plaintext = get_string("plaintext:  ");
 
     int l = strlen(plaintext);
 
     string ciphertext;
 
-        //for(int i = 0; i < l; i++)
-        //{
-            //if(islower(ciphertext[i]))
-            ///{
-                int x = ((int) plaintext[0] + ciphercode) % 122;
-                printf("%i\n", x);
-                printf("%i\n", ciphercode);
-                //ciphertext[i] = (string) x;
-            //}
+
+    for(int i = 0; i < l; i++)
+    {
+        if(islower(plaintext[i]))
+        {
+            ciphertext[i] = ((int) plaintext[0] + ciphercode) % 122;
+            printf("%i\n", ciphercode);
+        }
             //if(isupper(ciphertext[i]))
             //{
             //    ciphertext[i] = (plaintext[i] + argv[2]) % 90;
             //}
 
-        //}
+        }
 
 
 }
