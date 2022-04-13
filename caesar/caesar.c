@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int main(int argc, string argv[])
 {
@@ -19,7 +20,15 @@ int main(int argc, string argv[])
 
         for(int i = 0; i < l; i++)
         {
+            if(islower(cipher[i]))
+            {
             cipher[i] = (int) cipher[i] + (int) argv[2];
+            }
+            if(isupper(cipher[i]))
+            {
+
+            }
+
 
             //how should it reflect roll over from 25?
         }
