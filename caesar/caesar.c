@@ -7,11 +7,11 @@
 
 int main(int argc, string argv[])
 {
-
+    //convert CLA string into int
     int ciphercode = atoi(argv[1]);
-    
 
-    if (argc != 2)
+    //check if CLA input is valid
+    if (argc != 2 || ciphercode < 1)
     {
         printf("Usage: ./caesar key\n");
         return 1;
