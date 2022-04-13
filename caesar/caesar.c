@@ -22,8 +22,7 @@ int main(int argc, string argv[])
         {
             if(islower(cipher[i]))
             {
-                if
-                cipher[i] = (int) cipher[i] + (int) argv[2];
+                cipher[i] = ((int) cipher[i] + (int) argv[2]) % 90;
             }
             if(isupper(cipher[i]))
             {
