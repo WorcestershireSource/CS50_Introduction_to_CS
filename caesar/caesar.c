@@ -7,17 +7,19 @@
 
 int main(int argc, string argv[])
 {
-    if (argc >= 2)
+    if (argc != 2)
     {
-        if(isdigit(argv[1]) != 0)
-        {
-            string plaintext = get_string("plaintext:  ");
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
 
-            int l = strlen(plaintext);
+    string plaintext = get_string("plaintext:  ");
 
-            int ciphercode = atoi(argv[1]);
+    int l = strlen(plaintext);
 
-            string ciphertext;
+    int ciphercode = atoi(argv[1]);
+
+    string ciphertext;
 
         //for(int i = 0; i < l; i++)
         //{
@@ -34,13 +36,6 @@ int main(int argc, string argv[])
             //}
 
         //}
-        }
-    }
-    else
-    {
-        printf("Usage: ./caesar key\n");
-        return 1;
-    }
 
 
 }
