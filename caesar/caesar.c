@@ -15,7 +15,7 @@ int main(int argc, string argv[])
     {
         string plaintext = get_string("plaintext:  ");
 
-        int l = strlen(input);
+        int l = strlen(plaintext);
 
         string ciphertext[l];
 
