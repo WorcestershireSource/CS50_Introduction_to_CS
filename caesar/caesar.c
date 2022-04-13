@@ -23,13 +23,14 @@ int main(int argc, string argv[])
         {
             if(islower(ciphertext[i]))
             {
-                int x = (input[i] + argv[2]) % 122;
-                ciphertext[i] = (char) x;
+                int x = ((int) input[i] + (int) argv[2]) % 122;
+                printf("%i\n", x);
+                //ciphertext[i] = (string) x;
             }
-            if(isupper(ciphertext[i]))
-            {
-                ciphertext[i] = (input[i] + argv[2]) % 90;
-            }
+            //if(isupper(ciphertext[i]))
+            //{
+            //    ciphertext[i] = (input[i] + argv[2]) % 90;
+            //}
 
         }
 
