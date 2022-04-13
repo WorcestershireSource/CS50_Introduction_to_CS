@@ -19,20 +19,20 @@ int main(int argc, string argv[])
 
         string ciphertext[l];
 
-        for(int i = 0; i < l; i++)
-        {
-            if(islower(ciphertext[i]))
-            {
-                int x = ((int) input[i] + (int) argv[2]) % 122;
+        //for(int i = 0; i < l; i++)
+        //{
+            //if(islower(ciphertext[i]))
+            ///{
+                int x = ((int) input[0] + (int) argv[2]) % 122;
                 printf("%i\n", x);
                 //ciphertext[i] = (string) x;
-            }
+            //}
             //if(isupper(ciphertext[i]))
             //{
             //    ciphertext[i] = (input[i] + argv[2]) % 90;
             //}
 
-        }
+        //}
 
     }
 
