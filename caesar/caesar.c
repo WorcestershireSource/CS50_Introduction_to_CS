@@ -16,7 +16,7 @@ int main(int argc, string argv[])
 
         int l = strlen(input);
 
-        string = cipertext[l];
+        string cipertext = cipertext[l];
 
         for(int i = 0; i < l; i++)
         {
