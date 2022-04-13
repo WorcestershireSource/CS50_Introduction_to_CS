@@ -22,7 +22,7 @@ int main(int argc, string argv[])
 
     int l = strlen(plaintext);
 
-    string ciphertext = "";
+    int ciphertext[l];
 
 
     for(int i = 0; i < l; i++)
@@ -30,7 +30,7 @@ int main(int argc, string argv[])
         if(islower(plaintext[i]))
         {
             ciphertext[i] = ((int) plaintext[0] + ciphercode) % 122;
-            printf("%i\n", ciphercode);
+            printf("%ch\n", ciphercode);
         }
             //if(isupper(ciphertext[i]))
             //{
