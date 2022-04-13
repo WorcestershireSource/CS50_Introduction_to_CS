@@ -16,7 +16,7 @@ int main(int argc, string argv[])
 
         int l = strlen(input);
 
-        string cipertext = cipertext[l];
+        string ciphertext[l];
 
         for(int i = 0; i < l; i++)
         {
