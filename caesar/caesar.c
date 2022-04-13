@@ -25,7 +25,7 @@ int main(int argc, string argv[])
             ///{
                 int x = ((int) plaintext[0] + (int) argv[2]) % 122;
                 printf("%i\n", x);
-                printf("%i\n", (int) argv[2]);
+                printf("%i\n", (int) argv[1]);
                 //ciphertext[i] = (string) x;
             //}
             //if(isupper(ciphertext[i]))
