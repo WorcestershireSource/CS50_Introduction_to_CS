@@ -17,7 +17,7 @@ int main(int argc, string argv[])
 
         int l = strlen(plaintext);
 
-        string ciphertext[l];
+        string ciphertext;
 
         //for(int i = 0; i < l; i++)
         //{
