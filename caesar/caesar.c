@@ -13,7 +13,7 @@ int main(int argc, string argv[])
     }
     else
     {
-        string input = get_string("plaintext:  ");
+        string plaintext = get_string("plaintext:  ");
 
         int l = strlen(input);
 
@@ -23,13 +23,13 @@ int main(int argc, string argv[])
         //{
             //if(islower(ciphertext[i]))
             ///{
-                int x = ((int) input[0] + (int) argv[2]) % 122;
+                int x = ((int) plaintext[0] + (int) argv[2]) % 122;
                 printf("%i\n", x);
                 //ciphertext[i] = (string) x;
             //}
             //if(isupper(ciphertext[i]))
             //{
-            //    ciphertext[i] = (input[i] + argv[2]) % 90;
+            //    ciphertext[i] = (plaintext[i] + argv[2]) % 90;
             //}
 
         //}
