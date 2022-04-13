@@ -7,6 +7,10 @@
 
 int main(int argc, string argv[])
 {
+
+    int ciphercode = atoi(argv[1]);
+    
+
     if (argc != 2)
     {
         printf("Usage: ./caesar key\n");
@@ -16,8 +20,6 @@ int main(int argc, string argv[])
     string plaintext = get_string("plaintext:  ");
 
     int l = strlen(plaintext);
-
-    int ciphercode = atoi(argv[1]);
 
     string ciphertext;
 
@@ -39,3 +41,4 @@ int main(int argc, string argv[])
 
 
 }
+
