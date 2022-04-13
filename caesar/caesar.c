@@ -6,7 +6,7 @@
 
 int main(int argc, string argv[])
 {
-    if (argc != 2 || isalpha(argv[1]) != 0 || argv[1] < 0)
+    if (argc != 2 || isdigit(argv[1]) != 0 || argv[1] < 0)
     {
         printf("Usage: ./caesar key\n");
         return 1;
