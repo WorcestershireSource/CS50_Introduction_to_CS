@@ -11,7 +11,7 @@ int main(int argc, string argv[])
     }
     else
     {
-        string input = get_string("plaintext: ");
+        string input = get_string("plaintext:  ");
 
         int l = strlen(input);
 
