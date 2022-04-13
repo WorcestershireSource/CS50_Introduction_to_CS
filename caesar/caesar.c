@@ -16,22 +16,21 @@ int main(int argc, string argv[])
 
         int l = strlen(input);
 
-        string = ciper[l];
+        string = cipertext[l];
 
         for(int i = 0; i < l; i++)
         {
-            if(islower(cipher[i]))
+            if(islower(ciphertext[i]))
             {
-                cipher[i] = ((int) cipher[i] + (int) argv[2]) % 90;
+                ciphertext[i] = ((int) input[i] + (int) argv[2]) % 122;
             }
-            if(isupper(cipher[i]))
+            if(isupper(ciphertext[i]))
             {
-
+                ciphertext[i] = ((int) input[i] + (int) argv[2]) % 90;
             }
 
-
-            //how should it reflect roll over from 25?
         }
+
     }
 
 }
