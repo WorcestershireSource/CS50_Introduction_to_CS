@@ -4,14 +4,14 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-int only_digits(string);
+int only_alpha(string);
 char rotate(char, int);
 
 int main(int argc, string argv[])
 {
     //check that CLA is valid - just one and every character a digit
     //check that CLA is valid - just one and every character a digit
-    if (argc != 2 || only_digits(argv[1]) == 1)
+    if (argc != 2 || only_alpha(argv[1]) == 1)
     {
         printf("Usage: ./substitution key\n");
         return 1;
@@ -21,6 +21,8 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters.\n");
         return 1;
     }
+
+    //check contains each letter once....
 
 
     //Convert argv[1] from a string to an int
@@ -42,14 +44,14 @@ int main(int argc, string argv[])
 }
 
 
-//new function to cycle through a string and check if each character is a number based on ASCII chart
-int only_digits(string s)
+//new function to cycle through a string and check if each character is alphabetical based on ASCII chart
+int only_alpha(string s)
 {
     int l = strlen(s);
 
     for (int i = 0; i < l; i++)
     {
-        if (isdigit(s[i]) == 0)
+        if (isalpha(s[i]) == 0)
         {
             return 1;
         }
