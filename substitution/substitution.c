@@ -58,35 +58,18 @@ int only_alpha(string s)
     return 0;
 }
 
-//new function to turn a character of plaintext into a cipher code by moving it n times
-//code uses % to make sure it cycles back to start of alphabet once it has passed z
+//new function to turn a character of plaintext into a cipher code
 //numbers reflect ASCII chart
-char rotate(char c, int n)
+char rotate(char c, string n)
 {
-    int x = c + n;
-
     if (isupper(c))
     {
-        if (x > 90)
-        {
-            do
-            {
-                x = (x % 90) + 64;
-            }
-            while (x > 90);
-        }
+        int x = c - 64;
         return x;
     }
     if (islower(c))
     {
-        if (x > 122)
-        {
-            do
-            {
-                x = (x % 122) + 96;
-            }
-            while (x > 122);
-        }
+        int x = c - 96;
         return x;
     }
     else
