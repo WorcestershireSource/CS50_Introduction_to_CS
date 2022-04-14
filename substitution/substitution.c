@@ -39,11 +39,11 @@ int main(int argc, string argv[])
     {
         if(isupper(plaintext[i]))
         {
-            printf("%c", argv[1][rotate(plaintext[i])]);
+            printf("%c", toupper(argv[1][rotate(plaintext[i])]));
         }
         if(islower(plaintext[i]))
         {
-            printf("%c", argv[1][rotate(plaintext[i])]);
+            printf("%c", tolower(argv[1][rotate(plaintext[i])]));
         }
         else
         {
