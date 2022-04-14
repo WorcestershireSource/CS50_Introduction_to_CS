@@ -21,7 +21,23 @@ int main(int argc, string argv[])
         return 1;
     }
 
-
+    //check contains each letter once....
+    int key_check = 0;
+    for (int i = 65; i < 91; i++)
+    {
+        for (int j = 0; j < 26; j++)
+        {
+            if(toupper(argv[1][j]) == i)
+            {
+                key_check++;
+            }
+            if(key_check != j + 1)
+            {
+                printf("Key must contain unique characters\n");
+                return 1;
+            }
+        }
+    }
 
 
 
