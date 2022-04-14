@@ -65,12 +65,12 @@ char rotate(char c, string n)
     if (isupper(c))
     {
         int x = c - 64;
-        return x;
+        return cipher[x];
     }
     if (islower(c))
     {
         int x = c - 96;
-        return x;
+        return cipher[x];
     }
     else
     {
