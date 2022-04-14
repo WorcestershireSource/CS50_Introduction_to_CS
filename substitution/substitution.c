@@ -18,7 +18,7 @@ int main(int argc, string argv[])
     }
     if (strlen(argv) != 26)
     {
-        printf("Usage: ./caesar key\n");
+        printf("Key must contain 26 characters.\n");
         return 1;
     }
 
