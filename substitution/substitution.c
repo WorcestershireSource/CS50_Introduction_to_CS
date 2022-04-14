@@ -28,7 +28,13 @@ int main(int argc, string argv[])
     int key_check = 0;
     for (int i = 0; i < 26; i++)
     {
-        for (int j = 0; j < 26; j++)
+        for (int j = 65; j < 91; j++)
+        {
+            if([i] = j)
+            {
+                key_check++;
+            }
+        }
     }
 
     //Ask the user for the plain text input
