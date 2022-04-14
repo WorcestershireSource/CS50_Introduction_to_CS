@@ -21,24 +21,23 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    //check contains each letter once....
+    //check key in CLA contains each letter once....
     int key_check = 0;
     for (int i = 65; i < 91; i++)
     {
         for (int j = 0; j < 26; j++)
         {
-            if(toupper(argv[1][j]) == i)
+            if (toupper(argv[1][j]) == i)
             {
                 key_check++;
             }
         }
-        if(key_check != i - 64)
+        if (key_check != i - 64)
         {
-            printf("Key must contain unique characters\n");
+            printf("Key must contain 26 unique characters\n");
             return 1;
         }
     }
-
 
 
     //Convert argv[1] from a string to an int
@@ -54,15 +53,15 @@ int main(int argc, string argv[])
     printf("ciphertext:  ");
     for (int i = 0; i < l; i++)
     {
-        if(isupper(plaintext[i]))
+        if (isupper(plaintext[i]))
         {
             printf("%c", toupper(argv[1][rotate(plaintext[i])]));
         }
-        if(islower(plaintext[i]))
+        if (islower(plaintext[i]))
         {
             printf("%c", tolower(argv[1][rotate(plaintext[i])]));
         }
-        if(isalpha(plaintext[i]) == 0)
+        if (isalpha(plaintext[i]) == 0)
         {
             printf("%c", plaintext[i]);
         }
