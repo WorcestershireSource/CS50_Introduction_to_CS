@@ -71,12 +71,12 @@ int rotate(char c)
 {
     if (isupper(c))
     {
-        int x = c - 64;
+        int x = c - 65;
         return x;
     }
     if (islower(c))
     {
-        int x = c - 96;
+        int x = c - 97;
         return x;
     }
     else
