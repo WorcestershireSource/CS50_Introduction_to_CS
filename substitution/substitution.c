@@ -9,8 +9,7 @@ char rotate(char, int);
 
 int main(int argc, string argv[])
 {
-    //check that CLA is valid - just one and every character a digit
-    //check that CLA is valid - just one and every character a digit
+    //check that CLA is valid
     if (argc != 2 || only_alpha(argv[1]) == 1)
     {
         printf("Usage: ./substitution key\n");
