@@ -30,7 +30,7 @@ int main(int argc, string argv[])
 
     //Ask the user for the plain text input
     string plaintext = get_string("plaintext:  ");
-    int l = strlen(plaintext);
+    int l = strlen(plaintext)-1;
 
 
     //print the output
