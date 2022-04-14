@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 int only_alpha(string);
-char rotate(char, int);
+int rotate(char);
 
 int main(int argc, string argv[])
 {
@@ -37,7 +37,7 @@ int main(int argc, string argv[])
     printf("ciphertext:  ");
     for (int i = 0; i < l; i++)
     {
-        printf("%c", argv[1][2]);
+        printf("%c", argv[1][rotate(plaintext[i])]);
     }
     printf("\n");
 }
@@ -60,7 +60,7 @@ int only_alpha(string s)
 
 //new function to turn a character of plaintext into a cipher code
 //numbers reflect ASCII chart
-char rotate(char c, int n)
+int rotate(char c)
 {
     if (isupper(c))
     {
