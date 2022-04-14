@@ -37,7 +37,7 @@ int main(int argc, string argv[])
     printf("ciphertext:  ");
     for (int i = 0; i < l; i++)
     {
-        printf("%c", rotate(plaintext[i], cipher));
+        printf("%c", cipher[rotate(plaintext[i], cipher)]);
     }
     printf("\n");
 }
@@ -60,17 +60,17 @@ int only_alpha(string s)
 
 //new function to turn a character of plaintext into a cipher code
 //numbers reflect ASCII chart
-char rotate(char c, string n)
+char rotate(char c, int n)
 {
     if (isupper(c))
     {
         int x = c - 64;
-        return cipher[x];
+        return x;
     }
     if (islower(c))
     {
         int x = c - 96;
-        return cipher[x];
+        return x;
     }
     else
     {
