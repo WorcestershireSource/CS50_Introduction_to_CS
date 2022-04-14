@@ -21,21 +21,28 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    //Convert argv[1] from a string to an int
-    int cipher = atoi(argv[1]);
-
     //check contains each letter once....
     int key_check = 0;
-    for (int i = 0; i < 26; i++)
+    for (int i = 65; i < 91; i++)
     {
-        for (int j = 65; j < 91; j++)
+        for (int j = 0; j < 26; j++)
         {
-            if([i] = j)
+            if(toupper(argv[1][j]) == i)
             {
                 key_check++;
             }
         }
     }
+    if (key_check != 26)
+    {
+        printf("Key must contain unique characters\n");
+        return 1;
+    }
+
+
+    //Convert argv[1] from a string to an int
+    int cipher = atoi(argv[1]);
+
 
     //Ask the user for the plain text input
     string plaintext = get_string("plaintext:  ");
