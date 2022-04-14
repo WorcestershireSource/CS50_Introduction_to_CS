@@ -37,7 +37,11 @@ int main(int argc, string argv[])
     printf("ciphertext:  ");
     for (int i = 0; i < l; i++)
     {
-        if(isalpha(plaintext[i]))
+        if(isupper(plaintext[i]))
+        {
+            printf("%c", argv[1][rotate(plaintext[i])]);
+        }
+        if(islower(plaintext[i]))
         {
             printf("%c", argv[1][rotate(plaintext[i])]);
         }
