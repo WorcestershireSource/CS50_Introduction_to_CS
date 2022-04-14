@@ -31,11 +31,11 @@ int main(int argc, string argv[])
             {
                 key_check++;
             }
-            if(key_check != j + 1)
-            {
-                printf("Key must contain unique characters\n");
-                return 1;
-            }
+        }
+        if(key_check != i - 64)
+        {
+            printf("Key must contain unique characters\n");
+            return 1;
         }
     }
 
