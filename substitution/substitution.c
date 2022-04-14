@@ -10,13 +10,13 @@ char rotate(char, int);
 int main(int argc, string argv[])
 {
     //check that CLA is valid - just one and every character a digit
-    if (argc != 2)
+    //check that CLA is valid - just one and every character a digit
+    if (argc != 2 || only_digits(argv[1]) == 1)
     {
-        printf("Usage: ./caesar key\n");
+        printf("Usage: ./substitution key\n");
         return 1;
     }
-
-    if (only_digits(argv[1]) == 1)
+    if (strlen(argv) != 26)
     {
         printf("Usage: ./caesar key\n");
         return 1;

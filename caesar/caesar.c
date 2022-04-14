@@ -10,18 +10,11 @@ char rotate(char, int);
 int main(int argc, string argv[])
 {
     //check that CLA is valid - just one and every character a digit
-    if (argc != 2)
+    if (argc != 2 || only_digits(argv[1]) == 1)
     {
         printf("Usage: ./caesar key\n");
         return 1;
     }
-
-    if (only_digits(argv[1]) == 1)
-    {
-        printf("Usage: ./caesar key\n");
-        return 1;
-    }
-
 
     //Convert argv[1] from a string to an int
     int cipher = atoi(argv[1]);
