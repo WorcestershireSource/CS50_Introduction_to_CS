@@ -31,13 +31,14 @@ int main(int argc, string argv[])
             {
                 key_check++;
             }
+            if(key_check!= 1)
+            {
+                printf("Key must contain unique characters\n");
+                return 1;
+            }
         }
     }
-    if (key_check != 26)
-    {
-        printf("Key must contain unique characters\n");
-        return 1;
-    }
+
 
 
     //Convert argv[1] from a string to an int
