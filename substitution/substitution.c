@@ -21,12 +21,15 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    //check contains each letter once....
-
-
     //Convert argv[1] from a string to an int
     int cipher = atoi(argv[1]);
 
+    //check contains each letter once....
+    int key_check = 0;
+    for (int i = 0; i < 26; i++)
+    {
+        for (int j = 0; j < 26; j++)
+    }
 
     //Ask the user for the plain text input
     string plaintext = get_string("plaintext:  ");
