@@ -45,7 +45,7 @@ int main(int argc, string argv[])
         {
             printf("%c", tolower(argv[1][rotate(plaintext[i])]));
         }
-        else
+        if(isalpha(plaintext[i]) == 0)
         {
             printf("%c", plaintext[i]);
         }
