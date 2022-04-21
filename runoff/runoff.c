@@ -129,9 +129,9 @@ int main(int argc, string argv[])
 bool vote(int voter, int rank, string name)
 {
     //check if name is match for valid candidate
-    for(int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if(strcmp(name, candidates[i].name) == 0)
+        if (strcmp(name, candidates[i].name) == 0)
         {
             //update preferences array
             preferences[voter][rank] = i;
@@ -144,7 +144,16 @@ bool vote(int voter, int rank, string name)
 // Tabulate votes for non-eliminated candidates
 void tabulate(void)
 {
-    // TODO
+    for (int i = 0; i < voter_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if (candidates[j].eliminated == false)
+            {
+                candidates[j].votes = preferences[i][0];
+            }
+        }
+    }
     return;
 }
 
