@@ -84,19 +84,16 @@ int main(int argc, string argv[])
     }
 
     // Keep holding runoffs until winner exists
-
+    while (true)
+    {
         // Calculate votes given remaining candidates
         tabulate();
-
-        printf("%i\n", candidates[0].votes);
-        printf("%i\n", candidates[1].votes);
-        printf("%i\n", candidates[2].votes);
 
         // Check if election has been won
         bool won = print_winner();
         if (won)
         {
-
+            break;
         }
 
         // Eliminate last-place candidates
@@ -113,7 +110,7 @@ int main(int argc, string argv[])
                     printf("%s\n", candidates[i].name);
                 }
             }
-
+            break;
         }
 
         // Eliminate anyone with minimum number of votes
@@ -124,7 +121,7 @@ int main(int argc, string argv[])
         {
             candidates[i].votes = 0;
         }
-
+    }
     return 0;
 }
 
@@ -154,7 +151,7 @@ void tabulate(void)
             if (candidates[preferences[i][j]].eliminated == false)
             {
                 candidates[preferences[i][j]].votes++;
-                return;
+                break;
             }
         }
     }
