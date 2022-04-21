@@ -120,7 +120,12 @@ void record_preferences(int ranks[])
     //second rank recorded as better than every other (+1)
     for (int i = 0; i < candidate_count; i++)
     {
-        preferences[ranks[i]][ranks[i + 1]]++
+        for (int j = i; j < candidate_count; j++)
+        {
+            preferences[ranks[i]][ranks[j + 1]]++
+        }
+
+        p [0] [1]
         p [0] [2]
         p [0] [3]
         p [1] [2]
