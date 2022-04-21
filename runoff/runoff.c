@@ -134,7 +134,7 @@ bool vote(int voter, int rank, string name)
         if(strcmp(name, candidates[i].name) == 0)
         {
             //update preferences array
-            preferences[voter][rank] = name;
+            preferences[voter][rank] = i;
             return true;
         }
     }
