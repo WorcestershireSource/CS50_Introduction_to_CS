@@ -104,8 +104,8 @@ bool vote(int rank, string name, int ranks[])
     {
         if (strcmp(name, candidates[i]) == 0)
         {
-            //update preferences array
-            preferences[voter][rank] = i;
+            //update ranks array
+            ranks[i] = ;
             return true;
         }
     }
