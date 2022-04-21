@@ -161,7 +161,7 @@ void tabulate(void)
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
-    for (int i; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes > ((float) voter_count/2))
         {
@@ -177,7 +177,7 @@ int find_min(void)
 {
     int lowest_score = voter_count;
 
-    for (int i; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes < lowest_score)
         {
