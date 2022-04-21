@@ -99,6 +99,8 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
+    //if name is match for candidate
+    //update ranks to indicate voter preference (0 is first)
     
     return false;
 }
