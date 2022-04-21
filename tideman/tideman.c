@@ -131,6 +131,8 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     // TODO
+
+    // if ( preferences[ranks[i]][ranks[j]] > preferences[ranks[j]][ranks[i]])
     return;
 }
 
