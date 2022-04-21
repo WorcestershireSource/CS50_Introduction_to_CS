@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: The algorithm is very fast with a sorted list even with a larger problem set. Bubble sort is capable of quick results with a sorted list as it has a omega value of n and can temrinate after running through a sorted list once. On the other hand a random list will result in a substantially higher sort time as bubble sort will need to handle each piece of data multiple times.
+
+sort2 uses: Merge Sort
+
+How do you know?: The algorithm is fast in comparison to the others and the randomness or size of the problem set has a limited impact on the run time. This is consistent with a theta value of n log n.
+
+sort3 uses: Selection Sort
+
+How do you know?: Randomness doesn't substantially affect run time but the size of the problem set does. Selection sort needs to run over all the values repeatedly as it has no memory to recall previous run throughs of the values. 
