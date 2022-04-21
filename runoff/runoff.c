@@ -163,7 +163,11 @@ bool print_winner(void)
 {
     for (int i; i < candidate_count; i++)
     {
-        if (candidate[i])
+        if (candidate[i].votes > ((float) candidate_count/2))
+        {
+            printf("%s\n", candidate[i].name);
+            return true;
+        }
     }
     return false;
 }
