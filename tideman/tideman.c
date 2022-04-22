@@ -183,10 +183,10 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-//start with highest rank winner
-    for (int i = 0; i < pair_count)
+    //start with highest rank winner
+    for (int i = 0; i < pair_count; i++)
     {
-        if (cycle(pairs[i].winner, pairs[i].loser, pairs[i].winner))
+        if (cycle(pairs[i].winner, pairs[i].loser, pairs[i].winner) == true)
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
@@ -213,8 +213,6 @@ void cycle (int win, int loss, int original)
             }
             cycle(loss, i, original)
         }
-            locked [original][]
-        }
     }
-
+    return true;
 }
