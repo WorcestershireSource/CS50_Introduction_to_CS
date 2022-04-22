@@ -199,10 +199,20 @@ void print_winner(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int i = 0; i < pair_count; i++)
+        int cancelled = 0;
+
+        for (int j = 0; j < pair_count; i++)
         {
-            if (locked[pairs[i].winner][pairs[i].loser] = true)
+            if (locked[pairs[j].winner][i] == true)
+            {
+                cancelled++;
+            }
         }
+        if (cancelled == 0)
+        {
+            printf("%s\n", candidates[i]);
+        }
+    }
     return;
 }
 
