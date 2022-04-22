@@ -184,8 +184,6 @@ void lock_pairs(void)
 {
 //start with highest rank winner
 
-    bool cycle = false;
-
     for (int o = 0; o < pair_count; o++)
     {
         for (int n = 0; n < pair_count; n++)
@@ -195,25 +193,12 @@ void lock_pairs(void)
                 if (n == pairs[o].winner)
                 {
                     //there is a cycle
+                    return;
                 }
-                //Repeat line 
-
+                //recursive
+                //Repeat line
+                locked[pairs[o].winner][pairs[o].loser] = true;
             }
-            // && pairs[n].loser == pairs[o].winner && locked[pairs[j].loser])
-            {
-                cycle = true;
-            }
-            if (pairs[i].loser == pairs[j].winner)
-            {
-
-            }
-
-        }
-
-    }
-
-
-        locked[pairs[i].winner][pairs[i].lose] = true;
     }
     return;
 }
