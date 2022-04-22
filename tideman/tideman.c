@@ -184,13 +184,19 @@ void lock_pairs(void)
 {
 //start with highest rank winner
 
+    bool cycle = false;
+
     for (int i = 0; i < pair_count; i++)
     {
         for (int j = 0; j < pair_count; j++)
         {
-            if (pairs[j].winner = pairs[i].loser && pairs[j].winner = pairs[i].winner)
+            if (pairs[i].loser == pairs[j].winner && pairs[j].winner == pairs[i].winner)
             {
-                //then don't make a link
+                cycle = true;
+            }
+            if (pairs[i].loser == pairs[j].winner)
+            {
+
             }
 
         }
