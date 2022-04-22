@@ -158,8 +158,15 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // use pairs struc array to get win/lose pairs
-    //use preferences array to pull margin of victory
+    // use pairs struc array to get win/lose pairs pairs[pair_count].winner / .loser
+    //use preferences array to pull margin of victory preferences[winner][loser] = voters who prefer
+    for (int i = 0; i < pair_count; i++)
+    {
+        if (
+        preferences[pairs[i].winner][pairs[i].loser];
+    }
+
+
     return;
 }
 
