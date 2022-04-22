@@ -211,6 +211,12 @@ void cycle (int win, int loss, int original)
         return;
     }
 
+
+
+
+
+
+
     for (int i = 0; i < pair_count; i++)
     {
 
@@ -223,6 +229,10 @@ void cycle (int win, int loss, int original)
                 cycle_count++;
             }
             cycle(loss, i, original)
+        }
+        if (cycle_count == 0)
+        {
+            locked [original][]
         }
     }
 
