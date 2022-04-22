@@ -33,6 +33,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+void cycle (int win, int loss, int original);
 
 int main(int argc, string argv[])
 {
@@ -183,23 +184,6 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
 //start with highest rank winner
-
-    for (int o = 0; o < pair_count; o++)
-    {
-        for (int n = 0; n < pair_count; n++)
-        {
-            if (locked[pairs[o].loser][n] = true)
-            {
-                if (n == pairs[o].winner)
-                {
-                    //there is a cycle
-                    return;
-                }
-                //recursive
-                //Repeat line
-                locked[pairs[o].winner][pairs[o].loser] = true;
-            }
-    }
     return;
 }
 
@@ -210,24 +194,36 @@ void print_winner(void)
     return;
 }
 
-
-
-
 void cycle (int win, int loss, int original)
 {
-    int predec = 0;
+    int is_predecessor = 0;
 
     for (int n = 0; n < pair_count; n++)
     {
-        if (locked[loss][n] = true)
+        if (locked[loss][n] == true)
         {
-            predec++;
+            is_predecessor++;
         }
     }
 
-    if (predec == 0)
+    if (is_predecessor == 0)
     {
         return;
     }
-            if (n == pairs[o].winner)
+
+    for (int i = 0; i < pair_count; i++)
+    {
+
+    int cycle_count = 0;
+
+        if (locked[loss][i] = true)
+        {
+            if(i = original)
+            {
+                cycle_count++;
+            }
+            cycle(loss, i, original)
+        }
+    }
+
 }
