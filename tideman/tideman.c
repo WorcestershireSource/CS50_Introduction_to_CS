@@ -201,9 +201,9 @@ void print_winner(void)
     {
         int cancelled = 0;
 
-        for (int j = 0; j < pairs_count; i++)
+        for (int j = 0; j < candidate_count; i++)
         {
-            if (locked[pairs[j].winner][i] == true)
+            if (locked[j][i] == true)
             {
                 cancelled++;
             }
