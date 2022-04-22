@@ -203,8 +203,9 @@ void print_winner(void)
 
 bool cycle (int win, int loss, int original)
 {
-    for (int i = 0; i < pair_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
+        //has loser won against anyone else?
         if (locked[loss][i] == true)
         {
             if(i == original)
