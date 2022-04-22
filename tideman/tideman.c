@@ -160,10 +160,12 @@ void sort_pairs(void)
 {
     // use pairs struc array to get win/lose pairs pairs[pair_count].winner / .loser
     //use preferences array to pull margin of victory preferences[winner][loser] = voters who prefer
-    for (int i = 0; i < pair_count; i++)
+    for (int i = 0; i < pair_count - 1; i++)
     {
-        if (preferences[pairs[i].winner][pairs[i].loser] < preferences[pairs[i+1].winner][pairs[i+1].loser]
-
+        if (preferences[pairs[i].winner][pairs[i].loser] < preferences[pairs[i+1].winner][pairs[i+1].loser])
+        {
+            
+        }
     }
 
 
