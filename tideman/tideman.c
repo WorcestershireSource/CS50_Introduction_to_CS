@@ -153,6 +153,7 @@ void add_pairs(void)
             }
         }
     }
+    printf("%i\n", pcount);
     pair_count = pcount + 1;
     return;
 }
