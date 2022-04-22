@@ -151,7 +151,7 @@ void add_pairs(void)
         }
     }
     pair_count = pcount;
-    printf("%i\n", pcount)
+    printf("%i\n", pcount);
     return;
 }
 
