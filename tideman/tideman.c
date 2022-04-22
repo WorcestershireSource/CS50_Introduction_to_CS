@@ -184,6 +184,13 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
 //start with highest rank winner
+    for (int i = 0; i < pair_count)
+    {
+        if (cycle(pairs[i].winner, pairs[i].loser, pairs[i].winner))
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
+    }
     return;
 }
 
@@ -226,7 +233,7 @@ void cycle (int win, int loss, int original)
         {
             if(i = original)
             {
-                cycle_count++;
+                return false;
             }
             cycle(loss, i, original)
         }
