@@ -203,30 +203,8 @@ void print_winner(void)
 
 void cycle (int win, int loss, int original)
 {
-    int is_predecessor = 0;
-
-    for (int n = 0; n < pair_count; n++)
-    {
-        if (locked[loss][n] == true)
-        {
-            is_predecessor++;
-        }
-    }
-
-    if (is_predecessor == 0)
-    {
-        return;
-    }
-
-
-
-
-
-
-
     for (int i = 0; i < pair_count; i++)
     {
-
     int cycle_count = 0;
 
         if (locked[loss][i] = true)
