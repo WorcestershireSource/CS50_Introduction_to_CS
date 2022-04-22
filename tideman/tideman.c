@@ -203,7 +203,7 @@ void print_winner(void)
 
         for (int j = 0; j < pair_count; i++)
         {
-            if (locked[pairs[j].winner][i] == true)
+            if (locked[][pairs[j].win] == true)
             {
                 cancelled++;
             }
