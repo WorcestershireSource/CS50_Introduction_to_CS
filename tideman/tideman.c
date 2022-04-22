@@ -213,9 +213,6 @@ void print_winner(void)
 
 
 
-
-
-
 void cycle (int win, int loss, int original)
 {
     int predec = 0;
