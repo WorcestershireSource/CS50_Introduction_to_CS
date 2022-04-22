@@ -214,8 +214,10 @@ bool cycle (int win, int loss, int original)
                 return false;
             }
 
-            cycle(loss, i, original);
-
+            if (cycle(loss, i, original) == false)
+            {
+                return false;
+            }
         }
     }
     return true;
