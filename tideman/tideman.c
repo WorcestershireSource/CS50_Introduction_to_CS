@@ -205,8 +205,6 @@ void cycle (int win, int loss, int original)
 {
     for (int i = 0; i < pair_count; i++)
     {
-    int cycle_count = 0;
-
         if (locked[loss][i] = true)
         {
             if(i = original)
@@ -215,8 +213,6 @@ void cycle (int win, int loss, int original)
             }
             cycle(loss, i, original)
         }
-        if (cycle_count == 0)
-        {
             locked [original][]
         }
     }
