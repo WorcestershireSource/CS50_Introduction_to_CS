@@ -158,7 +158,8 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // TODO
+    // use pairs struc array to get win/lose pairs
+    //use preferences array to pull margin of victory
     return;
 }
 
