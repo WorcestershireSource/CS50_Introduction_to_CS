@@ -208,11 +208,13 @@ bool cycle (int win, int loss, int original)
         if (locked[loss][i] == true)
         {
             if(i == original)
-            //this only checks against the original - not against all predecessors... 
+            //this only checks against the original - not against all predecessors...
             {
                 return false;
             }
+
             cycle(loss, i, original);
+
         }
     }
     return true;
