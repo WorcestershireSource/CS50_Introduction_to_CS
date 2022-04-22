@@ -218,5 +218,19 @@ void print_winner(void)
 
 void cycle (int win, int loss, int original)
 {
-    if win
+    int predec = 0;
+
+    for (int n = 0; n < pair_count; n++)
+    {
+        if (locked[loss][n] = true)
+        {
+            predec++;
+        }
+    }
+
+    if (predec == 0)
+    {
+        return;
+    }
+            if (n == pairs[o].winner)
 }
