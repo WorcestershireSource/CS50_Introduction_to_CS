@@ -192,7 +192,12 @@ void lock_pairs(void)
         {
             if (locked[pairs[o].loser][n] = true)
             {
-                
+                if (n == pairs[o].winner)
+                {
+                    //there is a cycle
+                }
+                //Repeat line 
+
             }
             // && pairs[n].loser == pairs[o].winner && locked[pairs[j].loser])
             {
