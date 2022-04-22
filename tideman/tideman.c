@@ -209,3 +209,14 @@ void print_winner(void)
     // TODO
     return;
 }
+
+
+
+
+
+
+
+void cycle (int win, int loss, int original)
+{
+    if win
+}
