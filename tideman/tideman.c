@@ -196,11 +196,11 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    for (int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < 2; i++)
     {
         int cancelled = 0;
 
-        for (int j = 0; j < candidate_count; i++)
+        for (int j = 0; j < 2; i++)
         {
             if (locked[j][i] == true)
             {
