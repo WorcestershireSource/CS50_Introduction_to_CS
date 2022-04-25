@@ -33,7 +33,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
-bool cycle (int win, int loss, int original);
+bool cycle(int win, int loss, int original);
 
 int main(int argc, string argv[])
 {
@@ -165,14 +165,14 @@ void sort_pairs(void)
     {
         for (int j = 0; j < pair_count - 2; j++)
         {
-            if (preferences[pairs[i].winner][pairs[i].loser] < preferences[pairs[i+1].winner][pairs[i+1].loser])
+            if (preferences[pairs[i].winner][pairs[i].loser] < preferences[pairs[i + 1].winner][pairs[i + 1].loser])
             {
                 int swap_win = pairs[i].winner;
                 int swap_loss = pairs[i].loser;
-                pairs[i].winner = pairs[i+1].winner;
-                pairs[i].loser = pairs[i+1].loser;
-                pairs[i+1].winner = swap_win;
-                pairs[i+1].loser = swap_loss;
+                pairs[i].winner = pairs[i + 1].winner;
+                pairs[i].loser = pairs[i + 1].loser;
+                pairs[i + 1].winner = swap_win;
+                pairs[i + 1].loser = swap_loss;
             }
         }
     }
@@ -223,7 +223,6 @@ bool cycle(int win, int loss, int original)
         if (locked[loss][i] == true)
         {
             if (i == original)
-            //this only checks against the original - not against all predecessors...
             {
                 return false;
             }
