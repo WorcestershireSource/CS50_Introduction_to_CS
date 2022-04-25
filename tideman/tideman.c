@@ -215,14 +215,14 @@ void print_winner(void)
     return;
 }
 
-bool cycle (int win, int loss, int original)
+bool cycle(int win, int loss, int original)
 {
     for (int i = 0; i < candidate_count; i++)
     {
         //has loser won against anyone else?
         if (locked[loss][i] == true)
         {
-            if(i == original)
+            if (i == original)
             //this only checks against the original - not against all predecessors...
             {
                 return false;
