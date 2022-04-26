@@ -49,12 +49,13 @@ int main(int argc, char *argv[])
     fread(buffer, 2, 1, input);
 
     //multiple each two byte samples by two
-    for (fread(buffer, 2,1,input))
+    for (int i = 0; i < fread(buffer, 2,1,input), i++)
     {
-        
+        buffer[0] * factor;
     }
 
-    fwrite()
+    fwrite(buffer, 2, 1, output);
+    
 
     // Close files
     fclose(input);
