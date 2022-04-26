@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
     // TODO: Copy header from input file to output file
     uint8_t header[HEADER_SIZE];
 
+    //header is an array so functions as a pointer and doesn't need &
     fread(header, HEADER_SIZE, 1, input);
     fwrite(header, HEADER_SIZE, 1, output);
 
@@ -44,6 +45,7 @@ int main(int argc, char *argv[])
 
     //do I need dynamic memory allocation for buffer?
 
+    //buffer is not an array so needs & to be a pointer
     while (fread(&buffer, sizeof(int16_t), 1, input))
     {
         buffer = buffer * factor;
