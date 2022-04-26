@@ -44,7 +44,9 @@ int main(int argc, char *argv[])
 
     //do I need dynamic memory allocation for buffer?
 
-    int samples = fread(&buffer, 2, 1, input);
+    fread(&buffer, 2, 1, input);
+
+    int samples = sizeof(buffer);
 
     //multiple each two byte samples by two
     for (int i = 0; i < samples, i++)
