@@ -46,6 +46,7 @@ int main(int argc, char *argv[])
     //do I need dynamic memory allocation for buffer?
 
     //buffer is not an array so needs & to be a pointer
+    //each call on fread remembers where last left
     while (fread(&buffer, sizeof(int16_t), 1, input))
     {
         buffer = buffer * factor;
