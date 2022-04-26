@@ -43,7 +43,6 @@ int main(int argc, char *argv[])
     // TODO: Read samples from input file and write updated data to output file
     int16_t buffer;
 
-
     //do I need dynamic memory allocation for buffer?
 
     fread(buffer, 2, 1, input);
@@ -55,7 +54,7 @@ int main(int argc, char *argv[])
     }
 
     fwrite(buffer, 2, 1, output);
-    
+
 
     // Close files
     fclose(input);
