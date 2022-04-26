@@ -44,7 +44,8 @@ int main(int argc, char *argv[])
     int16_t buffer;
 
 
-    
+    fread(buffer, 10, 1, input);
+    fwrite()
 
     // Close files
     fclose(input);
