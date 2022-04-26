@@ -36,19 +36,25 @@ int main(int argc, char *argv[])
     // TODO: Copy header from input file to output file
     uint8_t header[HEADER_SIZE];
 
-    fread(header, HEADER_SIZE, HEADER_SIZE, input);
+    fread(header, 8, HEADER_SIZE, input);
 
-    fwrite(header, HEADER_SIZE, HEADER_SIZE, output);
+    fwrite(header, 8, HEADER_SIZE, output);
 
     // TODO: Read samples from input file and write updated data to output file
     int16_t buffer;
 
 
-    fread(buffer, 10, 2, input);
-    fwrite()
+    //do I need dynamic memory allocation for buffer?
+
+    fread(buffer, 2, 1, input);
 
     //multiple each two byte samples by two
-    
+    for (fread(buffer, 2,1,input))
+    {
+        
+    }
+
+    fwrite()
 
     // Close files
     fclose(input);
