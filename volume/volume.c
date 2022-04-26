@@ -44,18 +44,13 @@ int main(int argc, char *argv[])
 
     //do I need dynamic memory allocation for buffer?
 
-    fread(&buffer, 2, 1, input);
-
-    int samples = sizeof(buffer);
-
-    //multiple each two byte samples by two
-    for (int i = 0; i < samples, i++)
+    while (fread(&buffer, sizeof(int16_t), 1, input))
     {
-        buffer[0] * factor;
+        buffer = buffer * factor;
+
+        fwrite(&buffer, sizeof(int16_t), 2, output);
+
     }
-
-    fwrite(buffer, 2, 1, output);
-
 
     // Close files
     fclose(input);
