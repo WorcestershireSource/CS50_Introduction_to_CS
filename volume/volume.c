@@ -48,6 +48,7 @@ int main(int argc, char *argv[])
     fwrite()
 
     //multiple each two byte samples by two
+    
 
     // Close files
     fclose(input);
