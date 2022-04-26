@@ -47,6 +47,8 @@ int main(int argc, char *argv[])
     fread(buffer, 10, 2, input);
     fwrite()
 
+    //multiple each two byte samples by two
+
     // Close files
     fclose(input);
     fclose(output);
