@@ -162,9 +162,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     tby = tby + copy[i + r][j + c].rgbtBlue * Gy[r + 1][c + 1];
                 }
             }
-        image[i][j].rgbtRed = sqrt((trx^2)+(try^2));
-        image[i][j].rgbtGreen = sqrt((tgx^2)+(tgy^2));
-        image[i][j].rgbtBlue = sqrt((tbx^2)+(tby^2));
+        image[i][j].rgbtRed = sqrt(trx^2 + try^2);
+        image[i][j].rgbtGreen = sqrt(tgx^2 + tgy^2);
+        image[i][j].rgbtBlue = sqrt(tbx^2 + tby^2);
         }
     }
     //add rounding and cap for 250
