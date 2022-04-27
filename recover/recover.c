@@ -24,9 +24,11 @@ if (output == NULL)
     return 1;
 }
 
+
 uint8_t copy[512];
 
-fread(copy, 1, 1, input))
+if(fread(copy, sizeof(uint8_t), 1, input))
+
 {
 
 }
