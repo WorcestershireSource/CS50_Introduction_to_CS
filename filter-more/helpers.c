@@ -179,7 +179,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
 int sopel(int gx, int gy)
 {
-    int outcome = sqrt(pow(((float) gx, 2) + pow((float) gy, 2));
+    int outcome = sqrt(pow((float)gx, 2) + pow((float)gy, 2));
 
     if (outcome > 255)
     {
