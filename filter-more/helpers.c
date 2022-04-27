@@ -156,7 +156,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int c = -1; c < 2; c++)
                 {
-
                     trx = trx + copy[i + r][j + c].rgbtRed * Gx[r + 1][c + 1];
                     tgx = tgx + copy[i + r][j + c].rgbtGreen * Gx[r + 1][c + 1];
                     tbx = tbx + copy[i + r][j + c].rgbtBlue * Gx[r + 1][c + 1];
