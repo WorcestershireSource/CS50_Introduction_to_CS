@@ -116,5 +116,5 @@ int sepiaconvert(int tr, int tg, int tb, float r, float g, float b)
         sepiatone = 255;
     }
 
-    return (int) sepiatone;
+    return round(sepiatone);
 }
