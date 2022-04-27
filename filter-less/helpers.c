@@ -1,5 +1,7 @@
 #include "helpers.h"
 
+void sepia();
+
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -27,9 +29,32 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             float sepiaGreen = .349 * image[i][j].rgbtRed + .686 * image[i][j].rgbtGreen + .168 * image[i][j].rgbtBlue;
             float sepiaBlue = .272 * image[i][j].rgbtRed + .534 * image[i][j].rgbtGreen + .131 * image[i][j].rgbtBlue;
 
-            image[i][j].rgbtRed = (int)sepiaRed;
+            if (sepiaRed > 255)
+            {
+                image[i][j].rgbtRed = 255;
+            }
+            else
+            {
+                image[i][j].rgbtRed = (int)sepiaRed;
+            }
+
+            if (sepiaBlue > 255)
+            {
+                image[i][j].rgbtBlue = 255;
+            }
+            else
+            {
             image[i][j].rgbtBlue = (int)sepiaBlue;
-            image[i][j].rgbtGreen = (int)sepiaGreen;
+            }
+
+            if (sepiaGreen > 255)
+            {
+                image[i][j].rgbtGreen = 255;
+            }
+            else
+            {
+                image[i][j].rgbtGreen = (int)sepiaGreen;
+            }
         }
     }
     return;
@@ -46,3 +71,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     return;
 }
+
+
+void sepia()
