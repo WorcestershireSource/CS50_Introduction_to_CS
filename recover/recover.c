@@ -26,6 +26,9 @@ if (output == NULL)
 
 uint8_t copy[512];
 
-fread(copy, 512, 1, input);
+fread(copy, 1, 1, input))
+{
+
+}
 
 }
