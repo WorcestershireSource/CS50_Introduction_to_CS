@@ -60,7 +60,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         {
             //temporarily remembers the first value so it can be overwritten
             //overwrites values
-            image[i][j] = copy[i][width - j];
+            image[i][j] = copy[i][width - (j + 1)];
         }
     }
     return;
