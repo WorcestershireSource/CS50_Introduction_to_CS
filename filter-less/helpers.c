@@ -107,11 +107,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
             int cells = 6;
 
-            if ((i == 0 || i == height + 1) && (j == 0 || j == width + 1))
+            if ((i == 0 || i == height - 1) && (j == 0 || j == width - 1))
             {
                 cells = 4;
             }
-            if (i > 0 && i < height + 1 && j > 0 && j < width + 1)
+            if (i > 0 && i < height - 1 && j > 0 && j < width - 1)
             {
                 cells = 9;
             }
