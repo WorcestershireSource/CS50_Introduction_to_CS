@@ -166,6 +166,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         image[i][j].rgbtBlue = sqrt((tbx^2)+(tby^2));
         }
     }
+    //add rounding and cap for 250
 
 
     return;
