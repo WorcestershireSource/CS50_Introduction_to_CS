@@ -123,12 +123,17 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
+    //initialise kernals for sopel calculation
     int Gx[3][3] = {
-        {-1, 0, 1}
-        {-2, 0, 2}
+        {-1, 0, 1},
+        {-2, 0, 2},
         {-1, 0, 1}
     };
-    int Gy[2][2];
+    int Gy[3][3] = {
+        {-1, -2, -1},
+        {0, 0, 0},
+        {1, 2, 1}
+    };
 
     //loop over all pixels
     for (int i = 0; i < height; i++)
