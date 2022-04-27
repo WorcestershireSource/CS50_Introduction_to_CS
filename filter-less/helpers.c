@@ -48,11 +48,12 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < c; j++)
         {
             //temporarily remembers the first value so it can be overwritten
-            RGBTRIPLE copy = image[i][j];
+            RGBTRIPLE copy[0];
+            copy[0] = image[i][j];
 
             //overwrites values
             image[i][j] = image[i][width - j];
-            image[i][width - j] = copy;
+            image[i][width - j] = copy[0];
         }
     }
     return;
