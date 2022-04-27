@@ -112,6 +112,40 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    RGBTRIPLE copy[height][width];
+
+    //copy image to read from while blurring
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            copy[i][j] = image[i][j];
+        }
+    }
+
+    int Gx[2][2];
+    int Gy[2][2];
+
+    //loop over all pixels
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            //average surrounding cells
+            int avRed = 0;
+            int avGreen = 0;
+            int avBlue = 0;
+
+            for (int r = -1; r < 2; r++)
+            {
+                for (int c = -1; c < 2; c++)
+                {
+                }
+            }
+        }
+    }
+
+
     return;
 }
 
