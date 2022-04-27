@@ -82,7 +82,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     }
 
     //corner cells
-    
+    for (int i = 0; i < height; )
 
 
     //loop over all pixels to blur
