@@ -156,21 +156,24 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int c = -1; c < 2; c++)
                 {
-                    trx = trx + copy[i + r][j + c].rgbtRed * Gx[r + 1][c + 1];
-                    tgx = tgx + copy[i + r][j + c].rgbtGreen * Gx[r + 1][c + 1];
-                    tbx = tbx + copy[i + r][j + c].rgbtBlue * Gx[r + 1][c + 1];
+                    //border management
+                    if (i + r >= 0 && i + r < height && j + c >= 0 && j + c < width)
+                    {
+                        trx = trx + copy[i + r][j + c].rgbtRed * Gx[r + 1][c + 1];
+                        tgx = tgx + copy[i + r][j + c].rgbtGreen * Gx[r + 1][c + 1];
+                        tbx = tbx + copy[i + r][j + c].rgbtBlue * Gx[r + 1][c + 1];
 
-                    try = try + copy[i + r][j + c].rgbtRed * Gy[r + 1][c + 1];
-                    tgy = tgy + copy[i + r][j + c].rgbtGreen * Gy[r + 1][c + 1];
-                    tby = tby + copy[i + r][j + c].rgbtBlue * Gy[r + 1][c + 1];
-                }
+                        try = try + copy[i + r][j + c].rgbtRed * Gy[r + 1][c + 1];
+                        tgy = tgy + copy[i + r][j + c].rgbtGreen * Gy[r + 1][c + 1];
+                        tby = tby + copy[i + r][j + c].rgbtBlue * Gy[r + 1][c + 1];
+                    }
             }
         image[i][j].rgbtRed = sopel(trx, try);
         image[i][j].rgbtGreen = sopel(tgx, tgy);
         image[i][j].rgbtBlue = sopel(tgx, tgy);
         }
     }
-    //add border management (assume black border)
+
 
     return;
 }
