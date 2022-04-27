@@ -1,6 +1,6 @@
 #include "helpers.h"
 
-int sepiaconvert(RGBTRIPLE input[i][j], float r, float g, float b);
+int sepiaconvert(RGBTRIPLE input, int i, int j, float r, float g, float b);
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -25,9 +25,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            image[i][j].rgbtRed = sepiaconvert(image[i][j], .393, .769, .189);
-            image[i][j].rgbtGreen  = sepiaconvert(image[i][j], .349, .686, .168);
-            image[i][j].rgbtBlue = sepiaconvert(image[i][j], .272, .534, .131);
+            image[i][j].rgbtRed = sepiaconvert(image, i, j, .393, .769, .189);
+            image[i][j].rgbtGreen  = sepiaconvert(image, i, j, .349, .686, .168);
+            image[i][j].rgbtBlue = sepiaconvert(image, i, j, .272, .534, .131);
 
 
 
@@ -80,9 +80,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 }
 
 // separate function to implement Sepia conversion
-int sepiaconvert(RGBTRIPLE input[i][j], float r, float g, float b)
+int sepiaconvert(RGBTRIPLE input, int i, int j, float r, float g, float b)
 {
-    float sepiatone = r * image[i][j].rgbtRed + g * image[i][j].rgbtGreen + b * image[i][j].rgbtBlue;
+    float sepiatone = r * input[i][j].rgbtRed + g * input[i][j].rgbtGreen + b * input[i][j].rgbtBlue;
 
     if (sepiatone > 255)
     {
