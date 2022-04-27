@@ -78,10 +78,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             //average surrounding cells
-            int av = 0;
-
-            
-
             int avRed = 0;
             int avGreen = 0;
             int avBlue = 0;
