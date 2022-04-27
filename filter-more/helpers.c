@@ -140,15 +140,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            //average surrounding cells
-            int avRed = 0;
-            int avGreen = 0;
-            int avBlue = 0;
-
+            //loop over surrounding cells
             for (int r = -1; r < 2; r++)
             {
                 for (int c = -1; c < 2; c++)
                 {
+                    image[i + r][j + c].rgbtRed * Gy[r + 1][c + 1]
                 }
             }
         }
