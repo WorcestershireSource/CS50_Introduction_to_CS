@@ -1,6 +1,6 @@
 #include "helpers.h"
 
-void sepiaconvert(RGBTRIPLE input, int i, int j);
+int sepiaconvert(RGBTRIPLE input, int i, int j);
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
