@@ -78,16 +78,26 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             //average surrounding cells
-            for (int a = 0; a < 3; a++)
+            int avRed = 0;
+            int avGreen = 0;
+            int avBlue = 0;
+
+            for (int r = -1; r < 2; r++)
             {
-                for (int b = 0; b < 3; b++)
+                for (int c = -1; c < 2; c++)
                 {
-                    avRed = avRed + copy[i][j]
+                    avRed = avRed + copy[i + r][j + c].rgbtRed;
+                    avGreen = avGreen + copy[i + r][j + c].rgbtGreen;
+                    avBlue = avBlue + copy[i + r][j + c].rgbtBlue;
                 }
             }
-            image[i][j] =
+            avRed = avRed / 9;
+            avGreen = avGreen / 9;
+            avBlue = avBlue / 9;
 
-
+            image[i][j].rgbtRed = avRed;
+            image[i][j].rgbtGreen = avGreen;
+            image[i][j].rgbtBlue = avBlue;
         }
     }
 
