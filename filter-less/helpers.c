@@ -96,7 +96,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int c = -1; c < 2; c++)
                 {
-                    if (i + r >= 0 && i + r < height + 1 && j + c >= 0 && j + c < width + 1)
+                    if (i + r >= 0 && i + r < height && j + c >= 0 && j + c < width)
                     {
                         avRed = avRed + copy[i + r][j + c].rgbtRed;
                         avGreen = avGreen + copy[i + r][j + c].rgbtGreen;
