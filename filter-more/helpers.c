@@ -161,7 +161,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     try = try + copy[i + r][j + c].rgbtRed * Gy[r + 1][c + 1];
                     tgy = tgy + copy[i + r][j + c].rgbtGreen * Gy[r + 1][c + 1];
                     tby = tby + copy[i + r][j + c].rgbtBlue * Gy[r + 1][c + 1];
-                    printf()
+
                 }
             }
         image[i][j].rgbtRed = sqrt(trx^2 + try^2);
