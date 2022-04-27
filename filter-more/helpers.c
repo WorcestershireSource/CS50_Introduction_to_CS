@@ -123,7 +123,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    int Gx[2][2];
+    int Gx[2][2] = {-1, 0, 1; -2, 0, 2; -1, 0, 1};
     int Gy[2][2];
 
     //loop over all pixels
