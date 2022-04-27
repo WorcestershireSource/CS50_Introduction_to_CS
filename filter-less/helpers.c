@@ -41,26 +41,18 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-    int c = (width/2) - 1;
-
-    RGBTRIPLE copy[height][width];
-
-    //copy image to read from while blurring
-    for (int i = 0; i < height; i++)
-    {
-        for (int j = 0; j < width; j++)
-        {
-            copy[i][j] = image[i][j];
-        }
-    }
+    RGBTRIPLE copy[0];
+    int c = round(width/2) - 1;
 
     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < width; j++)
+        for (int j = 0; j < c; j++)
         {
             //temporarily remembers the first value so it can be overwritten
+            copy[0] = image[i][j];
             //overwrites values
-            image[i][j] = copy[i][width - (j + 1)];
+            image[i][j] = image[i][width - (j + 1)];
+            image[i][width - (j + 1)] = copy[0];
         }
     }
     return;
