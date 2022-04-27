@@ -167,14 +167,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         tgy = tgy + copy[i + r][j + c].rgbtGreen * Gy[r + 1][c + 1];
                         tby = tby + copy[i + r][j + c].rgbtBlue * Gy[r + 1][c + 1];
                     }
+                }
             }
         image[i][j].rgbtRed = sopel(trx, try);
         image[i][j].rgbtGreen = sopel(tgx, tgy);
         image[i][j].rgbtBlue = sopel(tgx, tgy);
         }
     }
-
-
     return;
 }
 
