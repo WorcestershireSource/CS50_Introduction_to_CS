@@ -81,10 +81,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    //corner cells
-    for (int i = 0; i < height; )
-
-
     //loop over all pixels to blur
     for (int i = 0; i < height; i++)
     {
@@ -110,7 +106,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 cells = 4;
             }
-            if (i > 0 && i < width && j > 0 && j < height))
+            if (i > 0 && i < width && j > 0 && j < height)
             {
                 cells = 9;
             }
