@@ -1,5 +1,7 @@
 #include "helpers.h"
 #include <math.h>
+#include <cs50.h>
+#include <stdio.h>
 
 int sepiaconvert(int tr, int tg, int tb, float r, float g, float b);
 
@@ -69,7 +71,6 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-
     RGBTRIPLE copy[height][width];
 
     //copy image to read from while blurring
@@ -95,6 +96,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int c = -1; c < 2; c++)
                 {
+                    if (i + r > 0 || )
                     avRed = avRed + copy[i + r][j + c].rgbtRed;
                     avGreen = avGreen + copy[i + r][j + c].rgbtGreen;
                     avBlue = avBlue + copy[i + r][j + c].rgbtBlue;
