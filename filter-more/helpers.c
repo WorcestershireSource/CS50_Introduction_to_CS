@@ -138,9 +138,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     //loop over all pixels
 
     //CHANGED TO THREE PIXEL SQUARE
-    for (int i = 0; i < 1; i++)
+    for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < 1; j++)
+        for (int j = 0; j < width; j++)
         {
             int trx = 0;
             int tgx = 0;
@@ -170,6 +170,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
     //add rounding and cap for 250
+    //add border management (assume black border)
 
 
     return;
