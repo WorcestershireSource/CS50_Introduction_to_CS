@@ -25,36 +25,43 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            float sepiaRed = .393 * image[i][j].rgbtRed + .769 * image[i][j].rgbtGreen + .189 * image[i][j].rgbtBlue;
-            float sepiaGreen = .349 * image[i][j].rgbtRed + .686 * image[i][j].rgbtGreen + .168 * image[i][j].rgbtBlue;
-            float sepiaBlue = .272 * image[i][j].rgbtRed + .534 * image[i][j].rgbtGreen + .131 * image[i][j].rgbtBlue;
+            image[i][j].rgbtRed = sepiatone(image[i][j], .393, .769, .189);
+            image[i][j].rgbtGreen  = sepiatone(image[i][j], .349, .686, .168);
+            image[i][j].rgbtBlue = sepiatone(image[i][j], .272, .534, .131);
 
-            if (sepiaRed > 255)
-            {
-                image[i][j].rgbtRed = 255;
-            }
-            else
-            {
-                image[i][j].rgbtRed = (int)sepiaRed;
-            }
 
-            if (sepiaBlue > 255)
-            {
-                image[i][j].rgbtBlue = 255;
-            }
-            else
-            {
-            image[i][j].rgbtBlue = (int)sepiaBlue;
-            }
 
-            if (sepiaGreen > 255)
-            {
-                image[i][j].rgbtGreen = 255;
-            }
-            else
-            {
-                image[i][j].rgbtGreen = (int)sepiaGreen;
-            }
+            //original
+            //float sepiaRed = .393 * image[i][j].rgbtRed + .769 * image[i][j].rgbtGreen + .189 * image[i][j].rgbtBlue;
+            //float sepiaGreen = .349 * image[i][j].rgbtRed + .686 * image[i][j].rgbtGreen + .168 * image[i][j].rgbtBlue;
+            //float sepiaBlue = .272 * image[i][j].rgbtRed + .534 * image[i][j].rgbtGreen + .131 * image[i][j].rgbtBlue;
+
+            //if (sepiaRed > 255)
+            //{
+            //    image[i][j].rgbtRed = 255;
+            //}
+            //else
+            //{
+            //    image[i][j].rgbtRed = (int)sepiaRed;
+            //}
+
+            //if (sepiaBlue > 255)
+            //{
+            //    image[i][j].rgbtBlue = 255;
+            //}
+            //else
+            //{
+            //image[i][j].rgbtBlue = (int)sepiaBlue;
+            //}
+
+            //if (sepiaGreen > 255)
+            //{
+            //    image[i][j].rgbtGreen = 255;
+            //}
+            //else
+            //{
+            //    image[i][j].rgbtGreen = (int)sepiaGreen;
+            //}
         }
     }
     return;
@@ -76,6 +83,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 int sepiaconvert(RGBTRIPLE input, float r, float g, float b)
 {
     float sepiatone = r * image[i][j].rgbtRed + g * image[i][j].rgbtGreen + b * image[i][j].rgbtBlue;
+
+    if (sepiatone > 255)
+    {
+        sepiatone = 255;
+    }
 
     return (int) sepiatone;
 }
