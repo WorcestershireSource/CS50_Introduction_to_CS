@@ -43,17 +43,24 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     int c = (width/2) - 1;
 
+    RGBTRIPLE copy[height][width];
+
+    //copy image to read from while blurring
     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < c; j++)
+        for (int j = 0; j < width; j++)
+        {
+            copy[i][j] = image[i][j];
+        }
+    }
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
         {
             //temporarily remembers the first value so it can be overwritten
-            RGBTRIPLE copy[0];
-            copy[0] = image[i][j];
-
             //overwrites values
-            image[i][j] = image[i][width - j];
-            image[i][width - j] = copy[0];
+            image[i][j] = copy[i][width - j];
         }
     }
     return;
