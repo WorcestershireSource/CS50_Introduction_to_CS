@@ -135,6 +135,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         {1, 2, 1}
     };
 
+
     //loop over all pixels
     for (int i = 0; i < height; i++)
     {
@@ -145,7 +146,23 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int c = -1; c < 2; c++)
                 {
-                    image[i + r][j + c].rgbtRed * Gy[r + 1][c + 1]
+                    int tempRedx[3][3];
+                    temp[r + 1][c + 1] = image[i + r][j + c].rgbtRed * Gx[r + 1][c + 1]
+                    int tempGreenx[3][3];
+                    temp[r + 1][c + 1] = image[i + r][j + c].rgbtGreen * Gx[r + 1][c + 1]
+                    int tempBluex[3][3];
+                    temp[r + 1][c + 1] = image[i + r][j + c].rgbtBlue * Gx[r + 1][c + 1]
+
+                    int tempRedy[3][3];
+                    temp[r + 1][c + 1] = image[i + r][j + c].rgbtRed * Gy[r + 1][c + 1]
+                    int tempGreeny[3][3];
+                    temp[r + 1][c + 1] = image[i + r][j + c].rgbtGreen * Gy[r + 1][c + 1]
+                    int tempBluey[3][3];
+                    temp[r + 1][c + 1] = image[i + r][j + c].rgbtBlue * Gy[r + 1][c + 1]
+
+                    //sq rt (Gx ^ 2  +  Gy ^2)
+
+                    
                 }
             }
         }
