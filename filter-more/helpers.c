@@ -147,6 +147,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int try = 0;
             int tgy = 0;
             int tby = 0;
+
             //loop over surrounding cells
             for (int r = -1; r < 2; r++)
             {
