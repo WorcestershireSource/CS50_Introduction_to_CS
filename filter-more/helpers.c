@@ -146,23 +146,21 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int c = -1; c < 2; c++)
                 {
-                    int tempRedx[3][3];
-                    temp[r + 1][c + 1] = image[i + r][j + c].rgbtRed * Gx[r + 1][c + 1]
-                    int tempGreenx[3][3];
-                    temp[r + 1][c + 1] = image[i + r][j + c].rgbtGreen * Gx[r + 1][c + 1]
-                    int tempBluex[3][3];
-                    temp[r + 1][c + 1] = image[i + r][j + c].rgbtBlue * Gx[r + 1][c + 1]
+                    int trx[3][3];
+                    int tgx[3][3];
+                    int tbx[3][3];
+                    trx[r + 1][c + 1] = copy[i + r][j + c].rgbtRed * Gx[r + 1][c + 1];
+                    tgx[r + 1][c + 1] = copy[i + r][j + c].rgbtGreen * Gx[r + 1][c + 1];
+                    tbx[r + 1][c + 1] = copy[i + r][j + c].rgbtBlue * Gx[r + 1][c + 1];
 
-                    int tempRedy[3][3];
-                    temp[r + 1][c + 1] = image[i + r][j + c].rgbtRed * Gy[r + 1][c + 1]
-                    int tempGreeny[3][3];
-                    temp[r + 1][c + 1] = image[i + r][j + c].rgbtGreen * Gy[r + 1][c + 1]
-                    int tempBluey[3][3];
-                    temp[r + 1][c + 1] = image[i + r][j + c].rgbtBlue * Gy[r + 1][c + 1]
+                    int try[3][3];
+                    int tgy[3][3];
+                    int tby[3][3];
+                    try[r + 1][c + 1] = copy[i + r][j + c].rgbtRed * Gy[r + 1][c + 1];
+                    tgy[r + 1][c + 1] = copy[i + r][j + c].rgbtGreen * Gy[r + 1][c + 1];
+                    tby[r + 1][c + 1] = copy[i + r][j + c].rgbtBlue * Gy[r + 1][c + 1];
 
-                    //sq rt (Gx ^ 2  +  Gy ^2)
-
-                    
+                    image[i][j] = sqrt(((trx + tgx + tbx)^2)+((try + tgy + tby)^2));
                 }
             }
         }
