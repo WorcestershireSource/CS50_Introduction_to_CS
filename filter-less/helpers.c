@@ -91,6 +91,24 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int avGreen = 0;
             int avBlue = 0;
 
+            //if corner case
+            if ((i == 0 || i == height - 1) && (j == 0 || j == width - 1))
+            {
+                cells = 4;
+            }
+            //if 
+            if (i > 0 && i < height - 1 && j > 0 && j < width - 1)
+            {
+                cells = 9;
+            }
+
+
+
+
+
+
+
+//old version
             for (int r = -1; r < 2; r++)
             {
                 for (int c = -1; c < 2; c++)
