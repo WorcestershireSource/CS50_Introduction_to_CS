@@ -63,6 +63,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
     RGBTRIPLE copy[height][width];
 
+    //copy image to read from while blurring
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -71,11 +72,21 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
+    //loop over all pixels to blur
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            
+            //average surrounding cells
+            for (int a = 0; a < 3; a++)
+            {
+                for (int b = 0; b < 3; b++)
+                {
+                    avRed = avRed + copy[i][j]
+                }
+            }
+            image[i][j] =
+
 
         }
     }
