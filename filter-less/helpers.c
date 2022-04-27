@@ -94,7 +94,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //if corner case four cells
             if ((i == 0 || i == height - 1) && (j == 0 || j == width - 1))
             {
-
+                for ()
 
 
             }
