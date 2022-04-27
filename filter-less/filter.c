@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//file in same dir with function prototypes includes bmp.h
 #include "helpers.h"
 
 int main(int argc, char *argv[])
