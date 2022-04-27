@@ -106,11 +106,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
             int cells;
 
-            if ((i == 0 || i == width) && (j == 0 || j == width)
+            if ((i == 0 || i == width) && (j == 0 || j == height))
             {
                 cells = 4;
             }
-            if (i < 0 && i < )
+            if (i > 0 && i < width && j > 0 && j < height))
+            {
+                cells = 9;
+            }
+            else
+            {
+                cells = 6;
+            }
+
             avRed = round(avRed / cells);
             avGreen = round(avGreen / cells);
             avBlue = round(avBlue / cells);
