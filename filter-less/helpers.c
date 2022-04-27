@@ -49,6 +49,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             //temporarily remembers the first value so it can be overwritten
             RGBTRIPLE copy = image[i][j];
 
+            //overwrites values
             image[i][j] = image[i][width - j];
             image[i][width - j] = copy;
         }
@@ -60,11 +61,31 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
 
+    RGBTRIPLE copy[height][width];
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            copy[i][j] = image[i][j];
+        }
+    }
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            
+
+        }
+    }
 
     return;
 }
 
 // separate function to implement Sepia conversion
+//takes the raw RGB values and the adjustment for each as inputs
+//checks if the result exceeds 255 max value
 int sepiaconvert(int tr, int tg, int tb, float r, float g, float b)
 {
     float sepiatone = r * tr + g * tg + b * tb;
