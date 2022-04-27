@@ -24,7 +24,7 @@ if (output == NULL)
     return 1;
 }
 
-
+//check for 0xff 0xd8 0xff at first byte followed by byte beginning with 0xe? (1110)
 uint8_t copy[512];
 
 if(fread(copy, sizeof(uint8_t), 1, input))
