@@ -105,8 +105,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
                 }
             }
-            int cells = 6;
 
+            //check if it is an edge or corner
+            int cells = 6;
             if ((i == 0 || i == height - 1) && (j == 0 || j == width - 1))
             {
                 cells = 4;
@@ -116,9 +117,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 cells = 9;
             }
 
-            avRed = round(avRed / cells);
-            avGreen = round(avGreen / cells);
-            avBlue = round(avBlue / cells);
+            avRed = round((float) avRed / cells);
+            avGreen = round((float) avGreen / cells);
+            avBlue = round((float) avBlue / cells);
 
             image[i][j].rgbtRed = avRed;
             image[i][j].rgbtGreen = avGreen;
