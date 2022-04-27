@@ -25,9 +25,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            image[i][j].rgbtRed = sepiatone(image[i][j], .393, .769, .189);
-            image[i][j].rgbtGreen  = sepiatone(image[i][j], .349, .686, .168);
-            image[i][j].rgbtBlue = sepiatone(image[i][j], .272, .534, .131);
+            image[i][j].rgbtRed = sepiaconvert(image[i][j], .393, .769, .189);
+            image[i][j].rgbtGreen  = sepiaconvert(image[i][j], .349, .686, .168);
+            image[i][j].rgbtBlue = sepiaconvert(image[i][j], .272, .534, .131);
 
 
 
