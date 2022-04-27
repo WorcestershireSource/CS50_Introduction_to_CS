@@ -3,6 +3,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int sopel(int gx, int gy);
+
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -154,6 +156,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int c = -1; c < 2; c++)
                 {
+
                     trx = trx + copy[i + r][j + c].rgbtRed * Gx[r + 1][c + 1];
                     tgx = tgx + copy[i + r][j + c].rgbtGreen * Gx[r + 1][c + 1];
                     tbx = tbx + copy[i + r][j + c].rgbtBlue * Gx[r + 1][c + 1];
@@ -163,16 +166,25 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     tby = tby + copy[i + r][j + c].rgbtBlue * Gy[r + 1][c + 1];
                 }
             }
-        image[i][j].rgbtRed = sqrt(pow(trx, 2) + pow(try, 2));
-        image[i][j].rgbtGreen = sqrt(pow(tgx, 2) + pow(tgy, 2));
-        image[i][j].rgbtBlue = sqrt(pow(tbx, 2) + pow(tby, 2));
+        image[i][j].rgbtRed = sopel(trx, try);
+        image[i][j].rgbtGreen = sopel(tgx, tgy);
+        image[i][j].rgbtBlue = sopel(tgx, tgy);
         }
     }
-    //add rounding and cap for 250
     //add border management (assume black border)
-
 
     return;
 }
 
+int sopel(int gx, int gy)
+{
+    int outcome = sqrt(pow(((float) gx, 2) + pow((float) gy, 2));
+
+    if (outcome > 255)
+    {
+        return 255;
+    }
+
+    return round(outcome);
+}
 
