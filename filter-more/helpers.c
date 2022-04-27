@@ -171,7 +171,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
         image[i][j].rgbtRed = sopel(trx, try);
         image[i][j].rgbtGreen = sopel(tgx, tgy);
-        image[i][j].rgbtBlue = sopel(tgx, tgy);
+        image[i][j].rgbtBlue = sopel(tbx, tby);
         }
     }
     return;
