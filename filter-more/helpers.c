@@ -12,7 +12,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            float grey = ((float)image[i][j].rgbtRed + (float)image[i][j].rgbtBlue + (float)image[i][j].rgbtGreen)/3;
+            float grey = ((float)image[i][j].rgbtRed + (float)image[i][j].rgbtBlue + (float)image[i][j].rgbtGreen) / 3;
             image[i][j].rgbtRed = round(grey);
             image[i][j].rgbtBlue = round(grey);
             image[i][j].rgbtGreen = round(grey);
@@ -24,7 +24,6 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-    int c = (width/2) - 1;
 
     RGBTRIPLE copy[height][width];
 
@@ -126,12 +125,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     }
 
     //initialise kernals for sopel calculation
-    int Gx[3][3] = {
+    int Gx[3][3] =
+    {
         {-1, 0, 1},
         {-2, 0, 2},
         {-1, 0, 1}
     };
-    int Gy[3][3] = {
+    int Gy[3][3] =
+    {
         {-1, -2, -1},
         {0, 0, 0},
         {1, 2, 1}
@@ -147,7 +148,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int trx = 0;
             int tgx = 0;
             int tbx = 0;
-            int try = 0;
+            int try1 = 0;
             int tgy = 0;
             int tby = 0;
 
@@ -156,27 +157,28 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int c = -1; c < 2; c++)
                 {
-                    //border management
+                    //border management - equivalent to black border
                     if (i + r >= 0 && i + r < height && j + c >= 0 && j + c < width)
                     {
                         trx = trx + copy[i + r][j + c].rgbtRed * Gx[r + 1][c + 1];
                         tgx = tgx + copy[i + r][j + c].rgbtGreen * Gx[r + 1][c + 1];
                         tbx = tbx + copy[i + r][j + c].rgbtBlue * Gx[r + 1][c + 1];
 
-                        try = try + copy[i + r][j + c].rgbtRed * Gy[r + 1][c + 1];
+                        try1 = try1 + copy[i + r][j + c].rgbtRed * Gy[r + 1][c + 1];
                         tgy = tgy + copy[i + r][j + c].rgbtGreen * Gy[r + 1][c + 1];
                         tby = tby + copy[i + r][j + c].rgbtBlue * Gy[r + 1][c + 1];
                     }
                 }
             }
-        image[i][j].rgbtRed = sopel(trx, try);
-        image[i][j].rgbtGreen = sopel(tgx, tgy);
-        image[i][j].rgbtBlue = sopel(tbx, tby);
+            image[i][j].rgbtRed = sopel(trx, try1);
+            image[i][j].rgbtGreen = sopel(tgx, tgy);
+            image[i][j].rgbtBlue = sopel(tbx, tby);
         }
     }
     return;
 }
 
+//new function to perform sopel calculation and check value is valid
 int sopel(int gx, int gy)
 {
     float outcome = sqrt(pow((float)gx, 2) + pow((float)gy, 2));
