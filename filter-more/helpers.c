@@ -141,30 +141,29 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            int trx = 0;
+            int tgx = 0;
+            int tbx = 0;
+            int try = 0;
+            int tgy = 0;
+            int tby = 0;
             //loop over surrounding cells
             for (int r = -1; r < 2; r++)
             {
                 for (int c = -1; c < 2; c++)
                 {
-                    int trx = 0;
-                    int tgx = 0;
-                    int tbx = 0;
                     trx = trx + copy[i + r][j + c].rgbtRed * Gx[r + 1][c + 1];
                     tgx = tgx + copy[i + r][j + c].rgbtGreen * Gx[r + 1][c + 1];
                     tbx = tbx + copy[i + r][j + c].rgbtBlue * Gx[r + 1][c + 1];
 
-                    int try = 0;
-                    int tgy = 0;
-                    int tby = 0;
                     try = try + copy[i + r][j + c].rgbtRed * Gy[r + 1][c + 1];
                     tgy = tgy + copy[i + r][j + c].rgbtGreen * Gy[r + 1][c + 1];
                     tby = tby + copy[i + r][j + c].rgbtBlue * Gy[r + 1][c + 1];
-
-                    image[i][j].rgbtRed = sqrt((trx^2)+(try^2));
-                    image[i][j].rgbtGreen = sqrt((tgx^2)+(tgy^2));
-                    image[i][j].rgbtBlue = sqrt((tbx^2)+(tby^2));
                 }
             }
+        image[i][j].rgbtRed = sqrt((trx^2)+(try^2));
+        image[i][j].rgbtGreen = sqrt((tgx^2)+(tgy^2));
+        image[i][j].rgbtBlue = sqrt((tbx^2)+(tby^2));
         }
     }
 
