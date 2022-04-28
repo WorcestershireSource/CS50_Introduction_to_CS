@@ -30,7 +30,7 @@ uint8_t copy[512];
 if(fread(copy, sizeof(uint8_t), 1, input))
 
 {
-
+    
 }
 
 }
