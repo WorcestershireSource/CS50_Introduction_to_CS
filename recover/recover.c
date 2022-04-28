@@ -68,5 +68,5 @@ while(fread(&copy, sizeof(uint8_t), 1, input))
     // Close files
     fclose(input);
     fclose(output);
-    
+
 }
