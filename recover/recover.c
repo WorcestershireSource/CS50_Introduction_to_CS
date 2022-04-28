@@ -21,7 +21,7 @@ if (input == NULL)
 FILE *output = fopen(argv[2], "w");
 if (output == NULL)
 {
-    printf("Could not open file.\n");
+    printf("Could not open new file.\n");
     return 1;
 }
 
