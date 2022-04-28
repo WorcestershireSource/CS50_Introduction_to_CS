@@ -38,12 +38,10 @@ uint8_t header[] = {0xff, 0xd8, 0xff};
 //performs the checks and stores the fourth JPEG byte
 uint8_t copy;
 
-//stores the main JPEG file
-uint8_t body[508];
 
 while(fread(&copy, 1, 512, input) == 512)
 {
-
+    
 }
 
     // Close files
