@@ -31,12 +31,15 @@ if (output == NULL)
 // if JPEG, write to new output file
 // repeat
 
-int8_t copy[512];
+int8_t copy;
 
-if(fread(copy, sizeof(uint8_t), 1, input))
-
+while(fread(copy, sizeof(uint8_t), 1, input))
 {
-
+    if (copy == 0xff)
+    {
+        fread(copy, sizeof(uint8_t), 1, input)
+        if 
+    }
 }
 
 }
