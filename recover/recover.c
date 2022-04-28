@@ -41,28 +41,9 @@ uint8_t copy;
 //stores the main JPEG file
 uint8_t body[508];
 
-while(fread(&copy, sizeof(uint8_t), 1, input))
+while(fread(&copy, 1, 512, input) == 512)
 {
-    if (copy == 0xff)
-    {
-        fread(&copy, sizeof(uint8_t), 1, input);
-        if (copy == 0xd8)
-        {
-            fread(&copy, sizeof(uint8_t), 1, input);
-            if (copy == 0xff)
-            {
-                fread(&copy, sizeof(uint8_t), 1, input);
-                if (copy >= 0xe0 && copy <= 0xef)
-                {
-                    fwrite(&header, sizeof(uint8_t), 1, output);
-                    fwrite(&copy, sizeof(uint8_t), 1, output);
 
-                    fread(&body, 508, 1, output);
-                    fwrite(&body, 508, 1, output);
-                }
-            }
-        }
-    }
 }
 
     // Close files
