@@ -36,8 +36,7 @@ if (input == NULL)
 uint8_t header[] = {0xff, 0xd8, 0xff};
 
 //performs the checks and stores the fourth JPEG byte
-uint8_t copy;
-
+uint8_t *copy = malloc(sizeof(uint8_t) * 512);
 
 while(fread(&copy, 1, 512, input) == 512)
 {
