@@ -31,14 +31,36 @@ if (output == NULL)
 // if JPEG, write to new output file
 // repeat
 
+//stores the generic JPEG header first three bytes
+int8_t header[3] = {0xff, 0xd8, 0xff};
+
+//performs the checks and stores the fourth JPEG byte
 int8_t copy;
+
+//stores the main JPEG file
+int8_t body[508];
 
 while(fread(copy, sizeof(uint8_t), 1, input))
 {
     if (copy == 0xff)
     {
-        fread(copy, sizeof(uint8_t), 1, input)
-        if 
+        fread(copy, sizeof(uint8_t), 1, input);
+        if (copy == 0xd8)
+        {
+            fread(copy, sizeof(uint8_t), 1, input);
+            if (copy == 0xff)
+            {
+                fread(copy, sizeof(uint8_t), 1, input);
+                if (copy >= 0xe0 && copy <= 0xef)
+                {
+                    fwrite(header, sizeof(int8_t), 1, output);
+                    fwrite(copy, sizeof(int8_t), 1, output):
+
+                    fread(body, 508, 1, output);
+                    fwrite(body, 508, 1, output);
+                }
+            }
+        }
     }
 }
 
