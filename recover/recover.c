@@ -18,12 +18,12 @@ if (input == NULL)
     return 1;
 }
 
-FILE *output = fopen(argv[2], "w");
-if (output == NULL)
-{
-    printf("Could not open new file.\n");
-    return 1;
-}
+//FILE *output = fopen(argv[2], "w");
+//if (output == NULL)
+//{
+//    printf("Could not open new file.\n");
+//    return 1;
+//}
 
 //check for 0xff 0xd8 0xff at first three bytes followed by byte beginning with 0xe? (1110)
 
@@ -41,11 +41,11 @@ uint8_t copy;
 
 while(fread(&copy, 1, 512, input) == 512)
 {
-    
+
 }
 
     // Close files
     fclose(input);
-    fclose(output);
+//    fclose(output);
 
 }
