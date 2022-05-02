@@ -19,16 +19,25 @@ if (input == NULL)
     return 1;
 }
 
-uint8_t buffer[512]
-//loop until fread = 0 (EOF)
-while(fread(buffer, 512, 1, input))
-{
+uint8_t buffer[512];
 
-}
-    //read 512 bytes into a buffer
+int JPEG_count = 0;
+
+//loop until fread = 0 (EOF) & read 512 bytes into a buffer
+while(fread(buffer, sizeof(uint8_t), 512, input))
+{
     //if start of new JPEG - JPEG header {0xff, 0xd8, 0xff} - plus four bits
-        //if first JPEG - open new file and write
-        //else if nth JPEG - close previous and open new file
+    if buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+    {
+        //if first JPEG - open new file and write else close previous and open new file
+        if(JPEG_count = 0)
+        {
+            //dma
+            FILE* output = fopen()
+        }
+    }
+}
+
     //else if not start of JPEG
         //if in JPEG - keep writing
         //if not in JPEg - keep searching
