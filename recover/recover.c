@@ -57,9 +57,10 @@ int main(int argc, char *argv[])
             {
                 fwrite(buffer, sizeof(BYTE), 512, ptr);
             }
+        
 
     }
-}
+
 
     //else if not start of JPEG
         //if in JPEG - keep writing
@@ -81,7 +82,7 @@ int main(int argc, char *argv[])
 
     // Close files
     fclose(input);
-//    fclose(output);
+
 
 
 
