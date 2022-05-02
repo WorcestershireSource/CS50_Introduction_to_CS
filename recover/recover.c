@@ -19,7 +19,7 @@ if (input == NULL)
     return 1;
 }
 
-in
+uint8_t buffer[512]
 //loop until fread = 0 (EOF)
 while(fread(buffer, 512, 1, input))
 {
