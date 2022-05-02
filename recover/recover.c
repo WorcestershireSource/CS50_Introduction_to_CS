@@ -51,13 +51,31 @@ int main(int argc, char *argv[])
 
                 fwrite(buffer, sizeof(BYTE), 512, img);
             }
+            if(JPEG_count > 1)
+            {
+                fclose(ptr);
+
+                char name[4];
+                sprintf(name, "%03i.jpg",JPEG_count);
+
+                FILE* img = fopen(name, "w");
+                ptr = img;
+                if(img == NULL)
+                {
+                    printf("Could not open new file\n");
+                    return 1;
+                }
+
+                fwrite(buffer, sizeof(BYTE), 512, img);
+
+            }
         }
         else
-            if(JPEG_count > 1)
+            if(JPEG_count >= 1)
             {
                 fwrite(buffer, sizeof(BYTE), 512, ptr);
             }
-        
+
 
     }
 
