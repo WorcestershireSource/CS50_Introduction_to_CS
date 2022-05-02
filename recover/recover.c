@@ -48,12 +48,21 @@ while(fread(&copy, 1, 512, input) == 512)
 //    fclose(output);
 
 
-//dynamic memory allocation deals with unknown file size
-
 
 //open memory card - fopen r
 
-//Look for the beginning of a JPEG - look for header -
+//loop until fread = 0 (EOF)
+    //read 512 bytes into a buffer
+    //if start of new JPEG
+        //if first JPEG - open new file and write
+        //else if nth JPEG - close previous and open new file
+    //else if not start of JPEG
+        //if in JPEG - keep writing
+        //if not in JPEg - keep searching
+//close any remaining files
+
+
+    //Look for the beginning of a JPEG - look for header -
 //JPEG stored back to back - keep saving 512 blocks until find one that starts with header file
 //video shows way to handle fourth byte
 
@@ -62,5 +71,7 @@ while(fread(&copy, 1, 512, input) == 512)
 //Open a new file with unique name - dynamic memory allocation
 
 //Write 512 bytes until a new JPEG is found
+
+//fread = 0 when EOF reached
 
 }
