@@ -49,5 +49,15 @@ while(fread(&copy, 1, 512, input) == 512)
 
 
 //dynamic memory allocation deals with unknown file size
-    
+
+
+//open memory card - fopen r
+
+//Look for the beginning of a JPEG - look for header -
+//JPEG
+
+//Open a new file with unique name - dynamic memory allocation
+
+//Write 512 bytes until a new JPEG is found
+
 }
