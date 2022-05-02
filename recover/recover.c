@@ -49,5 +49,5 @@ while(fread(&copy, 1, 512, input) == 512)
 
 
 //dynamic memory allocation deals with unknown file size
-
+    
 }
