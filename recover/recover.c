@@ -19,12 +19,15 @@ if (input == NULL)
     return 1;
 }
 
-uint8_t buffer[512];
+
+typedef uint8_t BYTE;
+
+BYTE buffer[512];
 
 int JPEG_count = 0;
 
 //loop until fread = 0 (EOF) & read 512 bytes into a buffer
-while(fread(buffer, sizeof(uint8_t), 512, input))
+while(fread(buffer, sizeof(BYTE), 512, input) != 0)
 {
     //if start of new JPEG - JPEG header {0xff, 0xd8, 0xff} - plus four bits
     if buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
