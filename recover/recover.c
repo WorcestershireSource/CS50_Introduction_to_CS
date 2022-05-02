@@ -47,4 +47,7 @@ while(fread(&copy, 1, 512, input) == 512)
     fclose(input);
 //    fclose(output);
 
+
+//dynamic memory allocation deals with unknown file size
+
 }
