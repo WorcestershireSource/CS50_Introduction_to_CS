@@ -50,7 +50,7 @@ while(fread(buffer, sizeof(BYTE), 512, input) != 0)
         }
         if(JPEG_count > 1)
         {
-            fclose(
+            
         }
 
     }
