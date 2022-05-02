@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
             if(JPEG_count == 1)
             {
                 char name[4];
-                sprintf(name, "%03i.jpg",JPEG_count);
+                sprintf(name, "%03i.jpg",JPEG_count - 1);
 
                 FILE* img = fopen(name, "w");
                 ptr = img;
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
                 fclose(ptr);
 
                 char name[4];
-                sprintf(name, "%03i.jpg",JPEG_count);
+                sprintf(name, "%03i.jpg",JPEG_count - 1);
 
                 FILE* img = fopen(name, "w");
                 ptr = img;
