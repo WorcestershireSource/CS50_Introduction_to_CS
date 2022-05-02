@@ -54,7 +54,7 @@ while(fread(&copy, 1, 512, input) == 512)
 //open memory card - fopen r
 
 //Look for the beginning of a JPEG - look for header -
-//JPEG
+//JPEG stored back to back - keep saving until finding new
 
 //Open a new file with unique name - dynamic memory allocation
 
