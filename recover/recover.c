@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
                 sprintf(name, "%03i.jpg",JPEG_count);
 
                 FILE* img = fopen(name, "w");
-                ptr = (int) &img;
+                ptr = img;
                 if(img == NULL)
                 {
                     printf("Could not open new file\n");
