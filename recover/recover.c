@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 
                 fwrite(buffer, sizeof(BYTE), 512, img);
             }
-            //if it's not the first JPEG then I need to shit the previous file
+            //if it's not the first JPEG then shut the previous file first
             if (JPEG_count > 1)
             {
                 fclose(ptr);
@@ -70,6 +70,8 @@ int main(int argc, char *argv[])
                 fwrite(buffer, sizeof(BYTE), 512, img);
 
             }
+            //if the first JPEG has been found and 512 block does not inlcude JPEG header
+            //then write the next block to the file
         }
         else if (JPEG_count >= 1)
         {
