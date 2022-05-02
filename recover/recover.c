@@ -47,11 +47,14 @@ int main(int argc, char *argv[])
                 }
 
                 fwrite(buffer, sizeof(BYTE), 512, img);
+
+                fclose(img);
             }
         }
         else
             if(JPEG_count > 1)
             {
+                fwrite()
                 fwrite(buffer, sizeof(BYTE), 512, &img);
             }
 
