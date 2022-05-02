@@ -30,13 +30,17 @@ int JPEG_count = 0;
 while(fread(buffer, sizeof(BYTE), 512, input) != 0)
 {
     //if start of new JPEG - JPEG header {0xff, 0xd8, 0xff} - plus four bits
-    if buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+    if(buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
     {
         //if first JPEG - open new file and write else close previous and open new file
-        if(JPEG_count = 0)
+        if(JPEG_count == 0)
         {
-            //dma
+            JPEG_count++;
+            char name[4];
+            sprintf(name, "%03i.jpg",JPEG_count);
             FILE* output = fopen()
+
+
         }
     }
 }
