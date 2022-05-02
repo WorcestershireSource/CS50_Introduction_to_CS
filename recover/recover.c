@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
     int JPEG_count = 0;
 
-    int* ptr = NULL;
+    FILE* ptr = NULL;
 
     //loop until fread = 0 (EOF) & read 512 bytes into a buffer
     while(fread(buffer, sizeof(BYTE), 512, input) != 0)
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
         else
             if(JPEG_count > 1)
             {
-                fwrite(buffer, sizeof(BYTE), 512, *ptr)
+                fwrite(buffer, sizeof(BYTE), 512, ptr);
             }
 
     }
