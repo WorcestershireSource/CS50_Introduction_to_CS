@@ -57,7 +57,7 @@ while(fread(&copy, 1, 512, input) == 512)
 //JPEG stored back to back - keep saving 512 blocks until find one that starts with header file
 //video shows way to handle fourth byte
 
-//
+//sprintf 7 mins
 
 //Open a new file with unique name - dynamic memory allocation
 
