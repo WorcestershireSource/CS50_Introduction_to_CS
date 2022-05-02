@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
         else
             if(JPEG_count > 1)
             {
-                fwrite(buffer, sizeof(BYTE), 512, img);
+                fwrite(buffer, sizeof(BYTE), 512, &img);
             }
 
     }
