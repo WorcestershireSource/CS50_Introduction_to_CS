@@ -90,7 +90,7 @@ bool load(const char *dictionary)
 
         //insert node into hash table at that location
         n->next = table[i];
-        table[i]->next = n;
+        table[i] = n;
         dict_size++;
     }
     return false;
