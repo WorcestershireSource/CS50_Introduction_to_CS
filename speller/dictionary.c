@@ -80,6 +80,7 @@ bool load(const char *dictionary)
         }
 
         strcpy(n->word, copy);
+        n->next = NULL;
 
         //Hash word to obtain a hash value
         int i = hash(copy);
