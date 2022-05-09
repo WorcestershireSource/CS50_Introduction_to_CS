@@ -45,15 +45,24 @@ bool load(const char *dictionary)
         return 1;
     }
     //Read strings from file one at a time
-    fscanf(input, "%s", word)
+    char word[LENGTH + 1];
 
-    //Create a new node for each word
+    while (fscanf(input, "%s", word))
+    {
+        //Create a new node for each word
+        node *n = malloc(sizeof(node));
+        if (*n == NULL)
+        {
+            return 1;
+        }
+    }
+
 
     //Hash word to obtain a hash value
 
     //insert node into hash table at that location
 
-    //node *n = malloc(sizeof(node));
+
     //strcpy(n->word, input);
     //n->next = NULL;
 
