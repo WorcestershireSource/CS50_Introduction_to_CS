@@ -50,7 +50,7 @@ unsigned int hash(const char *word)
     int letter_1 = toupper(word[0]) - 'A';
     int letter_2 = 25;
 
-
+    //checks if second character is a letter
     if (isalpha(word[1]) != 0)
     {
         letter_2 = toupper(word[1]) - 'A';
