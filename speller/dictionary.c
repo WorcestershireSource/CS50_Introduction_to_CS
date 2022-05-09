@@ -56,11 +56,11 @@ unsigned int hash(const char *word)
     {
         return (26 + letter_2);
     }
-    if (letter_1 == 15)
+    else if (letter_1 == 15)
     {
         return (26 + 26 + letter_2);
     }
-    if (letter_1 == 18)
+    else if (letter_1 == 18)
     {
         return (26 + 26 + 26 + letter_2);
     }
