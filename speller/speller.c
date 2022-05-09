@@ -35,6 +35,9 @@ int main(int argc, char *argv[])
     // Determine dictionary to use
     char *dictionary = (argc == 3) ? argv[1] : DICTIONARY;
 
+    //global variable for load iterations
+    int dict_size = 0;
+
     // Load dictionary
     getrusage(RUSAGE_SELF, &before);
     bool loaded = load(dictionary);
