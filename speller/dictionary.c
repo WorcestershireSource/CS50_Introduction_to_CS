@@ -89,7 +89,7 @@ bool load(const char *dictionary)
         //insert node into hash table at that location
         n->next = table[i];
         table[i]->next = n;
-        size();
+        dict_size++;
     }
     return false;
 }
@@ -97,7 +97,7 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    dict_size++;
+    if ()
     return 0;
 }
 
