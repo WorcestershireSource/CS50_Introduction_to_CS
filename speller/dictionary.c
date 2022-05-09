@@ -60,20 +60,15 @@ bool load(const char *dictionary)
 
         strcpy(n->word, copy);
 
-        n->next = table[hash(copy)];
-        table[hash(copy)]->next = n;
+        //Hash word to obtain a hash value
+        int i = hash(copy);
+
+
+        //insert node into hash table at that location
+        n->next = table[i];
+        table[i]->next = n;
 
     }
-
-
-    //Hash word to obtain a hash value
-
-    //insert node into hash table at that location
-
-
-
-    //n->next = NULL;
-
     return false;
 }
 
