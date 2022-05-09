@@ -77,6 +77,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO3
+    
     return 0;
 }
 
