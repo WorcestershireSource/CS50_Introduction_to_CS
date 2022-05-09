@@ -47,25 +47,26 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    int first = toupper(word[0] - 'A');
-    int second = toupper(word[1] - 'A');
+    int letter_1 = 1;
+
+    int letter_2 = 2;
 
     //larger harsh table entries for most common letters c, s and p
-    if (first == 2)
+    if (letter_1 == 2)
     {
-        return (26 + second);
+        return (26 + letter_2);
     }
-    if (first == 15)
+    if (letter_1 == 15)
     {
-        return (26 + 26 + second);
+        return (26 + 26 + letter_2);
     }
-    if (first == 18)
+    if (letter_1 == 18)
     {
-        return (26 + 26 + 26 + second);
+        return (26 + 26 + 26 + letter_2);
     }
     else
     {
-        return first;
+        return letter_1;
     }
 }
 
