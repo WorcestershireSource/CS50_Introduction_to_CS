@@ -76,8 +76,7 @@ bool load(const char *dictionary)
         node *n = malloc(sizeof(node));
         if (n == NULL)
         {
-            //free table?
-            return 1;
+            return false;
         }
 
         strcpy(n->word, copy);
@@ -91,7 +90,7 @@ bool load(const char *dictionary)
         table[i] = n;
         dict_size++;
     }
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
