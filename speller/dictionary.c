@@ -89,7 +89,7 @@ bool load(const char *dictionary)
         //WHAT IF THIS IS FIRST VALUE DO I NEED TO CHECK?
 
         //insert node into hash table at that location
-        n->next = table[i]->next;
+        n->next = table[i];
         table[i] = n;
         dict_size++;
     }
