@@ -48,8 +48,13 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     int letter_1 = toupper(word[0]) - 'A';
+    int letter_2 = 25;
 
-    int letter_2 = toupper(word[1]) - 'A';
+
+    if (isalpha(word[1]) != 0)
+    {
+        letter_2 = toupper(word[1]) - 'A';
+    }
 
     //larger harsh table entries for most common letters c, s and p
     if (letter_1 == 2)
