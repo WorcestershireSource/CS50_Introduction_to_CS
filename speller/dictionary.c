@@ -36,10 +36,20 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    // TODO1
+    //Open dictionary file
 
-    node *n = malloc(sizeof(node));
-    
+    //Read strings from file one at a time
+
+    //Create a new node for each word
+
+    //Hash word to obtain a hash value
+
+    //insert node into hash table at that location
+
+    //node *n = malloc(sizeof(node));
+    //strcpy(n->word, input);
+    //n->next = NULL;
+
     return false;
 }
 
