@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 #include "dictionary.h"
 
@@ -38,7 +39,13 @@ bool load(const char *dictionary)
 {
     //Open dictionary file
     FILE *input = fopen(dictionary, "r");
+    if (input == NULL)
+    {
+        printf("Could not open file.\n");
+        return 1;
+    }
     //Read strings from file one at a time
+    fscanf(input, "%s", word)
 
     //Create a new node for each word
 
