@@ -49,7 +49,15 @@ unsigned int hash(const char *word)
 {
     int i = toupper(word[0] - 'A';
 
-    if (i > )
+    if (i == 2)
+    {
+        
+    }
+
+    2 = c
+    15 = p
+    18 = s
+
 
     // TODO: Improve this hash function2
     return toupper(word[0]) - 'A';
