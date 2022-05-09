@@ -32,13 +32,20 @@ bool check(const char *word)
 
     node *cursor = table[i];
 
-    while (cursor->next != NULL)
+    if (cursor->next == NULL)
     {
-        if (strcasecmp(word, cursor->word) == 0)
+        return false;
+    }
+    else if (cursor->next != NULL)
+    {
+        while (cursor->next != NULL)
         {
-            return true;
+            if (strcasecmp(word, cursor->word) == 0)
+            {
+                return true;
+            }
+            cursor = cursor->next;
         }
-        cursor = cursor->next;
     }
 
     return false;
