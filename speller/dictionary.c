@@ -29,9 +29,8 @@ bool check(const char *word)
 {
     int i = hash(word);
 
+    int * cursor = table[i].next;
     
-    //if next != null
-    //go to next pointer
     while(table[i].next != NULL)
     {
         strcasecmp()
