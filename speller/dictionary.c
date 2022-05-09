@@ -86,8 +86,6 @@ bool load(const char *dictionary)
         //Hash word to obtain a hash value
         int i = hash(copy);
 
-        //WHAT IF THIS IS FIRST VALUE DO I NEED TO CHECK?
-
         //insert node into hash table at that location
         n->next = table[i];
         table[i] = n;
