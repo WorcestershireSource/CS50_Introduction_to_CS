@@ -49,14 +49,24 @@ unsigned int hash(const char *word)
 {
     int i = toupper(word[0] - 'A';
 
+    //larger harsh table entries for most common letters c, s and p
     if (i == 2)
     {
-        
+        return touppper((word[1] -'A') + 26)
+    }
+    if (i == 15)
+    {
+        return toupper((word[1] -'A') + 52)
+    }
+    if (i == 18)
+    {
+        return toupper((word[1] - 'A') + 78)
+    }
+    else
+    {
+        return toupper(word[0] - 'A')
     }
 
-    2 = c
-    15 = p
-    18 = s
 
 
     // TODO: Improve this hash function2
