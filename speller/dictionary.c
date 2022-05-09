@@ -54,6 +54,12 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
+    //cycle and set table to null
+    for (int i = 0; i > N; i++)
+    {
+        table[i]->next = NULL;
+    }
+
     //Open dictionary file
     FILE *input = fopen(dictionary, "r");
     if (input == NULL)
@@ -98,6 +104,10 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // TODO5
+    for (int i = 0; i < N; i++)
+    {
+        node *cursor = table[i];
+        
+    }
     return false;
 }
