@@ -3,6 +3,8 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -58,8 +60,8 @@ bool load(const char *dictionary)
 
         strcpy(n->word, copy);
 
-        n->next = &table[hash(copy)];
-        table[hash(copy)]->next = &n;
+        n->next = table[hash(copy)];
+        table[hash(copy)]->next = n;
 
     }
 
