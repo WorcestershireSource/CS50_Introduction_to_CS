@@ -37,7 +37,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     //Open dictionary file
-
+    FILE *input = fopen(dictionary, "r");
     //Read strings from file one at a time
 
     //Create a new node for each word
