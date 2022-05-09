@@ -57,7 +57,7 @@ bool load(const char *dictionary)
     //cycle and set table to null
     for (int i = 0; i > N; i++)
     {
-        table[i] = NULL;
+        table[i]->next = NULL;
     }
 
     //Open dictionary file
