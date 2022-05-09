@@ -47,6 +47,10 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
+    int i = toupper(word[0] - 'A';
+
+    if (i > )
+
     // TODO: Improve this hash function2
     return toupper(word[0]) - 'A';
 }
@@ -90,6 +94,7 @@ bool load(const char *dictionary)
         table[i] = n;
         dict_size++;
     }
+    fclose(input);
     return true;
 }
 
@@ -107,13 +112,13 @@ bool unload(void)
         node *cursor = table[i];
         node *tmp = cursor;
 
-        do
+        while (cursor != NULL)
         {
             cursor = cursor->next;
             free(tmp);
             tmp = cursor;
         }
-        while (cursor != NULL);
+
     }
     return true;
 }
