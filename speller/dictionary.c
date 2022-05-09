@@ -51,10 +51,12 @@ bool load(const char *dictionary)
     {
         //Create a new node for each word
         node *n = malloc(sizeof(node));
-        if (*n == NULL)
+        if (n == NULL)
         {
             return 1;
         }
+
+        strcpy(n->word, input);
     }
 
 
@@ -63,7 +65,7 @@ bool load(const char *dictionary)
     //insert node into hash table at that location
 
 
-    //strcpy(n->word, input);
+
     //n->next = NULL;
 
     return false;
