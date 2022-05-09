@@ -47,9 +47,9 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    int letter_1 = 1;
+    int letter_1 = toupper(word[0]) - 'A';
 
-    int letter_2 = 2;
+    int letter_2 = toupper(word[1]) - 'A';
 
     //larger harsh table entries for most common letters c, s and p
     if (letter_1 == 2)
