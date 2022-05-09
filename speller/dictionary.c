@@ -67,7 +67,6 @@ unsigned int hash(const char *word)
     {
         return first;
     }
-
 }
 
 // Loads dictionary into memory, returning true if successful, else false
