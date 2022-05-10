@@ -28,6 +28,8 @@ for i in range(0, c_length, 2):
         luhn += z
     print(str(i + 1) + " digit luhn is " + str(luhn))
 
+print(str_card[1])
+
 if luhn % 10 == 0:
     print(company)
 else:
