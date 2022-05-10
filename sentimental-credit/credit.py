@@ -17,24 +17,22 @@ elif two_digit == 34 or two_digit == 37 and c_length == 15:
 
 luhn = 0
 
-for i in range(0, c_length, 2):
+for i in range(0, c_length + 1, 2):
     luhn += int(str_card[c_length - (i + 1)])
-    print(str(i + 1) + " digit luhn is " + str(luhn))
-
-for j in range(1, c_length, 2):
-    z = int(str_card[c_length - (j + 1)]) * 2
+    print(str(i) + " digit luhn is " + str(luhn))
+    z = int(str_card[c_length - (i + 2)]) * 2
     if z > 9:
         luhn += (z - 10) + 1
     elif z < 10:
         luhn += z
-        print(str(j + 1) + " digit luhn is " + str(luhn))
+        print(str(i + 1) + " digit luhn is " + str(luhn))
 
 if luhn % 10 == 0:
     print(company)
 else:
     print("INVALID")
 
-print(c_length)
+
 
 
 
