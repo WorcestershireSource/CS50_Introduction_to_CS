@@ -34,10 +34,6 @@ if luhn % 10 == 0:
 else:
     print("INVALID")
 
-print(company)
-print(str(c_length))
-print(two_digit)
-
 
 
 
