@@ -5,7 +5,7 @@ while True:
     if height < 9 and height > 0:
         break
 
-for i in range(height + 1):
+for i in range(1, height + 1):
     print(" " * (height - i), end="")
     print("#" * i, end="")
     print("  ", end="")
