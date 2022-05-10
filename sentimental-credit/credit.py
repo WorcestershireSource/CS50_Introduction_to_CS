@@ -34,7 +34,7 @@ if luhn % 10 == 0:
 else:
     print("INVALID")
 
-
+print(c_length)
 
 
 
