@@ -18,25 +18,18 @@ luhn = 0
 
 for i in range(0, c_length, 2):
     luhn += int(str_card[c_length - (i + 1)])
-    luhn
-    print(luhn)
 
     z = int(str_card[c_length - (i + 2)]) * 2
-    print("z" + str(z))
     if z > 9:
-        luhn += z - 10 + 10
+        luhn += (z - 10) + 1
     elif z < 10:
         luhn += z
-    print(luhn)
-
 
 if luhn % 10 == 0:
     print(company)
 else:
     print("INVALID")
 
-print(luhn)
-print(company)
 
 
 
