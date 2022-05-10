@@ -21,6 +21,7 @@ for i in range(0, c_length, 2):
     luhn += int(str_card[c_length - (i + 1)])
     print(str(i) + " digit luhn is " + str(luhn))
     z = int(str_card[c_length - (i + 2)]) * 2
+    print(str(z))
     if z > 9:
         luhn += (z - 10) + 1
     elif z < 10:
