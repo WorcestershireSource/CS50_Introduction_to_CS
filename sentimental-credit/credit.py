@@ -4,3 +4,4 @@ card = get_int("What is card number?")
 
 c_length = len(card)
 
+if card = 
