@@ -19,15 +19,13 @@ luhn = 0
 
 for i in range(0, c_length + 1, 2):
     luhn += int(str_card[c_length - (i + 1)])
-    print(str(i) + " digit luhn is " + str(luhn))
     if c_length - (i + 2) > -1:
         z = int(str_card[c_length - (i + 2)]) * 2
-        print(str(z))
         if z > 9:
             luhn += (z - 10) + 1
         elif z < 10:
             luhn += z
-        print(str(i + 1) + " digit luhn is " + str(luhn))
+
 
 print(str_card[0])
 
@@ -36,7 +34,9 @@ if luhn % 10 == 0:
 else:
     print("INVALID")
 
-
+print(company)
+print(str(c_length))
+print(two_digit)
 
 
 
