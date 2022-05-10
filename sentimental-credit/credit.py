@@ -16,26 +16,14 @@ elif two_digit == 34 or two_digit == 37:
 
 luhn = 0
 
-for i in range(c_length)
-    j = str_card[c_length - i]
+for i in range(c_length):
+    j = str_card[c_length - (i]
     luhn += int(j)
     z = int(j) * 2
-    if z > 9
+    if z > 9:
         luhn += z - 10 + 10
-    elif z < 10
+    elif z < 10:
         luhn += z
-
-
-
-
-for i in range(17):
-    if i % 2 == 0 and (((card % 10) * 2) > 9):
-        luhn += (((card % 10) * 2) % 10) + (int(((card % 10) * 2) / 10) % 10)
-    elif (i % 2 > 0):
-        luhn += (card % 10)
-    else:
-        luhn += (card % 10) * 2
-    card = int(card / 10)
 
 
 if luhn % 10 == 0:
