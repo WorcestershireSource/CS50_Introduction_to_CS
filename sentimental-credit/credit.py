@@ -22,7 +22,7 @@ for i in range(17):
         luhn += (card % 10)
     else:
         luhn += (card % 10) * 2
-    card = card / 10
+    card = int(card / 10)
 
 
 if luhn % 10 == 0:
