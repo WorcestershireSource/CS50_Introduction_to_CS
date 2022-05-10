@@ -25,7 +25,7 @@ for i in range(0, c_length, 2):
         luhn += (z - 10) + 1
     elif z < 10:
         luhn += z
-        print(str(i + 1) + " digit luhn is " + str(luhn))
+    print(str(i + 1) + " digit luhn is " + str(luhn))
 
 if luhn % 10 == 0:
     print(company)
