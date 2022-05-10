@@ -27,8 +27,6 @@ for i in range(0, c_length + 1, 2):
             luhn += z
 
 
-print(str_card[0])
-
 if luhn % 10 == 0:
     print(company)
 else:
