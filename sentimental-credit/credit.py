@@ -7,12 +7,20 @@ c_length = len(str_card)
 
 two_digit = int(card / (10 ** (c_length - 2)))
 
-if (two_digit < 50 or two_digit > 39) and (c_length == 13 or c_length == 16):
-    company = "VISA"
-elif (two_digit < 56 and two_digit > 50) and c_length == 16:
-    company = "MASTERCARD"
-elif (two_digit == 34 or two_digit == 37) and c_length == 15:
-    company = "AMEX"
+company = "NULL"
+
+
+if two_digit < 56 and two_digit > 50:
+    if c_length == 16:
+        company = "MASTERCARD"
+
+if two_digit == 34 or two_digit == 37:
+    if c_length == 15:
+        company = "AMEX"
+
+if two_digit < 50 or two_digit > 39:
+    if c_length == 13 or c_length == 16:
+        company = "VISA"
 
 
 luhn = 0
