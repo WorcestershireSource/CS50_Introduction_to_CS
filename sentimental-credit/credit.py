@@ -22,6 +22,7 @@ for i in range(0, c_length, 2):
     print(luhn)
 
     z = int(str_card[c_length - (i + 2)])
+    print("z" + str(z))
     if z > 9:
         luhn += z - 10 + 10
     elif z < 10:
