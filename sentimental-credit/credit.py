@@ -14,12 +14,15 @@ elif two_digit < 56 and two_digit > 50 and c_length == 16:
 elif two_digit == 34 or two_digit == 37 and c_length == 15:
     company = "AMEX"
 
+
 luhn = 0
 
 for i in range(0, c_length, 2):
     luhn += int(str_card[c_length - (i + 1)])
-    print(str(i) + " digit luhn is " + str(luhn))
-    z = int(str_card[c_length - (i + 2)]) * 2
+    print(str(i + 1) + " digit luhn is " + str(luhn))
+
+for j in range(1, c_length, 2):
+    z = int(str_card[c_length - (i + 1)]) * 2
     if z > 9:
         luhn += (z - 10) + 1
     elif z < 10:
