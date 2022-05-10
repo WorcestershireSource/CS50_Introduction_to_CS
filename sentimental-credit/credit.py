@@ -1,8 +1,9 @@
 from cs50 import get_int
 
 card = get_int("What is card number? ")
+str_card = str(card)
 
-c_length = len(str(card))
+c_length = len(str_card)
 
 two_digit = card / (10 ** (c_length - 2))
 
@@ -14,6 +15,18 @@ elif two_digit == 34 or two_digit == 37:
     company = "AMEX"
 
 luhn = 0
+
+for i in range(c_length)
+    j = str_card[c_length - i]
+    luhn += int(j)
+    z = int(j) * 2
+    if z > 9
+        luhn += z - 10 + 10
+    elif z < 10
+        luhn += z
+
+
+
 
 for i in range(17):
     if i % 2 == 0 and (((card % 10) * 2) > 9):
