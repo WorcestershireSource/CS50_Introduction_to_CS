@@ -16,10 +16,11 @@ elif two_digit == 34 or two_digit == 37:
 
 luhn = 0
 
-for i in range(c_length):
-    j = str_card[c_length - (i + 1)]
+for i in range(0, c_length, 2):
+    j = int(str_card[c_length - (i + 1)]
     luhn += int(j)
     print(luhn)
+
     z = int(j) * 2
     if z > 9:
         luhn += z - 10 + 10
