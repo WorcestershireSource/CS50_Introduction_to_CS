@@ -4,4 +4,4 @@ card = get_int("What is card number?")
 
 c_length = len(card)
 
-if card = 
+two_digit = card / (10 ** (c_length - 2))
