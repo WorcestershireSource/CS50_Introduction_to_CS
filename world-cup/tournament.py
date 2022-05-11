@@ -20,7 +20,7 @@ def main():
         reader = csv.DictReader(file)
         for row in reader:
             team = row["team"]
-            rating = row["teams.append(reader)
+
 
 
     counts = {}
