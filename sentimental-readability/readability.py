@@ -14,6 +14,7 @@ av_letters = (num_letters / num_words) * 100
 av_words = (num_sentences / num_words) * 100
 index = round((0.0588 * av_letters) - (0.296 * av_words) - 15.8)
 
+# Print out results
 if index < 1:
     print("Before Grade 1")
 elif index > 1 and index < 16:
