@@ -24,7 +24,7 @@ def main():
             teams.append(team)
             teams.append(int(rating))
 
-
+    print(math.log(16,2))
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
 
@@ -58,9 +58,10 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
-    winner = []
 
-    for i in range
+
+
+
 
 
 if __name__ == "__main__":
