@@ -19,6 +19,6 @@ if index < 1:
 elif index > 1 and index < 16:
     print("Grade " + str(index))
 elif index > 15:
-    print("Grade 16 +")
+    print("Grade 16+")
 else:
     sys.exit(1)
