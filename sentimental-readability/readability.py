@@ -8,3 +8,4 @@ number_words = len(word_list)
 
 letters = sum(c.isalpha() for c in input)
 
+sentences = filtered.count('.' or '!' or '?')
