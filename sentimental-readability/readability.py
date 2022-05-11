@@ -22,7 +22,3 @@ elif index > 15:
     print("Grade 16 +")
 else:
     sys.exit(1)
-
-print("words: " + str(num_words))
-print("letters: " + str(num_letters))
-print("sentences: " + str(num_sentences))
