@@ -20,9 +20,9 @@ def main():
         reader = csv.DictReader(file)
         for row in reader:
             team = row["team"]
-            fifa = row["rating"]
+            teams.append(team)
 
-            
+
 
 
 
