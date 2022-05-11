@@ -20,7 +20,8 @@ elif (two_digit == 34 or two_digit == 37) and c_length == 15:
 luhn = 0
 
 for i in range(1, c_length, 2):
-    luhn += int(str_card[c_length - (i)])
+    if c_length - i > -1:
+        luhn += int(str_card[c_length - i])
     # print(str(i + 1) + " digit " + str(luhn))
     if c_length - (i + 1) > -1:
         z = int(str_card[c_length - (i + 1)]) * 2
