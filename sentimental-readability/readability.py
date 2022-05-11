@@ -7,7 +7,7 @@ input = get_string("Text: ")
 word_list = input.split()
 num_words = len(word_list)
 num_letters = sum(c.isalpha() for c in input)
-num_sentences = input.count('.' or '?' or '!')
+num_sentences = input.count('.') + input.count('?') + input.count('!')
 
 # Calculate averages and readability index score
 av_letters = (num_letters / num_words) * 100
