@@ -36,6 +36,7 @@ if luhn % 10 == 0:
 else:
     print("INVALID")
 
+print(str(c_length))
 
 
 
