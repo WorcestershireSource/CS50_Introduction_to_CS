@@ -68,7 +68,7 @@ def simulate_tournament(teams):
 
     win = simulate_round(teams)
 
-    for i in range(1, int(math.log(t,2)), 1):
+    for i in range(1, int(math.log(t, 2)), 1):
         win = simulate_round(win)
 
     return win[0]["team"]
