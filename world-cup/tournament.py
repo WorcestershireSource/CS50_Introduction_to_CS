@@ -32,8 +32,7 @@ def main():
         if tmp in counts:
             counts[tmp] += 1
         else:
-            counts.append(tmp)
-            counts[tmp] += 1
+            counts[tmp] = 1
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
@@ -71,8 +70,6 @@ def simulate_tournament(teams):
 
     for i in range(1, int(math.log(t,2)), 1):
         win = simulate_round(win)
-
-    print(len(win))
 
     return win[0]["team"]
 
