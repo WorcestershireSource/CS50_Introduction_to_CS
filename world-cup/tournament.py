@@ -22,18 +22,18 @@ def main():
         for row in reader:
             team = row["team"]
             rating = int(row["rating"])
-
-            teams.append(row)
+            dict = {"team": team, "rating": rating}
+            teams.append(dict)
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
     for i in range(N):
         tmp = simulate_tournament(teams)
-        if tmp in counts:
-            counts[tmp] += 1
+        if tmp["team"] in counts:
+            counts[tmp["team"]] += 1
         else:
             counts.append(tmp)
-            counts[tmp] += 1
+            counts[tmp["team"]] += 1
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
@@ -42,8 +42,8 @@ def main():
 
 def simulate_game(team1, team2):
     """Simulate a game. Return True if team1 wins, False otherwise."""
-    rating1 = int(team1["rating"])
-    rating2 = int(team2["rating"])
+    rating1 = team1["rating"]
+    rating2 = team2["rating"]
     probability = 1 / (1 + 10 ** ((rating2 - rating1) / 600))
     return random.random() < probability
 
