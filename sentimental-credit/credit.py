@@ -19,11 +19,11 @@ elif (two_digit == 34 or two_digit == 37) and c_length == 15:
 
 luhn = 0
 
-for i in range(0, c_length + 1, 2):
-    luhn += int(str_card[c_length - (i + 1)])
+for i in range(1, c_length + 1, 2):
+    luhn += int(str_card[c_length - (i)])
     print(str(i + 1) + " digit " + str(luhn))
     if c_length - (i + 2) > -1:
-        z = int(str_card[c_length - (i + 2)]) * 2
+        z = int(str_card[c_length - (i + 1)]) * 2
         if z > 9:
             luhn += (z - 10) + 1
         elif z < 10:
