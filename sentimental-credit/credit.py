@@ -29,6 +29,7 @@ for i in range(1, c_length + 1, 2):
             luhn += (z - 10) + 1
         elif z < 10:
             luhn += z
+
         print(str(i) + " digit 2 " + str(luhn))
 
 
