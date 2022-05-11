@@ -64,13 +64,15 @@ def simulate_round(teams):
 
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
+
     t = len(teams)
 
-    for i in range(0, math.log(t,2), 1):
-        win = simulate_round(teams)
+    win = simulate_round(teams)
 
-    return win
+    for i in range(1, math.log(t,2), 1):
+        win = simulate_round(win)
 
+    return win(name)
 
 
 if __name__ == "__main__":
