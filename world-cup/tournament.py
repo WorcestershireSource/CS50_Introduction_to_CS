@@ -23,9 +23,6 @@ def main():
             teams.append(team)
 
 
-
-
-
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
 
