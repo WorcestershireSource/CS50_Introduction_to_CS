@@ -3,6 +3,7 @@
 import csv
 import sys
 import random
+import math
 
 # Number of simluations to run
 N = 1000
@@ -24,7 +25,6 @@ def main():
             teams.append(team)
             teams.append(int(rating))
 
-    print(math.log(16,2))
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
 
@@ -58,6 +58,10 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
+    t = len(teams)
+
+    for i in range(0, math.log(t,2), 1)
+        
 
 
 
