@@ -72,7 +72,7 @@ def simulate_tournament(teams):
     for i in range(1, math.log(t,2), 1):
         win = simulate_round(win)
 
-    return win(name)
+    return str(win(name))
 
 
 if __name__ == "__main__":
