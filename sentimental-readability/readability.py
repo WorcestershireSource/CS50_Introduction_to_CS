@@ -6,3 +6,5 @@ input = get_string("Text: ")
 word_list = input.split()
 number_words = len(word_list)
 
+letters = sum(c.isalpha() for c in input)
+
