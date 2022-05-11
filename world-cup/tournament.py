@@ -29,11 +29,11 @@ def main():
     # TODO: Simulate N tournaments and keep track of win counts
     for i in range(N):
         tmp = simulate_tournament(teams)
-        if tmp[name] in counts:
-            counts[tmp[name]] += 1
+        if tmp in counts:
+            counts[tmp] += 1
         else:
-            counts.append(tmp[name])
-            counts[tmp[name]] += 1
+            counts.append(tmp)
+            counts[tmp] += 1
 
     # Print each team's chances of winning, according to simulation
     for team in sorted(counts, key=lambda team: counts[team], reverse=True):
