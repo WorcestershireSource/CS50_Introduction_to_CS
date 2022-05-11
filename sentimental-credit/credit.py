@@ -1,12 +1,12 @@
 from cs50 import get_int
 
-#Ask for input from the user
+# Ask for input from the user
 card = get_int("What is card number? ")
 str_card = str(card)
 c_length = len(str_card)
 two_digit = int(card / (10 ** (c_length - 2)))
 
-#Check what company the card is based on length and first two digits
+# Check what company the card is based on length and first two digits
 company = "NULL"
 if (two_digit < 50 and two_digit > 39) and (c_length == 13 or c_length == 16):
     company = "VISA"
