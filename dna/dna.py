@@ -45,8 +45,9 @@ def main():
 
 
     print(count)
+    print(x)
 
-    if count == x:
+    if count > x:
         print(people[i]["name"])
         return
     else:
