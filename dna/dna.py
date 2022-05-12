@@ -32,10 +32,10 @@ def main():
     max_tatc = longest_match(sequence, TATC)
 
     # Check database for matching profiles
-    x = len(people[])
+    x = len(people)
 
     for i in range(x):
-        if max_agatc == people[x]["AGATC"] and max_aatg == people[x]["AATG"] and max_tatc == people[x]["TATC"]
+        if max_agatc == people[x]["AGATC"] and max_aatg == people[x]["AATG"] and max_tatc == people[x]["TATC"]:
             print(people[x]["name"])
             return
 
