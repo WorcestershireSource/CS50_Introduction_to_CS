@@ -37,14 +37,14 @@ def main():
     ncol = len(dna_types)
     # Find longest match of each STR in DNA sequence
     for i in range(1, ncol, 1):
-        dna_types[i]["count"] = longest_match(sequence, dna_types[i]["type"])
+        dna_types[i]["count"] = longest_match(sequence, int(dna_types[i]["count"]))
 
     # Check database for matching profiles
     num = len(people)
 
     for i in range(0, num, 1):
         for j in range(1, ncol, 1):
-            if dna_types[i]["count"] == people[i][dna_types[i]["type"]]:
+            if dna_types[j]["count"] == people[i][dna_types[j]["count"]]:
                 print(people[i]["name"])
                 return
 
