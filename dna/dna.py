@@ -25,7 +25,7 @@ def main():
     with open(sys.argv[1], "r") as file:
         reader = csv.DictReader(file)
         for row in reader:
-                dna_types.append(row)
+                tmp = {"type": row, "count": 0}
                 break
 
     # Read DNA sequence file into a variable
@@ -35,20 +35,18 @@ def main():
             sequence = row[0]
 
     ncol = len(dna_types)
-
     # Find longest match of each STR in DNA sequence
-    for i in range(1, ncol, 1)
-        longest[i] = longest_match(sequence, people)
-    max_aatg = longest_match(sequence, "AATG")
-    max_tatc = longest_match(sequence, "TATC")
+    for i in range(1, ncol, 1):
+        dna_types[i]["count"] = longest_match(sequence, dna_types[i]["type"])
 
     # Check database for matching profiles
     num = len(people)
 
     for i in range(0, num, 1):
-        if max_agatc == people[i]["AGATC"] and max_aatg == people[i]["AATG"] and max_tatc == people[i]["TATC"]:
-            print(people[i]["name"])
-            return
+        for j in range(1, ncol, 1):
+            if dna_types[i]["count"] == people[i][dna_types[i]["type"]]:
+                print(people[i]["name"])
+                return
 
     print("No match")
 
