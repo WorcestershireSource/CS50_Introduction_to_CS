@@ -23,8 +23,8 @@ def main():
 
     dna_types = []
     with open(sys.argv[1], "r") as file:
-        reader = csv.reader(file)
-        for row in csv_reader:
+        reader = csv.DictReader(file)
+        for row in reader:
                 dna_types.append(row)
                 break
 
