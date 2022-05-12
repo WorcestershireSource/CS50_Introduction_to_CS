@@ -13,12 +13,12 @@ def main():
     with open(sys.argv[1], "r") as file:
         reader = csv.DictReader(file)
         for row in reader:
-            name = row["name"]
-            AGATC = int(row["AGATC"])
-            AATG = int(row["AATG"])
-            TATC = int(row["TATC"])
-            dict = {"name": name, "AGATC": AGATC, "AATG": AATG, "TATC": TATC}
-            people.append(dict)
+            people.append(row)
+                # name = row["name"]
+                # AGATC = int(row["AGATC"])
+                # AATG = int(row["AATG"])
+                # TATC = int(row["TATC"])
+                # dict = {"name": name, "AGATC": AGATC, "AATG": AATG, "TATC": TATC}
 
     # Read DNA sequence file into a variable
     with open(sys.argv[2], "r") as file2:
