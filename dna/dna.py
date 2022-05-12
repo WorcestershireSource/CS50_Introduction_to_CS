@@ -21,12 +21,11 @@ def main():
                 # TATC = int(row["TATC"])
                 # dict = {"name": name, "AGATC": AGATC, "AATG": AATG, "TATC": TATC}
 
-    dna_types = {}
+    dna_types = []
     with open(sys.argv[1], "r") as file:
         reader = csv.DictReader(file)
         for row in reader:
                 tmp = {"type": row, "count": 0}
-                dna_types = tmp
                 break
 
     # Read DNA sequence file into a variable
@@ -36,21 +35,20 @@ def main():
             sequence = row[0]
 
     ncol = len(dna_types)
+
     # Find longest match of each STR in DNA sequence
     for i in range(1, ncol, 1):
-        dna_types[i]["count"] = longest_match(sequence, int(dna_types[i]["count"]))
-
-    print(ncol)
-    print(dna_types)
+        dna_types[i]["count"] = longest_match(sequence, dna_types[i]["t])
+    max_aatg = longest_match(sequence, "AATG")
+    max_tatc = longest_match(sequence, "TATC")
 
     # Check database for matching profiles
     num = len(people)
 
     for i in range(0, num, 1):
-        for j in range(1, ncol, 1):
-            if dna_types[j]["count"] == people[i][dna_types[j]["count"]]:
-                print(people[i]["name"])
-                return
+        if max_agatc == people[i]["AGATC"] and max_aatg == people[i]["AATG"] and max_tatc == people[i]["TATC"]:
+            print(people[i]["name"])
+            return
 
     print("No match")
 
