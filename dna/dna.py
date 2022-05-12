@@ -38,7 +38,7 @@ def main():
     ncol = len(dna_types)
     # Find longest match of each STR in DNA sequence
     for i in range(1, ncol, 1):
-        dna_types["count"] = longest_match(sequence, int(dna_types["count"]))
+        dna_types[i]["count"] = longest_match(sequence, int(dna_types[i]["count"]))
 
     print(ncol)
     print(dna_types)
