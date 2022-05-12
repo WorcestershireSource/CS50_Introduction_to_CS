@@ -15,14 +15,12 @@ def main():
         for row in reader:
             people.append(row)
 
-    print(people[0]["AGATC"])
-    print(people[0]["name"])
-
     # Read DNA sequence file into a variable
     with open(sys.argv[2], "r") as file2:
         reader = csv.reader(file2)
         for row in reader:
             sequence = row[0]
+
 
     # Find longest match of each STR in DNA sequence
     max_agatc = longest_match(sequence, "AGATC")
