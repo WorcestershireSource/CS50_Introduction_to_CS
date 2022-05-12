@@ -31,10 +31,6 @@ def main():
     max_aatg = longest_match(sequence, "AATG")
     max_tatc = longest_match(sequence, "TATC")
 
-    print(max_agatc)
-    print(max_aatg)
-    print(max_tatc)
-
     # Check database for matching profiles
     num = len(people)
 
