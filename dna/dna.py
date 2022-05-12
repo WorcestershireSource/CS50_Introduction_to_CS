@@ -6,7 +6,7 @@ def main():
 
     # Check for command-line usage
     if len(sys.argv) != 3:
-            sys.exit("Usage: dna.py FILENAME FILENAME")
+        sys.exit("Usage: dna.py FILENAME FILENAME")
 
     people = []
     # Read database file into a variable
@@ -20,7 +20,6 @@ def main():
         reader = csv.reader(file2)
         for row in reader:
             sequence = row[0]
-
 
     # Find longest match of each STR in DNA sequence
     dna = []
