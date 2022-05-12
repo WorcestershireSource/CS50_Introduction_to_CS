@@ -12,6 +12,7 @@ def main():
     # Read database file into a variable
     with open(sys.argv[1], "r") as file:
         reader = csv.DictReader(file)
+        ncol = len(next(reader))
         for row in reader:
             people.append(row)
                 # name = row["name"]
@@ -20,6 +21,14 @@ def main():
                 # TATC = int(row["TATC"])
                 # dict = {"name": name, "AGATC": AGATC, "AATG": AATG, "TATC": TATC}
 
+    dna_types = []
+
+    with open(sys.argv[1], "r") as file:
+        reader = csv.reader(file)
+        
+
+
+
     # Read DNA sequence file into a variable
     with open(sys.argv[2], "r") as file2:
         reader = csv.reader(file2)
@@ -27,7 +36,10 @@ def main():
             sequence = row[0]
 
     # Find longest match of each STR in DNA sequence
-    max_agatc = longest_match(sequence, "AGATC")
+    longest = []
+
+    for i in range(ncol)
+        longest[i] = longest_match(sequence, people)
     max_aatg = longest_match(sequence, "AATG")
     max_tatc = longest_match(sequence, "TATC")
 
