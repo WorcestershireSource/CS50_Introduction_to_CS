@@ -27,6 +27,8 @@ def main():
             sequence = row[0]
 
     # Find longest match of each STR in DNA sequence
+
+    #for pie in pizzas.  
     max_agatc = longest_match(sequence, "AGATC")
     max_aatg = longest_match(sequence, "AATG")
     max_tatc = longest_match(sequence, "TATC")
