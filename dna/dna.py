@@ -15,8 +15,8 @@ def main():
         for row in reader:
             people.append(row)
 
-    for name in people.items():
-        print(people["name"])
+    print(people[0]["AGATC"])
+    print(people[0]["name"])
 
     # Read DNA sequence file into a variable
     with open(sys.argv[2], "r") as file2:
@@ -25,8 +25,6 @@ def main():
             sequence = row[0]
 
     # Find longest match of each STR in DNA sequence
-
-    #for pie in pizzas.
     max_agatc = longest_match(sequence, "AGATC")
     max_aatg = longest_match(sequence, "AATG")
     max_tatc = longest_match(sequence, "TATC")
