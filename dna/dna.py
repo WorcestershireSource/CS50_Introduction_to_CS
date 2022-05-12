@@ -39,7 +39,7 @@ def main():
             print(people[i]["name"])
             return
 
-    print("Match not found")
+    print("No match")
 
     return
 
