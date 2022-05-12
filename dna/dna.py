@@ -23,7 +23,8 @@ def main():
 
 
     # Find longest match of each STR in DNA sequence
-    max_agatc = longest_match(sequence, "AGATC")
+    for key in people:
+     = longest_match(sequence, "AGATC")
     max_aatg = longest_match(sequence, "AATG")
     max_tatc = longest_match(sequence, "TATC")
 
