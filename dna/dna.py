@@ -27,14 +27,14 @@ def main():
             sequence = row[0]
 
     # Find longest match of each STR in DNA sequence
-    max_agatc = longest_match(sequence, AGATC)
-    max_aatg = longest_match(sequence, AATG)
-    max_tatc = longest_match(sequence, TATC)
+    max_agatc = longest_match(sequence, "AGATC")
+    max_aatg = longest_match(sequence, "AATG")
+    max_tatc = longest_match(sequence, "TATC")
 
     # Check database for matching profiles
     x = len(people)
 
-    for i in range(x):
+    for i in range(0, x, 1):
         if max_agatc == people[x]["AGATC"] and max_aatg == people[x]["AATG"] and max_tatc == people[x]["TATC"]:
             print(people[x]["name"])
             return
