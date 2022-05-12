@@ -36,22 +36,18 @@ def main():
 
     # Check database for matching profiles
     num = len(people)
-    count = 0
+
     for i in range(num):
+        count = 0
         for j in range(x):
             # print(dna[j]["count"] + " " + people[i][dna[j]["dna"]] + " end ")
             if int(dna[j]["count"]) == int(people[i][dna[j]["dna"]]):
                 count += 1
+        if count == x:
+            print(people[i]["name"])
+            return
 
-
-    print(count)
-    print(x)
-
-    if count > x:
-        print(people[i]["name"])
-        return
-    else:
-        print("No match")
+    print("No match")
 
     return
 
