@@ -23,20 +23,30 @@ def main():
 
 
     # Find longest match of each STR in DNA sequence
+    dna = []
     for key in people[0]:
-        print(key)
+        if key != "name":
+            tmp = {"dna": key, "count": 0}
+            dna.append(tmp)
 
-    # max = longest_match(sequence, key)
+    x = len(dna)
+
+    for i in range(x):
+        dna[i]["count"] = longest_match(sequence, dna[i]["dna"])
 
     # Check database for matching profiles
     num = len(people)
+    count = 0
+    for i in range(num):
+        for j in range(x):
+            if dna[j]["count"] == people[i][dna[j]["dna"]]:
+                count += 1
 
-    #for i in range(0, num, 1):
-     #   if max_agatc == people[i]["AGATC"] and max_aatg == people[i]["AATG"] and max_tatc == people[i]["TATC"]:
-      #      print(people[i]["name"])
-       #     return
-
-    print("No match")
+    if count == x:
+        print(people[i]["name"])
+        return
+    else:
+        print("No match")
 
     return
 
