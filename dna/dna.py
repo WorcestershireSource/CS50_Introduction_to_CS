@@ -4,12 +4,12 @@ import sys
 
 def main():
 
-    # TODO: Check for command-line usage
+    # Check for command-line usage
     if len(sys.argv) != 3:
             sys.exit("Usage: dna.py FILENAME FILENAME")
 
     people = []
-    # TODO: Read database file into a variable
+    # Read database file into a variable
     with open(sys.argv[1], "r") as file:
         reader = csv.DictReader(file)
         for row in reader:
@@ -20,15 +20,22 @@ def main():
             dict = {"name": name, "AATG": AATG, "AATG": AATG, "TATC": TATC}
             people.append(dict)
 
-    # TODO: Read DNA sequence file into a variable
+    # Read DNA sequence file into a variable
     with open(sys.argv[2], "r") as file2:
         reader = csv.reader(file2)
         for row in reader
             sequence = row[0]
 
-    # TODO: Find longest match of each STR in DNA sequence
+    # Find longest match of each STR in DNA sequence
+    max_agatc = longest_match(sequence, AGATC)
+    max_aatg = longest_match(sequence, AATG)
+    max_tatc = longest_match(sequence, TATC)
 
-    # TODO: Check database for matching profiles
+    # Check database for matching profiles
+    x = len(people[])
+
+    for i in range(x)
+        if max_agatc = 
 
     return
 
