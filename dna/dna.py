@@ -39,8 +39,12 @@ def main():
     count = 0
     for i in range(num):
         for j in range(x):
+            print(dna[j]["count"] + " " + people[i][dna[j]["dna"] + " end ")
             if dna[j]["count"] == people[i][dna[j]["dna"]]:
                 count += 1
+
+
+    print(count)
 
     if count == x:
         print(people[i]["name"])
