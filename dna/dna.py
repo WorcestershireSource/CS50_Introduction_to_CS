@@ -17,7 +17,7 @@ def main():
             AGATC = int(row["AGATC"])
             AATG = int(row["AATG"])
             TATC = int(row["TATC"])
-            dict = {"name": name, "AATG": AATG, "AATG": AATG, "TATC": TATC}
+            dict = {"name": name, "AGATC": AGATC, "AATG": AATG, "TATC": TATC}
             people.append(dict)
 
     # Read DNA sequence file into a variable
@@ -32,11 +32,11 @@ def main():
     max_tatc = longest_match(sequence, "TATC")
 
     # Check database for matching profiles
-    x = len(people)
+    num = len(people)
 
-    for i in range(0, x, 1):
-        if max_agatc == people[x]["AGATC"] and max_aatg == people[x]["AATG"] and max_tatc == people[x]["TATC"]:
-            print(people[x]["name"])
+    for i in range(0, num, 1):
+        if max_agatc == people[i]["AGATC"] and max_aatg == people[i]["AATG"] and max_tatc == people[i]["TATC"]:
+            print(people[i]["name"])
             return
 
     print("Match not found")
