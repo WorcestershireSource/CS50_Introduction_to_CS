@@ -23,7 +23,7 @@ def main():
 
 
     # Find longest match of each STR in DNA sequence
-    for key, value in people:
+    for key in people[0]:
         print(key)
 
     # max = longest_match(sequence, key)
