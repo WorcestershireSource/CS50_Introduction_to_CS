@@ -9,6 +9,6 @@ SELECT description FROM crime_scene_reports WHERE year = 2021 AND month = 7 AND 
 --cirminal made call before leaving <1m saying take earliest flight tomorrow
 SELECT name, transcript FROM interviews WHERE year = 2021 AND month = 7 AND day = 28 AND transcript LIKE '%bakery%';
 
--- Check licence plate numbers - need to exclude those who have left
-SELECT activity, hour, minute, license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10;
+-- Check licence plate numbers - eight exit in time
+SELECT activity, hour, minute, license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute <= 25 and minute >= 15;
 
