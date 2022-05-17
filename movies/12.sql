@@ -6,3 +6,8 @@ SELECT title FROM movies
         WHERE name = "Johnny Depp" AND name = "Helena Bonham Carter");
 
 
+
+
+JD = 136
+
+HBC = 307
