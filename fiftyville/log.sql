@@ -26,7 +26,7 @@ SELECT passport_number from passengers
 --Check accounts used at atm
 SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street");
 
---Combine queries on people list to narrow down suspects
+--Combine queries on people list to narrow down suspects - Bruce
 SELECT name FROM people
     WHERE
         passport_number IN (SELECT passport_number from passengers
@@ -42,10 +42,10 @@ SELECT name FROM people
 --Check destination - fiftyville airport to NYC
 SELECT id, full_name, city FROM airports WHERE id IN (8, 36);
 
---Check accomplice
+--Check accomplice - Robin
+SELECT name FROM people WHERE phone_number IN (SELECT receiver FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60 AND caller IN (SELECT phone_number FROM people WHERE name = "Bruce"));
 
 
-SELECT receiver FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60 AND caller IN (SELECT phone_number FROM people WHERE name = "BRUCE");
 
 
 
