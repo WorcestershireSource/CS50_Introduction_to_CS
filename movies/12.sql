@@ -1,7 +1,7 @@
 SELECT title FROM movies
     JOIN stars ON movies.id = stars.movie_id
     JOIN people ON stars.person_id = people.id
-    WHERE name ALL("Helena Bonham Carter", "Johnny Depp");
+    WHERE name = "Helena Bonham Carter";
 
 SELECT title FROM movies
     WHERE id IN (SELECT movie_id FROM stars
