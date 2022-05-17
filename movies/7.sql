@@ -1,2 +1,3 @@
-SELECT tile, rating FROM movies, ratings
-    WHERE 
+SELECT title, rating FROM movies, ratings
+    WHERE movies.year = 2010
+    ORDER BY ratings.rating DESC, movies.title ASC;
