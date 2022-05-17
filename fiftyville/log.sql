@@ -12,3 +12,34 @@ SELECT name, transcript FROM interviews WHERE year = 2021 AND month = 7 AND day 
 -- Check licence plate numbers - eight exit in time
 SELECT activity, hour, minute, license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute <= 25 and minute >= 15;
 
+--set of calls made in relevant time frame - caller is criminal
+SELECT caller, receiver, duration FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
+
+--Look at flights on day after - earliest flight is flight id 36 going to destination 4 from airport 8
+SELECT origin_airport_id, destination_airport_id, hour, minute, id FROM flights WHERE year = 2021 AND month = 7 AND day = 29 ORDER BY hour, minute;
+
+--Look at passengers on that flight
+SELECT passport_number from passengers
+    JOIN flights ON passengers.flight_id = flights.id
+    WHERE flight_id = 36;
+
+--Combine queries on people list to narrow down suspects
+SELECT name FROM people
+    WHERE
+        passport_number IN (SELECT passport_number from passengers
+        JOIN flights ON passengers.flight_id = flights.id
+        WHERE flight_id = 36)
+    AND
+        phone_number IN (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60)
+    AND
+        license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute <= 25 and minute >= 15);
+
+
+
+
+
+
+
+
+
+
