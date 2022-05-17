@@ -3,4 +3,10 @@
 -- Check the crime scene logs - shows time of 10:15 and says 3x transcripts mention bakery
 SELECT description FROM crime_scene_reports WHERE year = 2021 AND month = 7 AND day = 28 AND street = "Humphrey Street";
 
-SELECT activity, minute, license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10;
+SELECT name, transcript FROM interviews WHERE year = 2021 AND month = 7 AND day = 28 AND transcript LIKE '%bakery%';
+
+
+
+-- Check licence plate numbers - need to exclude those who have left
+SELECT activity, hour, minute, license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour > 7 AND hour < 11;
+
