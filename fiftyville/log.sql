@@ -23,6 +23,9 @@ SELECT passport_number from passengers
     JOIN flights ON passengers.flight_id = flights.id
     WHERE flight_id = 36;
 
+--Check accounts used at atm
+SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street");
+
 --Combine queries on people list to narrow down suspects
 SELECT name FROM people
     WHERE
@@ -32,8 +35,12 @@ SELECT name FROM people
     AND
         phone_number IN (SELECT caller FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60)
     AND
-        license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute <= 25 and minute >= 15);
+        license_plate IN (SELECT license_plate FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28 AND hour = 10 AND minute <= 25 and minute >= 15)
+    AND
+        id IN (SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street"));
 
+--Check destination
+SELECT id, full_name, city FROM airports WHERE id IN (8, 36);
 
 
 
