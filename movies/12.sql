@@ -4,8 +4,16 @@ SELECT title FROM movies
     WHERE (title IN (SELECT title FROM movies WHERE name = "Johnny Depp")
     AND title IN (SELECT title FROM movies WHERE name = "Helena Bonham Carter"));
 
+SELECT title FROM movies
+    WHERE id IN (SELECT movie_id FROM stars
+        WHERE person_id )
 
 
+SELECT title FROM movies
+    WHERE id IN (SELECT movie_id FROM stars
+        WHERE person_id IN (SELECT id FROM people
+            WHERE name LIKE 'Helena Bonham Carter') AND (SELECT id FROM people
+                WHERE name LIKE 'Johnny Depp'));
 
 
 JD = 136
