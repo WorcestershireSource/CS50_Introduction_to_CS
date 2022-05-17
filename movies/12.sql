@@ -4,3 +4,6 @@ SELECT title FROM movies
     WHERE movie_id = (SELECT movie_id FROM stars
         JOIN people ON stars.person_id = people.id
         WHERE name = "Johnny Depp" AND name = "Helena Bonham Carter");
+
+
+SELECT id FROM people WHERE name = "Johnny Depp" AND name = "Helena Bonham Carter";
