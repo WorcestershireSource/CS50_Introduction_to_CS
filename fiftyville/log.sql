@@ -39,8 +39,10 @@ SELECT name FROM people
     AND
         id IN (SELECT person_id FROM bank_accounts WHERE account_number IN (SELECT account_number FROM atm_transactions WHERE year = 2021 AND month = 7 AND day = 28 AND atm_location = "Leggett Street"));
 
---Check destination
+--Check destination - fiftyville airport to NYC
 SELECT id, full_name, city FROM airports WHERE id IN (8, 36);
+
+--Check accomplice
 
 
 
