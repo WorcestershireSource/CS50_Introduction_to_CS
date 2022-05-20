@@ -7,13 +7,21 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
-            function correct()
+            function correctUK()
             {
-                #Ldn.style.backgroundColour = 'green';
+                correct.style.backgroundColour = 'green';
             }
 
-            document.querySelector('#Ldn').addEventListener('submit', correct);
+            document.querySelector('#correct').addEventListener('submit', correctf);
 
+            function correctFr()
+            {
+                let france =
+                if (france = "Paris")
+                {
+                    
+                }
+            }
 
         </script>
     </head>
@@ -30,9 +38,9 @@
                 <h3>What is the capital of the UK? </h3>
 
                 <form>
-                    <button id="Ldn">London</button>
-                    <button id="Birm">Birmingham</button>
-                    <button id="Bris">Bristol</button>
+                    <button class="correct">London</button>
+                    <button class="incorrect">Birmingham</button>
+                    <button class="incorrect">Bristol</button>
                 </form>
 
 
