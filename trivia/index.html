@@ -12,19 +12,29 @@
                 let correct = document.querySelector('.correct');
                 correct.addEventListener('click', function() {
                     correct.style.backgroundColor = 'green';
-                    document.querySelector('#response1').innerHMTL = 'Correct';
+                    document.querySelector('#response1').innerHTML = 'Correct';
                 });
 
                 let incorrect1 = document.querySelector('#incorrect1');
                 incorrect1.addEventListener('click', function() {
                     incorrect1.style.backgroundColor = 'red';
-                    document.querySelector('#response1').innerHMTL = 'Incorrect';
+                    document.querySelector('#response1').innerHTML = 'Incorrect';
                 });
 
                 let incorrect2 = document.querySelector('#incorrect2');
                 incorrect2.addEventListener('click', function() {
                     incorrect2.style.backgroundColor = 'red';
-                    document.querySelector('#response1').innerHMTL = 'Incorrect';
+                    document.querySelector('#response1').innerHTML = 'Incorrect';
+                });
+
+                let France = document.querySelector('#France');
+                let Submit = document.querySelector('#text');
+                Submit.addEventListener('click', function() {
+                    if (France = "Paris")
+                    {
+                    France.style.backgroundColor = 'green';
+                    document.querySelector('#response2').innerHTML = 'Correct';
+                    }
                 });
 
             });
