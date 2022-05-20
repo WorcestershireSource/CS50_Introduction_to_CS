@@ -8,10 +8,24 @@ code styles.<!DOCTYPE html>
         <script>
             // TODO: Add code to check answers to questions
             let body = document.querySelector('body');
-            document.querySelector('#red').addEventListener('click', function ()
+            document.querySelector('#correct').addEventListener('click', function ()
             {
-                body.style.backgroundColour = 'green';
+                button.style.backgroundColour = 'green';
             });
+
+            let body = document.querySelector('body');
+            document.querySelector('#incorrecti').addEventListener('click', function ()
+            {
+                button.style.backgroundColour = 'red';
+            });
+
+            let body = document.querySelector('body');
+            document.querySelector('#incorrectii').addEventListener('submit', function ()
+            {
+                button.style.backgroundColour = 'red';
+            });
+
+
         </script>
     </head>
     <body>
@@ -26,9 +40,9 @@ code styles.<!DOCTYPE html>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>What is the capital of the UK? </h3>
 
-                <button id="red">London</button>
-                <button>Birmingham</button>
-                <button>Bristol</button>
+                <button id="correct">London</button>
+                <button id="incorrecti">Birmingham</button>
+                <button id="incorrectii">Bristol</button>
 
             </div>
 
