@@ -29,11 +29,16 @@
 
 
                 document.querySelector('#check').addEventListener('click', function() {
-                    let France = document.querySelector('France');
-                    if (France = "Paris")
+                    let input = document.querySelector('input');
+                    if (input.value === 'Paris')
                     {
-                    France.style.backgroundColor = 'green';
-                    document.querySelector('#response2').innerHTML = 'Correct';
+                        input.style.backgroundColor = 'green';
+                        document.querySelector('#response2').innerHTML = 'Correct';
+                    }
+                    else
+                    {
+                        input.style.backgroundColor = 'red';
+                        document.querySelector('#response2').innerHTML = 'Incorrect';
                     }
                 });
 
