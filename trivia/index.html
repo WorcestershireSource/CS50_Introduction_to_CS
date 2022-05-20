@@ -7,18 +7,16 @@
         <title>Trivia!</title>
         <script>
             docunment.addEventListener('DOMContentLoaded',function() {
-
-
             })
 
-            
-            // TODO: Add code to check answers to questions
-            function correctUK()
-            {
-                correct.style.backgroundColour = 'green';
-            }
+            let correctUK = document.querySelector('.correct');
+            correctUK.addEventListener('click', function() {
+                correct.style.backgrounColour = 'green';
+                document.querySelector('feedback1').innerHMTL = 'Correct';
+            })
 
-            document.querySelector('#correct').addEventListener('submit', correctf);
+            // TODO: Add code to check answers to questions
+
 
             function correctFr()
             {
