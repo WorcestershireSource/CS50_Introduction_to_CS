@@ -6,6 +6,12 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
+            docunment.addEventListener('DOMContentLoaded',function() {
+
+
+            })
+
+            
             // TODO: Add code to check answers to questions
             function correctUK()
             {
@@ -34,29 +40,25 @@
             <div class="section">
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
-                <!-- TODO: Add multiple choice question here -->
+
                 <h3>What is the capital of the UK? </h3>
 
-                <form>
-                    <button class="correct">London</button>
-                    <button class="incorrect">Birmingham</button>
-                    <button class="incorrect">Bristol</button>
-                    <h4 id="ansUKc">Correct</h4>
-                    <h4 id="ansUKi">Incorrect</h4>
-                </form>
+                <button class="correct">London</button>
+                <button class="incorrect">Birmingham</button>
+                <button class="incorrect">Bristol</button>
 
-
+                <p id="response1"></p>
             </div>
 
             <div class="section">
                 <h2>Part 2: Free Response</h2>
                 <hr>
-                <!-- TODO: Add free response question here -->
+
                 <h3>What is the capital of France?</h3>
-                <input autocomplete="off" id="France">
-                <input type="submit">
-                <h4 id="ansFRc">Correct</h4>
-                <h4 id="ansFRi">Incorrect</h4>
+                <input type="text" autocomplete="off" id="France">
+                <button id="check">Submit</button>
+
+                <p id="response2"></p>
             </div>
         </div>
     </body>
