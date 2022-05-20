@@ -7,14 +7,25 @@
         <title>Trivia!</title>
         <script>
 
-            document.addEventListener('DOMContentLoaded',function() {
+            document.addEventListener('DOMContentLoaded', function() {
 
                 let correct = document.querySelector('.correct');
                 correct.addEventListener('click', function() {
-                    correct.style.backgrounColour = 'green';
+                    correct.style.backgroundColor = 'green';
                     document.querySelector('#response1').innerHMTL = 'Correct';
                 });
 
+                let incorrect1 = document.querySelector('#incorrect1');
+                correct.addEventListener('click', function() {
+                    incorrect1.style.backgroundColor = 'red';
+                    document.querySelector('#response1').innerHMTL = 'Incorrect';
+                });
+
+                let incorrect2 = document.querySelector('#incorrect2');
+                correct.addEventListener('click', function() {
+                    incorrect2.style.backgroundColor = 'red';
+                    document.querySelector('#response1').innerHMTL = 'Incorrect';
+                });
 
             });
 
@@ -33,11 +44,11 @@
                 <h3>What is the capital of the UK? </h3>
 
                 <button class="correct">London</button>
-                <button class="incorrect">Birmingham</button>
-                <button class="incorrect">Bristol</button>
+                <button id="incorrect1">Birmingham</button>
+                <button id="incorrect2">Bristol</button>
 
                 <p id="response1"></p>
-                
+
             </div>
 
             <div class="section">
