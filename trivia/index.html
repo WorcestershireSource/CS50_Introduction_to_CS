@@ -7,9 +7,11 @@ code styles.<!DOCTYPE html>
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
-
-
-            
+            let body = document.querySelector('body');
+            document.querySelector('#correct').addEventListener('click', function ()
+            {
+                body.style.backgroundColour = 'green';
+            });
         </script>
     </head>
     <body>
@@ -24,7 +26,7 @@ code styles.<!DOCTYPE html>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>What is the capital of the UK? </h3>
 
-                <button>London</button>
+                <button id="correct">London</button>
                 <button>Birmingham</button>
                 <button>Bristol</button>
 
