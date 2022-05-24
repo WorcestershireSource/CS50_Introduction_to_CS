@@ -1,12 +1,15 @@
 h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
+    font-size: 3rem;
     color: #ffffff;
 }
 
 p {
     color: black;
     margin: 0;
+    font-size: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .title {
@@ -15,12 +18,16 @@ p {
     text-align: left;
     margin-bottom: 1rem;
     padding: 1rem 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .main {
     text-align: left;
     margin-bottom: 1rem;
     padding: 1rem 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .video {
@@ -28,6 +35,8 @@ p {
     background-color: #ffffff;
     margin-bottom: 1rem;
     padding: 1rem 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .arms-img {
