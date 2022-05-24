@@ -30,8 +30,8 @@ p {
     padding: 3rem 1rem;
 }
 
-.arms {
-    height: 200px;
+.arms-img {
+    height: 100px;
     width: auto;
     text-align: right;
 }
@@ -43,4 +43,3 @@ p {
     padding: 1rem 1rem;
     margin-top: 2rem;
 }
-/* add one more */
