@@ -15,8 +15,9 @@
                     })
 
                     let no = document.querySelector('#no');
-                    yes.addEventListener('click', function() {
+                    no.addEventListener('click', function() {
                         document.querySelector('#blank').innerHTML = 'Sorry to hear that';
+
                     })
                 });
         </script>
@@ -29,7 +30,7 @@
                     <a class="nav-link" href="google.com">History</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="google.com">Geograhy</a>
+                    <a class="nav-link" href="google.com">Geography</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="google.com">Transport</a>
@@ -63,8 +64,9 @@
             <button id="no">No</button>
             <p style.visibility="hidden" class="hide" id="link"> Go to <a href="https://www.booking.com/searchresults.en-gb.html?aid=355028&sid=d8edd6b7797cfd923ba4624c312ce686&sb=1&sb_lp=1&src=index&src_elem=sb&error_url=https%3A%2F%2Fwww.booking.com%2Findex.en-gb.html%3Faid%3D355028%26sid%3Dd8edd6b7797cfd923ba4624c312ce686%26sb_price_type%3Dtotal%26%26&ss=Ludlow%2C+Shropshire%2C+United+Kingdom&is_ski_area=&checkin_year=&checkin_month=&checkout_year=&checkout_month=&group_adults=2&group_children=0&no_rooms=1&b_h4u_keep_filters=&from_sf=1&ss_raw=ludlow&ac_position=0&ac_langcode=en&ac_click_type=b&dest_id=-2602209&dest_type=city&place_id_lat=52.36799&place_id_lon=-2.71931&search_pageview_id=931e270a5641008e&search_selected=true&search_pageview_id=931e270a5641008e&ac_suggestion_list_length=5&ac_suggestion_theme_list_length=0"
             >booking.com</a> to find somewhere to stay</p>
+            <p id="blank"></p>
         </div>
-        <p id="blank"></p>
+
 
         <div class="end">
             Thank you for visiting
