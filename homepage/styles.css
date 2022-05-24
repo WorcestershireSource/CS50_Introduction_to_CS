@@ -35,4 +35,12 @@ p {
     width: auto;
     text-align: right;
 }
+
+.end {
+    background-color: #3480fa;
+    color: #ffffff;
+    text-align: left;
+    padding: 1rem 1rem;
+    margin-top: 2rem;
+}
 /* add one more */
