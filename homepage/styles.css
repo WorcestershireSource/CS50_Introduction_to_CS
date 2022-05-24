@@ -1,7 +1,7 @@
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 48px;
-    color: darkblue;
+    color: #ffffff;
 }
 
 p {
@@ -10,7 +10,7 @@ p {
 }
 
 .title {
-    background-color: #e8e9eb;
+    background-color: #3480fa;
     color: #000000;
     text-align: left;
     margin-bottom: 1rem;
@@ -25,7 +25,7 @@ p {
 
 .video {
     text-align: center;
-    background-color: #e8e9eb;
+    background-color: #ffffff;
     margin-bottom: 3rem;
     padding: 3rem 1rem;
 }
@@ -33,6 +33,6 @@ p {
 .arms {
     height: 200px;
     width: auto;
-    align: right;
+    text-align: right;
 }
 /* add one more */
