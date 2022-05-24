@@ -10,9 +10,9 @@ p {
 }
 
 .title {
-    background-color: #4f7b2a;
-    color: #00ff00;
-    text-align: center;
+    background-color: #e8e9eb;
+    color: #000000;
+    text-align: left;
     margin-bottom: 1rem;
     padding: 1rem 1rem;
 }
@@ -23,4 +23,10 @@ p {
     padding: 1rem 1rem;
 }
 
-/* add three more */
+.video {
+    text-align: center;
+    background-color: #e8e9eb;
+    margin-bottom: 3rem;
+    padding: 3rem 1rem;
+}
+/* add one more */
