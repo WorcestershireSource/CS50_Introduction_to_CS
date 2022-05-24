@@ -29,4 +29,10 @@ p {
     margin-bottom: 3rem;
     padding: 3rem 1rem;
 }
+
+.arms {
+    height: 200px;
+    width: auto;
+    align: right;
+}
 /* add one more */
