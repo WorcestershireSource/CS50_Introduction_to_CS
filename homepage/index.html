@@ -8,10 +8,11 @@
         <title>Ludlow</title>
         <script>
                 document.addEventListener('DOMContentLoaded', function() {
-                    
+
                     let yes = document.querySelector('#yes');
                     yes.addEventListener('click', function() {
-                        documnent.querySelector('#blank').innerHTML= 'Visit Ludlow';
+                        documnent.querySelector('#blank').innerHTML = 'Visit Ludlow';
+                        yes.style.backgroundColor = 'red';
                     })
 
                 });
