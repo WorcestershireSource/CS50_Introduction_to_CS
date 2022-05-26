@@ -36,8 +36,8 @@
                     <tbody>
                         {% for id in birthdays %}
                         <tr>
-                            <td>{{ name }}</td>
-                            <td>{{ day }}</td>
+                            <td>{{ id["name"] }}</td>
+                            <td>{{ id["day"] }} {{ id["month"]}}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
