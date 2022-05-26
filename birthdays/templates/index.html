@@ -28,7 +28,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for b}
+                        {% for name in birthdays %}
+                        <tr>
+                            <td>{{ birthdays["name"] }}</td>
+                            <td>{{ birthdays["day"] }} {{birthdays["month"] }}</td>
+                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
