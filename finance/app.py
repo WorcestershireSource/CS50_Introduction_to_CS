@@ -113,9 +113,9 @@ def quote():
     if request.method == "POST":
         symbol = request.form.get("symbol")
 
-        price = lookup(symbol)
+        price = usd(lookup(symbol))
 
-        if price = none:
+        if price == none:
             return apology("Not a valid stock", 403)
 
         return render_template("quoted.html", symbol, price)
