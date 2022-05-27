@@ -1,4 +1,5 @@
 import os
+import datetime
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
@@ -74,7 +75,7 @@ def buy():
 
         #If balance is sufficient then update the data base and return to default
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
-        db.execute("INSERT INTO transactions (user_id, stock, value, type) VALUES (?, ?, ?, Buy)", session["user_id"], symbol, total)
+        db.execute("INSERT INTO transactions (user_id, stock, value, type, time) VALUES (?, ?, ?, Buy, ?)", session["user_id"], symbol, total, datetime.datetime.now())
 
         return redirect("/")
 
