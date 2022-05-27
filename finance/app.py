@@ -59,7 +59,14 @@ def buy():
 
         total = stock["price"] * request.form.get("shares")
 
-        balanace = db.execute("SELECT cash FROM users WHERE id = (?)", )
+        balance = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+
+        new_balance = balance["cash" - total]
+
+        if new_balance < 0:
+            return apology("Insufficient funds", 403)
+
+        db.execute("
 
 
     # User reached route via GET (as by clicking a link or via redirect)
