@@ -115,12 +115,9 @@ def quote():
 
         stock = lookup(symbol)
 
-        if len(stock) != 1:
-            return apology("Not a valid stock", 403)
-
         price = usd(stock["price"])
 
-        return render_template("quoted.html", symbol, price)
+        return render_template("quoted.html")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
