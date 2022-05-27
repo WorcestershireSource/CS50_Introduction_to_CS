@@ -67,7 +67,7 @@ def buy():
 
         balance = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
-        new_balance = float(balance["cash"]) - float(total)
+        new_balance = float(balance[0]["cash"]) - float(total)
 
         if new_balance < 0:
             return apology("Insufficient funds", 403)
