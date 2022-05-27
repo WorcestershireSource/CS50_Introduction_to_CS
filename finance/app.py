@@ -59,7 +59,7 @@ def buy():
 
         total = stock["price"] * request.form.get("shares")
 
-        if db.execute("SELECT cash FROM users WHERE id = (?)", )
+        balanace = db.execute("SELECT cash FROM users WHERE id = (?)", )
 
 
     # User reached route via GET (as by clicking a link or via redirect)
