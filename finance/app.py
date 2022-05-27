@@ -110,7 +110,8 @@ def logout():
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
 def quote():
-    """Get stock quote."""
+    if request.method == "POST":
+        
     return apology("TODO")
 
 

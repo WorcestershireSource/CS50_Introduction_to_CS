@@ -7,9 +7,8 @@
 {% block main %}
     <form action="/quote" method="post">
         <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="quote" name="quote" placeholder="Stock name" type="text">
         </div>
-
-        <button class="btn btn-primary" type="submit">Log In</button>
+        <button class="btn btn-primary" type="submit">Get a quote</button>
     </form>
 {% endblock %}
