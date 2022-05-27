@@ -126,12 +126,15 @@ def register():
         elif not request.form.get("regpassword"):
             return apology("must provide password", 403)
 
+        # Query database for username
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", request.form.get("regusername"), request.form.get("regpassword"))
+
+        redirect
+
     # User reached route via GET (as by clicking a link or via redirect)
     else:
         return render_template("register.html")
 
-    # Query database for username
-    db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", request.form.get("regusername"), request.form.get("regpassword"))
 
 
 @app.route("/sell", methods=["GET", "POST"])
