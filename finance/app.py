@@ -51,34 +51,35 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == "POST":
-        # Ensure username was submitted
+        #Check that a valid stock is provided
         symbol = request.form.get("symbol")
         stock = lookup(symbol)
+
         if not lookup(symbol):
             return apology("Not a recognised stock", 403)
 
-        total = stock["price"] * request.form.get("shares")
+        # Check a number of shares submitted
+        if not request.form.get("shares"):
+            return apology("must provide number of shares", 403)
+
+        #Calculate total cost and check there is sufficient balance
+        total = float(stock["price"]) * float(request.form.get("shares"))
 
         balance = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
-        new_balance = balance["cash" - total]
+        new_balance = float(balance["cash"]) - float(total)
 
         if new_balance < 0:
             return apology("Insufficient funds", 403)
 
-        db.execute("
+        #If balance is sufficient then update the data base and return to default
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
 
+        return redirect("/")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
-        return render_template("quote.html")
-
-        # Ensure password was submitted
-        elif not request.form.get("password") < 0:
-            return apology("must porvide number of shares", 403)
-
-
-    return apology("TODO")
+        return render_template("buy.html")
 
 
 @app.route("/history")
