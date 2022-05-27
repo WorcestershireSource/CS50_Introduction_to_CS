@@ -123,13 +123,15 @@ def register():
             return apology("must provide username", 403)
 
         # Ensure password was submitted
-        elif not request.form.get("regpassword"):
+        elif not request.form.get("regpassword") or request.form.get("regpassword") != request.form.get("confirmpassword"):
             return apology("must provide password", 403)
 
-        # Query database for username
-        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", request.form.get("regusername"), request.form.get("regpassword"))
+        hash = generate_password_hash(request.form.get("regpassword"))
 
-        redirect
+        # Query database for username
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", request.form.get("regusername"), hash)
+
+        return redirect("/")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
