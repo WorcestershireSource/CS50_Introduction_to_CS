@@ -112,8 +112,8 @@ def logout():
 def quote():
     if request.method == "POST":
         stock = request.form.get("symbol")
-        
-        if len(stock)
+
+        price = 
     return apology("TODO")
 
 
