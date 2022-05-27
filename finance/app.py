@@ -75,7 +75,7 @@ def buy():
 
         #If balance is sufficient then update the data base and return to default
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
-        db.execute("INSERT INTO transactions (user_id, stock, value, type, time) VALUES (?, ?, ?, ?, ?)", session["user_id"], symbol, total, "Buy", datetime.datetime.now())
+        db.execute("INSERT INTO transactions (user_id, stock, value, type, time, shares) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol, total, "Buy", datetime.datetime.now(), request.form.get("shares"))
 
         return redirect("/")
 
