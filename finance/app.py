@@ -113,7 +113,12 @@ def quote():
     if request.method == "POST":
         stock = request.form.get("symbol")
 
-        price = 
+        price = lookup(stock)
+
+        if price = none:
+            return apology("Not a valid stock", 403)
+
+        return render_template()
     return apology("TODO")
 
 
