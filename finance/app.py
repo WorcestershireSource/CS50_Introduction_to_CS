@@ -115,13 +115,16 @@ def quote():
 
         stock = lookup(symbol)
 
+        if not lookup(symbol):
+            return apology("Not a recognised stock", 403)
+
         price = usd(stock["price"])
 
-        return render_template("quoted.html")
+        return render_template("quoted.html", symbol=symbol, price=price)
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
-        return render_template("quote.html", symbol=symbol, price=price)
+        return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
