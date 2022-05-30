@@ -22,8 +22,9 @@
             <tbody>
                 {% for stock in index_table %}
                 <tr>
-                    <td>{{ id["name"] }}</td>
-                    <td>{{ id["day"] }} / {{ id["month"]}}</td>
+                    <td>{{ stock["stock"] }}</td>
+                    <td>{{ stock["shares"] }}</td>
+                    <td> value </td>
                 </tr>
                 {% endfor %}
             </tbody>
