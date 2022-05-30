@@ -114,18 +114,18 @@ def login():
 
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("must provide username", 403)
+            return apology("Must provide username", 403)
 
         # Ensure password was submitted
         elif not request.form.get("password"):
-            return apology("must provide password", 403)
+            return apology("Must provide password", 403)
 
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
         # Ensure username exists and password is correct
         if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
-            return apology("invalid username and/or password", 403)
+            return apology("Invalid username and/or password", 403)
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
@@ -175,11 +175,11 @@ def register():
     if request.method == "POST":
         # Ensure username was submitted
         if not request.form.get("regusername"):
-            return apology("must provide username", 403)
+            return apology("Must provide username", 403)
 
         # Ensure password was submitted
         elif not request.form.get("regpassword") or request.form.get("regpassword") != request.form.get("confirmpassword"):
-            return apology("must provide password", 403)
+            return apology("Must provide password", 403)
 
         hash = generate_password_hash(request.form.get("regpassword"))
 
@@ -199,10 +199,14 @@ def register():
 def sell():
     """Sell shares of stock"""
     if request.method == "POST":
+       symbol = request.form.get("symbol")
+        stock = lookup(symbol)
+        if not lookup(symbol):
+            return apology("Not a recognised stock", 403)
 
         # Check a number of shares submitted
         if not request.form.get("shares"):
-            return apology("must provide number of shares", 403)
+            return apology("Must provide number of shares", 403)
 
         #Calculate total cost and check there is sufficient balance
         total = float(stock["price"]) * float(request.form.get("shares"))
