@@ -7,7 +7,7 @@
 {% block main %}
     <form action="/buy" method="post">
         <div class="mb-3">
-            <select class="form-select" aria-label="Select a stock to sell">
+            <select class="form-select" id="symbol" name="symbol" aria-label="Select a stock to sell">
                 {% set count = namespace(value=0) %}
                 {% for stock in choices %}
                     <option value ="{{count.value}}"> {{ stock["stock"] }} </option>
