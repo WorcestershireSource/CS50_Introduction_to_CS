@@ -14,17 +14,21 @@
         <table>
             <thead>
                 <tr>
+                    <th>Type</th>
                     <th>Stock</th>
-                    <th>Shares</th>
-                    <th>Value</th>
+                    <th>Price</th>
+                    <th>Number of shares</th>
+                    <th>Date and time</th>
                 </tr>
             </thead>
             <tbody>
-                {% for stock in index_table %}
+                {% for id in history %}
                 <tr>
-                    <td>{{ stock["stock"] }} </td>
-                    <td>{{ stock["shares"] }}</td>
-                    <td> value </td>
+                    <td>{{ id["type"] }}</td>
+                    <td>{{ id["stock"] }} </td>
+                    <td>{{ id["value"] }}</td>
+                    <td>{{ id["shares"] }} </td>
+                    <td>{{ id["time"] }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
