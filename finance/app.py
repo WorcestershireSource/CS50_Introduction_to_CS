@@ -47,11 +47,14 @@ def index():
     tmp = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     balance = usd(tmp[0]["cash"])
 
-    tmp2 = db.execute("SELECT stocks, shares FROM current WHERE user_id = ?", session["user_id"])
+    tmp2 = db.execute("SELECT stock, shares FROM current WHERE user_id = ?", session["user_id"])
     count = db.execute("COUNT stocks FROM current WHERE user_id =?", session["user_id"])
 
-    
-    for i in count:
+    stock_totals = []
+    for id in tmp2:
+        value = tmp2[id]["shares"] 
+        tmp_dict = {"stock": tmp[id]["stock"], "value": value}
+
 
 
     return render_template("index.html", index_table=index_table, balance=balance)
