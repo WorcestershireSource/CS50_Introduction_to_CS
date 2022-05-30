@@ -51,11 +51,10 @@ def index():
     tmp2 = db.execute("SELECT stock, shares FROM current WHERE user_id = ?", session["user_id"])
 
     stock_totals = []
-    for i in tmp2:
-        stock = tmp2
+    for stock in tmp2:
         price = lookup(stock)
-        value = tmp2[id]["shares"] * price["price"]
-        tmp_dict = {"stock": tmp[id]["stock"], "value": value}
+        value = tmp2[stock]["shares"] * price["price"]
+        tmp_dict = {"stock": stock, "value": value}
         stock_totals.append(tmp_dict)
 
     return render_template("index.html", index_table=index_table, balance=balance, stock_totals=stock_totals)
