@@ -199,7 +199,7 @@ def register():
 def sell():
     """Sell shares of stock"""
     if request.method == "POST":
-       symbol = request.form.get("symbol")
+        symbol = request.form.get("symbol")
         stock = lookup(symbol)
         if not lookup(symbol):
             return apology("Not a recognised stock", 403)
