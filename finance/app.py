@@ -52,7 +52,8 @@ def index():
 
     stock_totals = []
     for id in tmp2:
-        value = tmp2[id]["shares"] 
+        lookup(tmp2[id]["stock"])
+        value = tmp2[id]["shares"]
         tmp_dict = {"stock": tmp[id]["stock"], "value": value}
 
 
