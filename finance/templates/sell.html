@@ -6,9 +6,12 @@
 
 {% block main %}
     <form action="/buy" method="post">
-        <div class="mb-3">
-            <input autocomplete="off" autofocus class="select" id="symbol" name="symbol" placeholder="Stock name" type="text">
-        </div>
+        <select class="form-select" aria-label="Select a stock to sell">
+            {% for stock in choices %}
+                <option value="{{ i }} "> {{ stock["stock"] }} </option>
+            {% endfor %}
+        </select>
+
         <div class="mb-3">
             <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="How many shares?" type="number">
         </div>

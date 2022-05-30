@@ -235,6 +235,6 @@ def sell():
     else:
         choices = db.execute("SELECT stock FROM current WHERE user_id = ?", session["user_id"])
 
-        
 
-        return render_template("sell.html")
+
+        return render_template("sell.html", choices=choices)
