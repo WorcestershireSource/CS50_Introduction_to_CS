@@ -215,7 +215,10 @@ def sell():
 
         new_balance = float(balance[0]["cash"]) + float(total)
 
-        # update the database and return to default
+        #Check there are shares to sell
+        if 
+
+        #Update the database and return to default
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
         db.execute("INSERT INTO transactions (user_id, stock, value, type, time, shares) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol, total, "Sell", datetime.datetime.now(), request.form.get("shares"))
 

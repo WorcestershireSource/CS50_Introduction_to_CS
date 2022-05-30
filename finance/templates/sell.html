@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Buy stocks
+    Sell stocks
 {% endblock %}
 
 {% block main %}
-    <form action="/buy" method="post">
+    <form action="/sell" method="post">
         <div class="mb-3">
             <select class="form-select" id="symbol" name="symbol" aria-label="Select a stock to sell">
                 {% set count = namespace(value=0) %}
