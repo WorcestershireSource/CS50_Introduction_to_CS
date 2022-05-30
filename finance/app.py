@@ -81,7 +81,8 @@ def buy():
         if len(current) != 1:
             db.execute("INSERT INTO current (user_id, stock, shares) VALUES (?, ?, ?)", session["user_id"], symbol, request.form.get("shares"))
         else:
-            new_shares = int(db.execute("SELECT shares FROM current WHERE user_id = ? AND stock = ?", session["user_id"], symbol)) + int(request.form.get("shares"))
+            existing_shares = db.execute("SELECT shares FROM current WHERE user_id = ? AND stock = ?", session["user_id"], symbol)
+            new_shares = int(existing_shares[0]["shares"]) + int(request.form.get("shares"))
             db.execute("UPDATE current SET shares = ? WHERE user_id = ? AND stock = ?", new_shares, session["user_id"], symbol)
 
         return redirect("/")
