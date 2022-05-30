@@ -216,14 +216,16 @@ def sell():
         new_balance = float(balance[0]["cash"]) + float(total)
 
         #Check there are shares to sell
-        if 
+        existing_shares = db.execute("SELECT shares FROM current WHERE user_id = ? AND stock = ?", session["user_id"], symbol)
+        new_shares = int(existing_shares[0]["shares"]) - int(request.form.get("shares"))
+
+        if existing_shares[0]["shares"] < request.form.get("shares"):
+            return apology("Not enough shares to sell", 403)
 
         #Update the database and return to default
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
         db.execute("INSERT INTO transactions (user_id, stock, value, type, time, shares) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol, total, "Sell", datetime.datetime.now(), request.form.get("shares"))
 
-        existing_shares = db.execute("SELECT shares FROM current WHERE user_id = ? AND stock = ?", session["user_id"], symbol)
-        new_shares = int(existing_shares[0]["shares"]) - int(request.form.get("shares"))
         db.execute("UPDATE current SET shares = ? WHERE user_id = ? AND stock = ?", new_shares, session["user_id"], symbol)
 
         return redirect("/")
