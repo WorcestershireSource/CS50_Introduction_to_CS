@@ -199,9 +199,6 @@ def register():
 def sell():
     """Sell shares of stock"""
     if request.method == "POST":
-        #Check that a valid stock is provided
-        symbol = request.form.get("symbol")
-
 
         # Check a number of shares submitted
         if not request.form.get("shares"):
@@ -234,7 +231,4 @@ def sell():
     # User reached route via GET (as by clicking a link or via redirect)
     else:
         choices = db.execute("SELECT stock FROM current WHERE user_id = ?", session["user_id"])
-
-
-
         return render_template("sell.html", choices=choices)
