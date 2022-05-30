@@ -8,7 +8,7 @@
 
     <div class="section">
         You have {{ balance | usd }} cash in your account
-        The current total value of your cash and investments is {{ total | usd }}
+        The current total value of your cash and investments is
 
         <h2>Investments</h2>
         <table>
@@ -20,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for id in birthdays %}
+                {% for stock in index_table %}
                 <tr>
                     <td>{{ id["name"] }}</td>
                     <td>{{ id["day"] }} / {{ id["month"]}}</td>
