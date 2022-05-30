@@ -48,17 +48,15 @@ def index():
     balance = usd(tmp[0]["cash"])
 
     tmp2 = db.execute("SELECT stock, shares FROM current WHERE user_id = ?", session["user_id"])
-    count = db.execute("COUNT stocks FROM current WHERE user_id =?", session["user_id"])
 
     stock_totals = []
     for id in tmp2:
-        lookup(tmp2[id]["stock"])
-        value = tmp2[id]["shares"]
+        price = lookup(tmp2[id]["stock"])
+        value = tmp2[id]["shares"] * price["price"]
         tmp_dict = {"stock": tmp[id]["stock"], "value": value}
+        stock_totals.append(tmp_dict)
 
-
-
-    return render_template("index.html", index_table=index_table, balance=balance)
+    return render_template("index.html", index_table=index_table, balance=balance, stock_totals=stock_totals)
 
 
 
