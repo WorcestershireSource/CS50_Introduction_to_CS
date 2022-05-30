@@ -78,7 +78,7 @@ def buy():
         db.execute("INSERT INTO transactions (user_id, stock, value, type, time, shares) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol, total, "Buy", datetime.datetime.now(), request.form.get("shares"))
 
         current = db.execute("SELECT stock FROM current")
-        if symbol in current:
+        if symbol in current[0]:
             db.execute("UPDATE current SET shares = ? WHERE user_id = ? AND stock = ?", db.execute("SELECT shares FROM current WHERE user_id = ? AND stock = ?", session["user_id"], symbol) + request.form.get("shares"), session["user_id"], symbol)
         else:
             db.execute("INSERT INTO current (user_id, stock, shares) VALUES (?, ?, ?)", session["user_id"], symbol, request.form.get("shares"))
