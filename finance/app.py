@@ -213,14 +213,11 @@ def sell():
 
         balance = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
-        new_balance = float(balance[0]["cash"]) - float(total)
+        new_balance = float(balance[0]["cash"]) + float(total)
 
-        if new_balance < 0:
-            return apology("Insufficient funds", 403)
-
-        #If balance is sufficient then update the data base and return to default
+        # update the database and return to default
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
-        db.execute("INSERT INTO transactions (user_id, stock, value, type, time, shares) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol, total, "Buy", datetime.datetime.now(), request.form.get("shares"))
+        db.execute("INSERT INTO transactions (user_id, stock, value, type, time, shares) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol, total, "Sell", datetime.datetime.now(), request.form.get("shares"))
 
         current = db.execute("SELECT stock FROM current WHERE stock = ?", symbol)
         if len(current) != 1:
