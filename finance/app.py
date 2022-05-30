@@ -79,7 +79,9 @@ def buy():
 
         current = db.execute("SELECT stock FROM current")
         if symbol in current:
-            db.execute("UPDATE current SET shares = ? WHERE user_id = ? AND stock = ?", db.execute("SELECT shares FROM current WHERE user_id = ? AND stock = ?", session["user_id"], symbol) + , session["user_id"], symbol)
+            db.execute("UPDATE current SET shares = ? WHERE user_id = ? AND stock = ?", db.execute("SELECT shares FROM current WHERE user_id = ? AND stock = ?", session["user_id"], symbol) + request.form.get("shares"), session["user_id"], symbol)
+        else
+            db.execute("INSERT INTO current )
 
         return redirect("/")
 
