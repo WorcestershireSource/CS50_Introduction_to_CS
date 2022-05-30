@@ -233,4 +233,8 @@ def sell():
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
-        return render_template("buy.html")
+        choices = db.execute("SELECT stock FROM current WHERE user_id = ?", session["user_id"])
+
+        
+
+        return render_template("sell.html")
