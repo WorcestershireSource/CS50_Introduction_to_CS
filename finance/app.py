@@ -43,8 +43,8 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    index_table = db.execute("SELECT * from current WHERE id = ?", session["user_id"])
-    tmp = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+    index_table = db.execute("SELECT * from current WHERE user_id = ?", session["user_id"])
+    tmp = db.execute("SELECT cash FROM users WHERE user_id = ?", session["user_id"])
     balance = usd(tmp[0]["cash"])
     return render_template("index.html", index_table=index_table, balance=balance)
 
