@@ -60,11 +60,11 @@ def buy():
         stock = lookup(symbol)
 
         if not lookup(symbol):
-            return apology("Not a recognised stock", 403)
+            return apology("Not a recognised stock", 400)
 
         # Check a number of shares submitted
-        if not request.form.get("shares"):
-            return apology("must provide number of shares", 403)
+        if not request.form.get("shares") or :
+            return apology("must provide number of shares", 400)
 
         #Calculate total cost and check there is sufficient balance
         total = float(stock["price"]) * float(request.form.get("shares"))
@@ -158,7 +158,7 @@ def quote():
         stock = lookup(symbol)
 
         if not lookup(symbol):
-            return apology("Not a recognised stock", 403)
+            return apology("Not a recognised stock", 400)
 
         price = usd(stock["price"])
 
@@ -175,11 +175,11 @@ def register():
     if request.method == "POST":
         # Ensure username was submitted
         if not request.form.get("username"):
-            return apology("Must provide username", 403)
+            return apology("Must provide username", 400)
 
         # Ensure password was submitted
         elif not request.form.get("password") or request.form.get("password") != request.form.get("confirmation"):
-            return apology("Must provide password", 403)
+            return apology("Must provide password", 400)
 
         hash = generate_password_hash(request.form.get("password"))
 
