@@ -201,10 +201,7 @@ def sell():
     if request.method == "POST":
         #Check that a valid stock is provided
         symbol = request.form.get("symbol")
-        stock = lookup(symbol)
 
-        if not lookup(symbol):
-            return apology("Not a recognised stock", 403)
 
         # Check a number of shares submitted
         if not request.form.get("shares"):
