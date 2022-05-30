@@ -198,4 +198,42 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    return apology("TODO")
+    if request.method == "POST":
+        #Check that a valid stock is provided
+        symbol = request.form.get("symbol")
+        stock = lookup(symbol)
+
+        if not lookup(symbol):
+            return apology("Not a recognised stock", 403)
+
+        # Check a number of shares submitted
+        if not request.form.get("shares"):
+            return apology("must provide number of shares", 403)
+
+        #Calculate total cost and check there is sufficient balance
+        total = float(stock["price"]) * float(request.form.get("shares"))
+
+        balance = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+
+        new_balance = float(balance[0]["cash"]) - float(total)
+
+        if new_balance < 0:
+            return apology("Insufficient funds", 403)
+
+        #If balance is sufficient then update the data base and return to default
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
+        db.execute("INSERT INTO transactions (user_id, stock, value, type, time, shares) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol, total, "Buy", datetime.datetime.now(), request.form.get("shares"))
+
+        current = db.execute("SELECT stock FROM current WHERE stock = ?", symbol)
+        if len(current) != 1:
+            db.execute("INSERT INTO current (user_id, stock, shares) VALUES (?, ?, ?)", session["user_id"], symbol, request.form.get("shares"))
+        else:
+            existing_shares = db.execute("SELECT shares FROM current WHERE user_id = ? AND stock = ?", session["user_id"], symbol)
+            new_shares = int(existing_shares[0]["shares"]) + int(request.form.get("shares"))
+            db.execute("UPDATE current SET shares = ? WHERE user_id = ? AND stock = ?", new_shares, session["user_id"], symbol)
+
+        return redirect("/")
+
+    # User reached route via GET (as by clicking a link or via redirect)
+    else:
+        return render_template("buy.html")
