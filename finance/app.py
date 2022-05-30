@@ -63,7 +63,7 @@ def buy():
             return apology("Not a recognised stock", 400)
 
         # Check a number of shares submitted
-        if not request.form.get("shares") or not request.form.get("shares").isdigit()):
+        if not request.form.get("shares") or not request.form.get("shares").isdigit():
             return apology("must provide number of shares", 400)
 
         #Calculate total cost and check there is sufficient balance
