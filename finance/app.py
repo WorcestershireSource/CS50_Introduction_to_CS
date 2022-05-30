@@ -219,13 +219,9 @@ def sell():
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
         db.execute("INSERT INTO transactions (user_id, stock, value, type, time, shares) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol, total, "Sell", datetime.datetime.now(), request.form.get("shares"))
 
-        current = db.execute("SELECT stock FROM current WHERE stock = ?", symbol)
-        if len(current) != 1:
-            db.execute("INSERT INTO current (user_id, stock, shares) VALUES (?, ?, ?)", session["user_id"], symbol, request.form.get("shares"))
-        else:
-            existing_shares = db.execute("SELECT shares FROM current WHERE user_id = ? AND stock = ?", session["user_id"], symbol)
-            new_shares = int(existing_shares[0]["shares"]) + int(request.form.get("shares"))
-            db.execute("UPDATE current SET shares = ? WHERE user_id = ? AND stock = ?", new_shares, session["user_id"], symbol)
+        existing_shares = db.execute("SELECT shares FROM current WHERE user_id = ? AND stock = ?", session["user_id"], symbol)
+        new_shares = int(existing_shares[0]["shares"]) - int(request.form.get("shares"))
+        db.execute("UPDATE current SET shares = ? WHERE user_id = ? AND stock = ?", new_shares, session["user_id"], symbol)
 
         return redirect("/")
 
