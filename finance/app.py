@@ -50,8 +50,8 @@ def index():
     tmp2 = db.execute("SELECT stock, shares FROM current WHERE user_id = ?", session["user_id"])
 
     stock_totals = []
-    for id in tmp2:
-        stock = tmp2[id]["stock"]
+    for i in tmp2:
+        stock = tmp2
         price = lookup(stock)
         value = tmp2[id]["shares"] * price["price"]
         tmp_dict = {"stock": tmp[id]["stock"], "value": value}
