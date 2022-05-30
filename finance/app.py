@@ -47,7 +47,13 @@ def index():
     tmp = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     balance = usd(tmp[0]["cash"])
 
+    tmp2 = db.execute("SELECT stocks, shares FROM current WHERE user_id = ?", session["user_id"])
+    count = db.execute("COUNT stocks FROM current WHERE user_id =?", session["user_id"])
+
     
+    for i in count:
+
+
     return render_template("index.html", index_table=index_table, balance=balance)
 
 
