@@ -77,6 +77,10 @@ def buy():
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
         db.execute("INSERT INTO transactions (user_id, stock, value, type, time, shares) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol, total, "Buy", datetime.datetime.now(), request.form.get("shares"))
 
+        current = db.execute("SELECT stock FROM current")
+        if symbol in current
+            db.execute("UPDATE current SET shares = ? WHERE user_id = ? AND stock = ?", db.execute("SELECT shares FROM current WHERE user_id = ? AND stock = ?", session["user_id"], symbol) + , session["user_id"], symbol)
+
         return redirect("/")
 
     # User reached route via GET (as by clicking a link or via redirect)
