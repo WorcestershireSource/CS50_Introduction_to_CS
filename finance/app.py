@@ -47,6 +47,7 @@ def index():
     tmp = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     balance = usd(tmp[0]["cash"])
 
+    #Having trouble here
     tmp2 = db.execute("SELECT stock, shares FROM current WHERE user_id = ?", session["user_id"])
 
     stock_totals = []
