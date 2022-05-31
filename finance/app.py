@@ -225,11 +225,11 @@ def sell():
         symbol = request.form.get("symbol")
         stock = lookup(symbol)
         if not lookup(symbol):
-            return apology("Not a recognised stock", 403)
+            return apology("Not a recognised stock", 400)
 
         # Check a number of shares submitted
         if not request.form.get("shares"):
-            return apology("Must provide number of shares", 403)
+            return apology("Must provide number of shares", 400)
 
         #Calculate total cost and check there is sufficient balance
         total = float(stock["price"]) * float(request.form.get("shares"))
@@ -243,7 +243,7 @@ def sell():
         new_shares = int(existing_shares[0]["shares"]) - int(request.form.get("shares"))
 
         if existing_shares[0]["shares"] < request.form.get("shares"):
-            return apology("Not enough shares to sell", 403)
+            return apology("Not enough shares to sell", 400)
 
         #Update the database and return to default
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
