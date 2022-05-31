@@ -52,6 +52,7 @@ def index():
 
     stock_totals = []
     for stock in tmp2:
+        print(stock)
         price = lookup(stock)
         value = tmp2[stock]["shares"] * price["price"]
         tmp_dict = {"stock": stock, "value": value}
