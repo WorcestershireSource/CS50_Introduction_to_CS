@@ -49,8 +49,8 @@ def index():
     #Having trouble here
     tmp2 = db.execute("SELECT stock, shares FROM current WHERE user_id = ?", session["user_id"])
 
-    print(tmp2[0]["stock"])
     count = len(tmp2)
+    total = tmp[0]["cash"]
 
     index_table = []
     for i in range(count):
@@ -60,8 +60,10 @@ def index():
         value = float(shares) * float(price["price"])
         tmp_dict = {"stock": stock, "shares": shares, "value": usd(value)}
         index_table.append(tmp_dict)
+        total = float(total) + float(value)
 
-    return render_template("index.html", index_table=index_table, balance=balance)
+
+    return render_template("index.html", index_table=index_table, balance=balance, total=usd(total))
 
 
 
