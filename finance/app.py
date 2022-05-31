@@ -58,7 +58,7 @@ def index():
         price = lookup(stock)
         shares = tmp2[i]["shares"]
         value = float(shares) * float(price["price"])
-        tmp_dict = {"stock": stock, "Shares": shares, "Value": value}
+        tmp_dict = {"stock": stock, "shares": shares, "value": usd(value)}
         index_table.append(tmp_dict)
 
     return render_template("index.html", index_table=index_table, balance=balance)
