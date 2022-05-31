@@ -43,21 +43,25 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    index_table = db.execute("SELECT * from current WHERE user_id = ?", session["user_id"])
     tmp = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     balance = usd(tmp[0]["cash"])
 
     #Having trouble here
     tmp2 = db.execute("SELECT stock, shares FROM current WHERE user_id = ?", session["user_id"])
 
-    stock_totals = []
-    for stock in tmp2:
-        price = lookup(stock)
-        value = tmp2[stock]["shares"] * price["price"]
-        tmp_dict = {"stock": stock, "value": value}
-        stock_totals.append(tmp_dict)
+    print(tmp2[0]["stock"])
+    count = len(tmp2)
 
-    return render_template("index.html", index_table=index_table, balance=balance, stock_totals=stock_totals)
+    index_table = []
+    for i in range(count):
+        stock = tmp2[i]["stock"]
+        price = lookup(stock)
+        shares = tmp2[i]["shares"]
+        value = float(shares) * float(price["price"])
+        tmp_dict = {"stock": stock, "Shares": shares, "Value": value}
+        index_table.append(tmp_dict)
+
+    return render_template("index.html", index_table=index_table, balance=balance)
 
 
 
