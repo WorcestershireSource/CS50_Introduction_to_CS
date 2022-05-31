@@ -71,6 +71,7 @@ def buy():
         symbol = request.form.get("symbol")
         stock = lookup(symbol)
 
+
         if not lookup(symbol):
             return apology("Not a recognised stock", 400)
 
