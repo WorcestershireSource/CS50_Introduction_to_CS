@@ -46,7 +46,6 @@ def index():
     tmp = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     balance = usd(tmp[0]["cash"])
 
-    #Having trouble here
     tmp2 = db.execute("SELECT stock, shares FROM current WHERE user_id = ?", session["user_id"])
 
     count = len(tmp2)
@@ -62,9 +61,7 @@ def index():
         index_table.append(tmp_dict)
         total = float(total) + float(value)
 
-
     return render_template("index.html", index_table=index_table, balance=balance, total=usd(total))
-
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -72,10 +69,9 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == "POST":
-        #Check that a valid stock is provided
+        # Check that a valid stock is provided
         symbol = request.form.get("symbol")
         stock = lookup(symbol)
-
 
         if not lookup(symbol):
             return apology("Not a recognised stock", 400)
@@ -84,7 +80,7 @@ def buy():
         if not request.form.get("shares") or not request.form.get("shares").isdigit():
             return apology("must provide number of shares", 400)
 
-        #Calculate total cost and check there is sufficient balance
+        # Calculate total cost and check there is sufficient balance
         total = float(stock["price"]) * float(request.form.get("shares"))
 
         balance = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
@@ -94,13 +90,15 @@ def buy():
         if new_balance < 0:
             return apology("Insufficient funds", 403)
 
-        #If balance is sufficient then update the data base and return to default
+        # If balance is sufficient then update the data base and return to default
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
-        db.execute("INSERT INTO transactions (user_id, stock, value, type, time, shares) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol, total, "Buy", datetime.datetime.now(), request.form.get("shares"))
+        db.execute("INSERT INTO transactions (user_id, stock, value, type, time, shares) VALUES (?, ?, ?, ?, ?, ?)",
+                   session["user_id"], symbol, total, "Buy", datetime.datetime.now(), request.form.get("shares"))
 
         current = db.execute("SELECT stock FROM current WHERE stock = ?", symbol)
         if len(current) != 1:
-            db.execute("INSERT INTO current (user_id, stock, shares) VALUES (?, ?, ?)", session["user_id"], symbol, request.form.get("shares"))
+            db.execute("INSERT INTO current (user_id, stock, shares) VALUES (?, ?, ?)",
+                       session["user_id"], symbol, request.form.get("shares"))
         else:
             existing_shares = db.execute("SELECT shares FROM current WHERE user_id = ? AND stock = ?", session["user_id"], symbol)
             new_shares = int(existing_shares[0]["shares"]) + int(request.form.get("shares"))
@@ -216,7 +214,6 @@ def register():
         return render_template("register.html")
 
 
-
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
@@ -231,23 +228,24 @@ def sell():
         if not request.form.get("shares"):
             return apology("Must provide number of shares", 400)
 
-        #Calculate total cost and check there is sufficient balance
+        # Calculate total cost and check there is sufficient balance
         total = float(stock["price"]) * float(request.form.get("shares"))
 
         balance = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
         new_balance = float(balance[0]["cash"]) + float(total)
 
-        #Check there are shares to sell
+        # Check there are shares to sell
         existing_shares = db.execute("SELECT shares FROM current WHERE user_id = ? AND stock = ?", session["user_id"], symbol)
         new_shares = int(existing_shares[0]["shares"]) - int(request.form.get("shares"))
 
         if existing_shares[0]["shares"] < request.form.get("shares"):
             return apology("Not enough shares to sell", 400)
 
-        #Update the database and return to default
+        # Update the database and return to default
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
-        db.execute("INSERT INTO transactions (user_id, stock, value, type, time, shares) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], symbol, total, "Sell", datetime.datetime.now(), request.form.get("shares"))
+        db.execute("INSERT INTO transactions (user_id, stock, value, type, time, shares) VALUES (?, ?, ?, ?, ?, ?)",
+                   session["user_id"], symbol, total, "Sell", datetime.datetime.now(), request.form.get("shares"))
 
         db.execute("UPDATE current SET shares = ? WHERE user_id = ? AND stock = ?", new_shares, session["user_id"], symbol)
 
@@ -257,3 +255,20 @@ def sell():
     else:
         choices = db.execute("SELECT stock FROM current WHERE user_id = ?", session["user_id"])
         return render_template("sell.html", choices=choices)
+
+
+@app.route("/cash", methods=["GET", "POST"])
+@login_required
+def cash():
+    if request.method == "POST":
+        cash = request.form.get("cash")
+
+        if not cash.isnumeric():
+            return apology("Not a valid amount", 400)
+
+        old_balance = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        update = old_balance[0]["cash"] + float(cash)
+
+        db.execute("UPDATE users SET cash = ? WHERE id =?", update, session["user_id"])
+
+    return redirect("/")

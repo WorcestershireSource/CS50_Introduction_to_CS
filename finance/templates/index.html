@@ -7,11 +7,12 @@
 {% block main %}
 
     <div class="section">
+        <h2>Summary</h2>
         <p>You have {{ balance }} cash in your account</p>
         <p>The current total value of your cash and investments is {{ total }}
-
+        <h2></h2>
         <h2>Investments</h2>
-        <table>
+        <table class="table">
             <thead>
                 <tr>
                     <th>Stock</th>
@@ -29,6 +30,14 @@
                 {% endfor %}
             </tbody>
         </table>
+        <h2></h2>
+        <h2>Add cash to account</h2>
+        <form action="/cash" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="cash" name="cash" placeholder="Amount to be added" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Add cash</button>
+        </form>
     </div>
 
 {% endblock %}
