@@ -9,6 +9,8 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 from helpers import apology, login_required, lookup, usd
 
+# Note that API required to run: export API_KEY=pk_244ae97da50b422ca81d42bc90a15419
+
 # Configure application
 app = Flask(__name__)
 
@@ -95,7 +97,7 @@ def buy():
         db.execute("INSERT INTO transactions (user_id, stock, value, type, time, shares) VALUES (?, ?, ?, ?, ?, ?)",
                    session["user_id"], symbol, total, "Buy", datetime.datetime.now(), request.form.get("shares"))
 
-        current = db.execute("SELECT stock FROM current WHERE stock = ?", symbol)
+        current = db.execute("SELECT shares FROM current WHERE stock = ? AND user_id = ?", symbol, session["user_id"])
         if len(current) != 1:
             db.execute("INSERT INTO current (user_id, stock, shares) VALUES (?, ?, ?)",
                        session["user_id"], symbol, request.form.get("shares"))
